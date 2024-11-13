@@ -1,0 +1,28 @@
+project:
+  title: "Sartini-Stats"
+  type: website
+  output-dir: docs
+
+website:
+  title: "Sartini-Stats"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - href: pubs.qmd
+        text: Publications
+      - href: soft.qmd
+        text: Software
+
+format:
+  html:
+    theme: lux
+    css: styles.css
+    toc: true
+
+editor: visual
+
+execute: 
+  freeze: auto

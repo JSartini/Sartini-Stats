@@ -1,16 +1,65 @@
 [
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "Johns Hopkins University - Bloomberg SPH | August 2021 - present\n\n\n\nPrinceton University | August 2017 - May 2021"
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About Me",
+    "section": "",
+    "text": "Johns Hopkins University - Bloomberg SPH | August 2021 - present\n\n\n\nPrinceton University | August 2017 - May 2021"
+  },
+  {
+    "objectID": "about.html#research-groups",
+    "href": "about.html#research-groups",
+    "title": "About Me",
+    "section": "Research Groups",
+    "text": "Research Groups\n\nJohns Hopkins University\n\nWearable and Implantable Technology (WIT) Working Group | December 2022 - present\nZeger Lab | August 2022 - present\n\n\n\nPrinceton University\n\nIndirect Reciprocity Working Group | November 2019 - August 2021\nTransportation Systems Lab | May 2020 - September 2020\n\n\n\nUniversity of Arkansas\n\nSystems Engineering Lab | May 2020 - May 2021"
+  },
+  {
+    "objectID": "about.html#teaching-experience",
+    "href": "about.html#teaching-experience",
+    "title": "About Me",
+    "section": "Teaching Experience",
+    "text": "Teaching Experience\n\nJohns Hopkins University\n\nStatistical Computing and Machine Learning TA | August 2022 - present\nTA Training Planning Committee | August 2023, August 2024\n\n\n\nPrinceton Univeristy\n\nStatistical Courses TA | August 2020 - May 2021"
+  },
+  {
+    "objectID": "about.html#software-experience",
+    "href": "about.html#software-experience",
+    "title": "About Me",
+    "section": "Software Experience",
+    "text": "Software Experience\nSoftware Engineering Intern | PriacyStar | May 2019 - August 2019"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Sartini-Stats",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "Joe Sartini is currently a 4th year biostatistics PhD student, with broad interests in deriving clinically relevant features from high-dimensional data. His methodological works focuses on comprehensive modeling of uncertainty, better incorporation of hierarchical structure, and implementation of practical software."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
+    "objectID": "about.html#teaching-experience---jhu-bsph",
+    "href": "about.html#teaching-experience---jhu-bsph",
     "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "section": "Teaching Experience - JHU BSPH",
+    "text": "Teaching Experience - JHU BSPH\nStatistical Computing and Machine Learning TA | August 2022 - present\nTA Training Planning Committee | August 2023, August 2024"
+  },
+  {
+    "objectID": "about.html#software-experience---privacystar-first-orion",
+    "href": "about.html#software-experience---privacystar-first-orion",
+    "title": "About",
+    "section": "Software Experience - PrivacyStar (First Orion)",
+    "text": "Software Experience - PrivacyStar (First Orion)\nSoftware Engineering Intern | May 2019 - August 2019"
+  },
+  {
+    "objectID": "about.html#software-experience---privacystar",
+    "href": "about.html#software-experience---privacystar",
+    "title": "About",
+    "section": "Software Experience - PrivacyStar",
+    "text": "Software Experience - PrivacyStar\nSoftware Engineering Intern | May 2019 - August 2019"
   }
 ]

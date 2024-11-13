@@ -1,9 +1,59 @@
 ---
-title: "About"
+title: "About Me"
 ---
 
-About this site
+## Education
 
-```{r}
-1 + 1
-```
+#### PhD in Biostatistics
+
+Johns Hopkins University - Bloomberg SPH \| August 2021 - present
+
+#### B.S.E. in Operations Research and Financial Engineering
+
+Princeton University \| August 2017 - May 2021
+
+***
+
+\vspace{2em}
+
+## Research Groups
+
+#### Johns Hopkins University
+
+- Wearable and Implantable Technology (WIT) Working Group \| December 2022 - present
+
+- Zeger Lab \| August 2022 - present
+
+#### Princeton University 
+
+- Indirect Reciprocity Working Group \| November 2019 - August 2021
+
+- Transportation Systems Lab \| May 2020 - September 2020
+
+#### University of Arkansas
+
+- Systems Engineering Lab \| May 2020 - May 2021
+
+***
+
+\vspace{2em}
+
+## Teaching Experience
+
+#### Johns Hopkins University
+
+- Statistical Computing and Machine Learning TA \| August 2022 - present
+
+- TA Training Planning Committee \| August 2023, August 2024
+
+#### Princeton Univeristy
+
+- Statistical Courses TA \| August 2020 - May 2021 
+
+***
+
+\vspace{2em}
+
+## Software Experience
+
+Software Engineering Intern \| PriacyStar \| May 2019 - August 2019

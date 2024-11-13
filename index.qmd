@@ -1,11 +1,23 @@
 ---
-title: "Sartini-Stats"
+#title: "Joe Sartini"
+image: resources/Headshot.jpg
+toc: false
+about:
+  template: jolla
+  image-shape: round
+  image-width: 17em
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/joseph-sartini/
+    - icon: github
+      text: GitHub
+      href: https://github.com/JSartini
+    - icon: envelope
+      text: Email
+      href: mailto:jsartin1@jh.edu
+    - text: "{{< iconify mingcute bluesky-social-fill >}} Bluesky"
+      href: https://bsky.app/profile/jsartini.bsky.social
 ---
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```{r}
-1 + 1
-```
+Joe Sartini is currently a 4th year biostatistics PhD student, with broad interests in deriving clinically relevant features from high-dimensional data. His methodological works focuses on comprehensive modeling of uncertainty, better incorporation of hierarchical structure, and implementation of practical software.

@@ -7,8 +7,6 @@ website:
   title: "Sartini-Stats"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
       - href: about.qmd
         text: About
       - href: pubs.qmd

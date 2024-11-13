@@ -1,0 +1,23 @@
+---
+title: "The evolution of private reputations in information-abundant landscapes"
+type: "article"
+author: "Michel-Mata, Kawakatsu, Sartini, Kessinger, Plotkin, & Tarnita"
+year: "2024"
+publication: "Nature"
+doi: "https://doi.org/10.1038/s41586-024-07977-x"
+materials: "https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-024-07977-x/MediaObjects/41586_2024_7977_MOESM1_ESM.pdf"
+toc: false
+categories:
+  - indirect reciprocity
+  - evolutionary game theory
+  - cooperation
+  - journal article
+---
+
+## Citation (APA)
+
+> Michel-Mata, S., Kawakatsu, M., Sartini, J. et al. The evolution of private reputations in information-abundant landscapes. Nature 634, 883--889 (2024). https://doi.org/10.1038/s41586-024-07977-x
+
+## Abstract
+
+Reputations are critical to human societies, as individuals are treated differently based on their social standing1,2. For instance, those who garner a good reputation by helping others are more likely to be rewarded by third parties3,4,5. Achieving widespread cooperation in this way requires that reputations accurately reflect behaviour6 and that individuals agree about each other's standings7. With few exceptions8,9,10, theoretical work has assumed that information is limited, which hinders consensus7,11 unless there are mechanisms to enforce agreement, such as empathy12, gossip13,14,15 or public institutions16. Such mechanisms face challenges in a world where empathy, effective communication and institutional trust are compromised17,18,19. However, information about others is now abundant and readily available, particularly through social media. Here we demonstrate that assigning private reputations by aggregating several observations of an individual can accurately capture behaviour, foster emergent agreement without enforcement mechanisms and maintain cooperation, provided individuals exhibit some tolerance for bad actions. This finding holds for both first- and second-order norms of judgement and is robust even when norms vary within a population. When the aggregation rule itself can evolve, selection indeed favours the use of several observations and tolerant judgements. Nonetheless, even when information is freely accessible, individuals do not typically evolve to use all of it. This method of assessing reputations---'look twice, forgive once', in a nutshell---is simple enough to have arisen early in human culture and powerful enough to persist as a fundamental component of social heuristics.

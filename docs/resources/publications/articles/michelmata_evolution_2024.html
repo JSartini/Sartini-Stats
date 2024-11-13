@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Michel-Mata, Kawakatsu, Sartini, Kessinger, Plotkin, &amp; Tarnita">
 
-<title>Sartini-Stats - Publications</title>
+<title>Sartini-Stats - The evolution of private reputations in information-abundant landscapes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +24,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,67 +67,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-articles .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-project','listing-website','listing-format','listing-editor','listing-execute','listing-language','listing-title','listing-type','listing-author','listing-year','listing-publication','listing-preprint','listing-doi','listing-toc','listing-categories','listing-path','listing-outputHref','listing-description','listing-filename','listing-file-modified','listing-reading-time','listing-word-count','listing-materials',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
-      
-      searchColumns: ["listing-project","listing-website","listing-format","listing-editor","listing-execute","listing-language","listing-title","listing-type","listing-author","listing-year","listing-publication","listing-preprint","listing-doi","listing-toc","listing-categories","listing-path","listing-outputHref","listing-description","listing-filename","listing-file-modified","listing-reading-time","listing-word-count","listing-materials"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-articles'] = new List('listing-articles', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -138,7 +79,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Sartini-Stats</span>
     </a>
   </div>
@@ -149,19 +90,19 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./pubs.html" aria-current="page"> 
+    <a class="nav-link" href="../../../pubs.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./soft.html"> 
+    <a class="nav-link" href="../../../soft.html"> 
 <span class="menu-text">Software</span></a>
   </li>  
 </ul>
@@ -175,23 +116,42 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div><div class="category" data-category="application">application <span class="quarto-category-count">(2)</span></div><div class="category" data-category="continuous glucose monitoring">continuous glucose monitoring <span class="quarto-category-count">(4)</span></div><div class="category" data-category="cooperation">cooperation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="evolutionary game theory">evolutionary game theory <span class="quarto-category-count">(1)</span></div><div class="category" data-category="functional data analysis">functional data analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="hierarchical structure">hierarchical structure <span class="quarto-category-count">(1)</span></div><div class="category" data-category="indirect reciprocity">indirect reciprocity <span class="quarto-category-count">(1)</span></div><div class="category" data-category="journal article">journal article <span class="quarto-category-count">(5)</span></div><div class="category" data-category="periodogram">periodogram <span class="quarto-category-count">(1)</span></div><div class="category" data-category="time series analysis">time series analysis <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Publications</h1>
-</div>
+<h1 class="title">The evolution of private reputations in information-abundant landscapes</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">indirect reciprocity</div>
+    <div class="quarto-category">evolutionary game theory</div>
+    <div class="quarto-category">cooperation</div>
+    <div class="quarto-category">journal article</div>
+  </div>
+  </div>
 
 
 
-<div class="quarto-title-meta column-page-left">
+<div class="quarto-title-meta column-page">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Michel-Mata, Kawakatsu, Sartini, Kessinger, Plotkin, &amp; Tarnita </p>
+          </div>
+  </div>
     
   
     
+    <div>
+    <div class="quarto-title-meta-heading">Doi</div>
+    <div class="quarto-title-meta-contents">
+      <p class="doi">
+        <a href="https://doi.org/https://doi.org/10.1038/s41586-024-07977-x">https://doi.org/10.1038/s41586-024-07977-x</a>
+      </p>
+    </div>
+  </div>
   </div>
   
 
@@ -199,121 +159,18 @@ window.Quarto = {
 </header>
 
 
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Publications</li>
-  </ol>
-</nav>
-<div id="listing-articles" class="quarto-listing quarto-listing-container-custom">
-<ul class="pub-list list">
-
-  <li data-index="0" data-categories="time series analysis,continuous glucose monitoring,periodogram,journal article" data-listing-file-modified-sort="1731508476791" data-listing-reading-time-sort="2" data-listing-word-count-sort="291" style="margin-top:20px;">
-    <span class="listing-title lead">Glucose Color Index: Development and Validation of a Novel Measure of the Shape of Glycemic Variability</span><br>
-    <span class="listing-author">Sartini, Fang, Rooney, Selvin, Coresh, &amp; Zeger</span><br>
-    <span class="listing-publication fst-italic ">Diabetes Science and Technology</span>
-    <span class="listing-year">(2024)</span><br>
-    <a href="./resources/publications/articles/sartini_GCI_2024.html" class="btn btn-primary btn-sm">
-      Details
-    </a>
-    
-    <a href="https://doi.org/10.1177/19322968241245654" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">
-      DOI
-    </a>
-    
-    
-    
-    <a href="https://journals.sagepub.com/doi/suppl/10.1177/19322968241245654/suppl_file/sj-docx-1-dst-10.1177_19322968241245654.docx" class="btn btn-light btn-sm" target="_blank" rel="noopener noreferrer">
-      <i class="bi bi-file-earmark-zip"></i> Materials
-    </a>
-    
-  </li>
-
-  <li data-index="1" data-categories="functional data analysis,hierarchical structure,continuous glucose monitoring,journal article" data-listing-file-modified-sort="1731509893938" data-listing-reading-time-sort="2" data-listing-word-count-sort="211" style="margin-top:20px;">
-    <span class="listing-title lead">Multilevel functional data analysis modeling of human glucose response to meal intake</span><br>
-    <span class="listing-author">Matabuena, Sartini, &amp; Gude</span><br>
-    <span class="listing-publication fst-italic ">ArXiv</span>
-    <span class="listing-year">(2024)</span><br>
-    <a href="./resources/publications/articles/matabuena_multilevel_2024.html" class="btn btn-primary btn-sm">
-      Details
-    </a>
-    
-    <a href="https://doi.org/10.48550/arXiv.2405.14690" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">
-      DOI
-    </a>
-    
-    
-    <a href="http://arxiv.org/abs/2405.14690" class="btn btn-light btn-sm" target="_blank" rel="noopener noreferrer">
-      <i class="bi bi-file-earmark-text"></i> Preprint
-    </a>
-    
-    
-  </li>
-
-  <li data-index="2" data-categories="indirect reciprocity,evolutionary game theory,cooperation,journal article" data-listing-file-modified-sort="1731509688361" data-listing-reading-time-sort="2" data-listing-word-count-sort="259" style="margin-top:20px;">
-    <span class="listing-title lead">The evolution of private reputations in information-abundant landscapes</span><br>
-    <span class="listing-author">Michel-Mata, Kawakatsu, Sartini, Kessinger, Plotkin, &amp; Tarnita</span><br>
-    <span class="listing-publication fst-italic ">Nature</span>
-    <span class="listing-year">(2024)</span><br>
-    <a href="./resources/publications/articles/michelmata_evolution_2024.html" class="btn btn-primary btn-sm">
-      Details
-    </a>
-    
-    <a href="https://doi.org/10.1038/s41586-024-07977-x" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">
-      DOI
-    </a>
-    
-    
-    
-    <a href="https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-024-07977-x/MediaObjects/41586_2024_7977_MOESM1_ESM.pdf" class="btn btn-light btn-sm" target="_blank" rel="noopener noreferrer">
-      <i class="bi bi-file-earmark-zip"></i> Materials
-    </a>
-    
-  </li>
-
-  <li data-index="3" data-categories="continuous glucose monitoring,application,journal article" data-listing-file-modified-sort="1731508853136" data-listing-reading-time-sort="2" data-listing-word-count-sort="209" style="margin-top:20px;">
-    <span class="listing-title lead">The Associations of Mean Glucose and Time in Range from Continuous Glucose Monitoring with HbA1c in Adults with Type 2 Diabetes</span><br>
-    <span class="listing-author">Selvin, Wang, Rooney, Echouffo-Tcheugui, Fang, Zeger, Sartini, Tang, Coresh, Aurora, &amp; Punjabi</span><br>
-    <span class="listing-publication fst-italic ">Diabetes Technology and Therapeutics</span>
-    <span class="listing-year">(2023)</span><br>
-    <a href="./resources/publications/articles/selvin_associations_2023.html" class="btn btn-primary btn-sm">
-      Details
-    </a>
-    
-    <a href="https://doi.org/10.1089/dia.2022.0178" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">
-      DOI
-    </a>
-    
-    
-    
-  </li>
-
-  <li data-index="4" data-categories="continuous glucose monitoring,application,journal article" data-listing-file-modified-sort="1731508887186" data-listing-reading-time-sort="2" data-listing-word-count-sort="232" style="margin-top:20px;">
-    <span class="listing-title lead">Within-person and between-sensor variability in continuous glucose monitoring metrics</span><br>
-    <span class="listing-author">Selvin, Wang, Rooney, Fang, Echouffo-Tcheugui, Zeger, Sartini, Tang, Coresh, Aurora, &amp; Punjabi</span><br>
-    <span class="listing-publication fst-italic ">Clinical Chemistry</span>
-    <span class="listing-year">(2023)</span><br>
-    <a href="./resources/publications/articles/selvin_variability_2023.html" class="btn btn-primary btn-sm">
-      Details
-    </a>
-    
-    <a href="https://doi.org/10.1093/clinchem/hvac192" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">
-      DOI
-    </a>
-    
-    
-    
-  </li>
-
-</ul>
-
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
+<section id="citation-apa" class="level2">
+<h2 class="anchored" data-anchor-id="citation-apa">Citation (APA)</h2>
+<blockquote class="blockquote">
+<p>Michel-Mata, S., Kawakatsu, M., Sartini, J. et al.&nbsp;The evolution of private reputations in information-abundant landscapes. Nature 634, 883–889 (2024). https://doi.org/10.1038/s41586-024-07977-x</p>
+</blockquote>
+</section>
+<section id="abstract" class="level2">
+<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
+<p>Reputations are critical to human societies, as individuals are treated differently based on their social standing1,2. For instance, those who garner a good reputation by helping others are more likely to be rewarded by third parties3,4,5. Achieving widespread cooperation in this way requires that reputations accurately reflect behaviour6 and that individuals agree about each other’s standings7. With few exceptions8,9,10, theoretical work has assumed that information is limited, which hinders consensus7,11 unless there are mechanisms to enforce agreement, such as empathy12, gossip13,14,15 or public institutions16. Such mechanisms face challenges in a world where empathy, effective communication and institutional trust are compromised17,18,19. However, information about others is now abundant and readily available, particularly through social media. Here we demonstrate that assigning private reputations by aggregating several observations of an individual can accurately capture behaviour, foster emergent agreement without enforcement mechanisms and maintain cooperation, provided individuals exhibit some tolerance for bad actions. This finding holds for both first- and second-order norms of judgement and is robust even when norms vary within a population. When the aggregation rule itself can evolve, selection indeed favours the use of several observations and tolerant judgements. Nonetheless, even when information is freely accessible, individuals do not typically evolve to use all of it. This method of assessing reputations—‘look twice, forgive once’, in a nutshell—is simple enough to have arisen early in human culture and powerful enough to persist as a fundamental component of social heuristics.</p>
 
 
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

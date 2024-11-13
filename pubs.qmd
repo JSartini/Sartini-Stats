@@ -1,3 +1,28 @@
 ---
 title: "Publications"
+toc: false
+listing:
+  - id: articles
+    contents: "resources/publications/*/**.qmd"
+    template: ./ejs/article.ejs
+    categories: true
+    sort:
+      - "year desc"
+      - "title"
+    page-size: 10
+    field-display-names: 
+      publication: "Publication"
+      year: "Year"
 ---
+
+```{=html}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Publications</li>
+  </ol>
+</nav>
+```
+
+:::{#articles}
+:::

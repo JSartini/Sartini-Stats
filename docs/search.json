@@ -35,6 +35,111 @@
     "text": "Software Experience\nSoftware Engineering Intern | PriacyStar | May 2019 - August 2019"
   },
   {
+    "objectID": "resources/publications/articles/selvin_variability_2023.html",
+    "href": "resources/publications/articles/selvin_variability_2023.html",
+    "title": "Within-person and between-sensor variability in continuous glucose monitoring metrics",
+    "section": "",
+    "text": "Selvin, E., Wang, D., Rooney, M. R., Fang, M., Echouffo-Tcheugui, J. B., Zeger, S., Sartini, J., Tang, O., Coresh, J., Nisha Aurora, R., & Punjabi, N. M. (2023). Within-Person and Between-Sensor Variability in Continuous Glucose Monitoring Metrics. Clinical chemistry, 69(2), 180–188. https://doi.org/10.1093/clinchem/hvac192"
+  },
+  {
+    "objectID": "resources/publications/articles/selvin_variability_2023.html#citation-apa-7",
+    "href": "resources/publications/articles/selvin_variability_2023.html#citation-apa-7",
+    "title": "Within-person and between-sensor variability in continuous glucose monitoring metrics",
+    "section": "",
+    "text": "Selvin, E., Wang, D., Rooney, M. R., Fang, M., Echouffo-Tcheugui, J. B., Zeger, S., Sartini, J., Tang, O., Coresh, J., Nisha Aurora, R., & Punjabi, N. M. (2023). Within-Person and Between-Sensor Variability in Continuous Glucose Monitoring Metrics. Clinical chemistry, 69(2), 180–188. https://doi.org/10.1093/clinchem/hvac192"
+  },
+  {
+    "objectID": "resources/publications/articles/selvin_variability_2023.html#abstract",
+    "href": "resources/publications/articles/selvin_variability_2023.html#abstract",
+    "title": "Within-person and between-sensor variability in continuous glucose monitoring metrics",
+    "section": "Abstract",
+    "text": "Abstract\nBackground: The within-person and between-sensor variability of metrics from different interstitial continuous glucose monitoring (CGM) sensors in adults with type 2 diabetes not taking insulin is unclear. Methods: Secondary analysis of data from 172 participants from the HYPNOS randomized clinical trial. Participants simultaneously wore Dexcom G4 and Abbott Libre Pro CGM sensors for up to 2-weeks at baseline and, again, at the 3-month follow-up visit. Results: At baseline (up to 2-weeks of CGM), mean glucose for both the Abbot and Dexcom sensors was approximately 150 mg/dl and time-in-range (70-180 mg/dL) was just below 80%. When comparing the same sensor at two different time points (two 2-week wear periods, 3 months apart), the within-person variability (CVw) in mean glucose was 17.4% (Abbott) and 14.2% (Dexcom). CVw for percent time-in-range: 20.1% (Abbott) and 18.6% (Dexcom). At baseline, the Pearson’s correlation of mean glucose from the two sensors worn simultaneously was r=0.86, root mean squared error (RMSE), 13 mg/dL; for time-in-range, r=0.88, RMSE 8%-points. Conclusions: Substantial variation was observed within sensors over time and across two different sensors worn simultaneously on the same individuals. Clinicians should be aware of this variability when using CGM technology to make clinical decisions."
+  },
+  {
+    "objectID": "resources/publications/articles/sartini_GCI_2024.html",
+    "href": "resources/publications/articles/sartini_GCI_2024.html",
+    "title": "Glucose Color Index: Development and Validation of a Novel Measure of the Shape of Glycemic Variability",
+    "section": "",
+    "text": "Sartini J, Fang M, Rooney MR, Selvin E, Coresh J, Zeger S. Glucose Color Index: Development and Validation of a Novel Measure of the Shape of Glycemic Variability. Journal of Diabetes Science and Technology. 2024;0(0). doi:10.1177/19322968241245654"
+  },
+  {
+    "objectID": "resources/publications/articles/sartini_GCI_2024.html#citation-apa-7",
+    "href": "resources/publications/articles/sartini_GCI_2024.html#citation-apa-7",
+    "title": "Glucose Color Index: Development and Validation of a Novel Measure of the Shape of Glycemic Variability",
+    "section": "",
+    "text": "Sartini J, Fang M, Rooney MR, Selvin E, Coresh J, Zeger S. Glucose Color Index: Development and Validation of a Novel Measure of the Shape of Glycemic Variability. Journal of Diabetes Science and Technology. 2024;0(0). doi:10.1177/19322968241245654"
+  },
+  {
+    "objectID": "resources/publications/articles/sartini_GCI_2024.html#abstract",
+    "href": "resources/publications/articles/sartini_GCI_2024.html#abstract",
+    "title": "Glucose Color Index: Development and Validation of a Novel Measure of the Shape of Glycemic Variability",
+    "section": "Abstract",
+    "text": "Abstract\nBackground: Standard continuous glucose monitoring (CGM) metrics: mean glucose, standard deviation, coefficient of variation, and time in range, fail to capture the shape of variability in the CGM time series. This information could facilitate improved diabetes management. Methods: We analyzed CGM data from 141 adults with type 2 diabetes in the Hyperglycemic Profiles in Obstructive Sleep Apnea (HYPNOS) trial. Participants in HYPNOS wore CGM sensors for up to two weeks at two time points, three months apart. We calculated the log-periodogram for each time period, summarizing using disjoint linear models. These summaries were combined into a single value, termed the Glucose Color Index (GCI), using canonical correlation analysis. We compared the between-wear correlation of GCI with those of standard CGM metrics and assessed associations between GCI and diabetes comorbidities in 398 older adults with type 2 diabetes from the Atherosclerosis Risk in Communities (ARIC) study. Results: The GCI achieved a test-retest correlation of R = .75. Adjusting for standard CGM metrics, the GCI test-retest correlation was R = .55. Glucose Color Index was significantly associated (p &lt; .05) with impaired physical functioning, frailty/pre-frailty, cardiovascular disease, chronic kidney disease, and dementia/mild cognitive impairment after adjustment for confounders. Conclusion: We developed and validated the GCI, a novel CGM metric that captures the shape of glucose variability using the periodogram signal decomposition. Glucose Color Index was reliable within participants over a three-month period and associated with diabetes comorbidities. The GCI suggests a promising avenue toward the development of CGM metrics which more fully incorporate time series information."
+  },
+  {
+    "objectID": "resources/publications/articles/michelmata_evolution_2024.html",
+    "href": "resources/publications/articles/michelmata_evolution_2024.html",
+    "title": "The evolution of private reputations in information-abundant landscapes",
+    "section": "",
+    "text": "Michel-Mata, S., Kawakatsu, M., Sartini, J. et al. The evolution of private reputations in information-abundant landscapes. Nature 634, 883–889 (2024). https://doi.org/10.1038/s41586-024-07977-x"
+  },
+  {
+    "objectID": "resources/publications/articles/michelmata_evolution_2024.html#citation-apa",
+    "href": "resources/publications/articles/michelmata_evolution_2024.html#citation-apa",
+    "title": "The evolution of private reputations in information-abundant landscapes",
+    "section": "",
+    "text": "Michel-Mata, S., Kawakatsu, M., Sartini, J. et al. The evolution of private reputations in information-abundant landscapes. Nature 634, 883–889 (2024). https://doi.org/10.1038/s41586-024-07977-x"
+  },
+  {
+    "objectID": "resources/publications/articles/michelmata_evolution_2024.html#abstract",
+    "href": "resources/publications/articles/michelmata_evolution_2024.html#abstract",
+    "title": "The evolution of private reputations in information-abundant landscapes",
+    "section": "Abstract",
+    "text": "Abstract\nReputations are critical to human societies, as individuals are treated differently based on their social standing1,2. For instance, those who garner a good reputation by helping others are more likely to be rewarded by third parties3,4,5. Achieving widespread cooperation in this way requires that reputations accurately reflect behaviour6 and that individuals agree about each other’s standings7. With few exceptions8,9,10, theoretical work has assumed that information is limited, which hinders consensus7,11 unless there are mechanisms to enforce agreement, such as empathy12, gossip13,14,15 or public institutions16. Such mechanisms face challenges in a world where empathy, effective communication and institutional trust are compromised17,18,19. However, information about others is now abundant and readily available, particularly through social media. Here we demonstrate that assigning private reputations by aggregating several observations of an individual can accurately capture behaviour, foster emergent agreement without enforcement mechanisms and maintain cooperation, provided individuals exhibit some tolerance for bad actions. This finding holds for both first- and second-order norms of judgement and is robust even when norms vary within a population. When the aggregation rule itself can evolve, selection indeed favours the use of several observations and tolerant judgements. Nonetheless, even when information is freely accessible, individuals do not typically evolve to use all of it. This method of assessing reputations—‘look twice, forgive once’, in a nutshell—is simple enough to have arisen early in human culture and powerful enough to persist as a fundamental component of social heuristics."
+  },
+  {
+    "objectID": "resources/publications/articles/matabuena_multilevel_2024.html",
+    "href": "resources/publications/articles/matabuena_multilevel_2024.html",
+    "title": "Multilevel functional data analysis modeling of human glucose response to meal intake",
+    "section": "",
+    "text": "Matabuena, M., & Sartini, J. (2024). Multilevel functional data analysis modeling of human glucose response to meal intake. ArXiv."
+  },
+  {
+    "objectID": "resources/publications/articles/matabuena_multilevel_2024.html#citation-apa",
+    "href": "resources/publications/articles/matabuena_multilevel_2024.html#citation-apa",
+    "title": "Multilevel functional data analysis modeling of human glucose response to meal intake",
+    "section": "",
+    "text": "Matabuena, M., & Sartini, J. (2024). Multilevel functional data analysis modeling of human glucose response to meal intake. ArXiv."
+  },
+  {
+    "objectID": "resources/publications/articles/matabuena_multilevel_2024.html#abstract",
+    "href": "resources/publications/articles/matabuena_multilevel_2024.html#abstract",
+    "title": "Multilevel functional data analysis modeling of human glucose response to meal intake",
+    "section": "Abstract",
+    "text": "Abstract\nGlucose meal response information collected via Continuous Glucose Monitoring (CGM) is relevant to the assessment of individual metabolic status and the support of personalized diet prescriptions. However, the complexity of the data produced by CGM monitors pushes the limits of existing analytic methods. CGM data often exhibits substantial within-person variability and has a natural multilevel structure. This research is motivated by the analysis of CGM data from individuals without diabetes in the AEGIS study. The dataset includes detailed information on meal timing and nutrition for each individual over different days. The primary focus of this study is to examine CGM glucose responses following patients’ meals and explore the time-dependent associations with dietary and patient characteristics. Motivated by this problem, we propose a new analytical framework based on multilevel functional models, including a new functional mixed R-square coefficient. The use of these models illustrates 3 key points: (i) The importance of analyzing glucose responses across the entire functional domain when making diet recommendations; (ii) The differential metabolic responses between normoglycemic and prediabetic patients, particularly with regards to lipid intake; (iii) The importance of including random, person-level effects when modelling this scientific problem."
+  },
+  {
+    "objectID": "resources/publications/articles/selvin_associations_2023.html",
+    "href": "resources/publications/articles/selvin_associations_2023.html",
+    "title": "The Associations of Mean Glucose and Time in Range from Continuous Glucose Monitoring with HbA1c in Adults with Type 2 Diabetes",
+    "section": "",
+    "text": "Selvin, E., Wang, D., Rooney, M. R., Echouffo-Tcheugui, J., Fang, M., Zeger, S., Sartini, J., Tang, O., Coresh, J., Aurora, R. N., & Punjabi, N. M. (2023). The Associations of Mean Glucose and Time in Range from Continuous Glucose Monitoring with HbA1c in Adults with Type 2 Diabetes. Diabetes technology & therapeutics, 25(1), 86–90. https://doi.org/10.1089/dia.2022.0178"
+  },
+  {
+    "objectID": "resources/publications/articles/selvin_associations_2023.html#citation-apa-7",
+    "href": "resources/publications/articles/selvin_associations_2023.html#citation-apa-7",
+    "title": "The Associations of Mean Glucose and Time in Range from Continuous Glucose Monitoring with HbA1c in Adults with Type 2 Diabetes",
+    "section": "",
+    "text": "Selvin, E., Wang, D., Rooney, M. R., Echouffo-Tcheugui, J., Fang, M., Zeger, S., Sartini, J., Tang, O., Coresh, J., Aurora, R. N., & Punjabi, N. M. (2023). The Associations of Mean Glucose and Time in Range from Continuous Glucose Monitoring with HbA1c in Adults with Type 2 Diabetes. Diabetes technology & therapeutics, 25(1), 86–90. https://doi.org/10.1089/dia.2022.0178"
+  },
+  {
+    "objectID": "resources/publications/articles/selvin_associations_2023.html#abstract",
+    "href": "resources/publications/articles/selvin_associations_2023.html#abstract",
+    "title": "The Associations of Mean Glucose and Time in Range from Continuous Glucose Monitoring with HbA1c in Adults with Type 2 Diabetes",
+    "section": "Abstract",
+    "text": "Abstract\nAssociations of mean glucose and time in range (70–180 mg/dL) from continuous glucose monitoring (CGM) with HbA1c in adults with type 2 diabetes are not well characterized. We conducted a secondary analysis of 186 participants from the Hyperglycemic Profiles in Obstructive Sleep Apnea (HYPNOS) trial. Participants simultaneously wore Dexcom G4 and Abbott Libre Pro CGM sensors up to 4 weeks. Mean HbA1c was 7.7% (SD, 1.3). There were strong negative Pearson’s correlations of HbA1c with CGM time in range (−0.79, Abbott; −0.81, Dexcom) and strong positive correlations with CGM mean glucose (Dexcom, 0.84; Abbott, 0.82). However, there were large differences in CGM mean glucose (±20 mg/dL) and time in range (±14%) at any given HbA1c value. Mean glucose and HbA1c are strongly correlated in type 2 diabetes patients not taking insulin but discordance is evident at the individual level. Clinicians should expect discordance and use HbA1c and CGM in a complementary manner. ClinicalTrials.gov Identifier: NCT02454153"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Sartini-Stats",
@@ -42,24 +147,10 @@
     "text": "Joe Sartini is currently a 4th year biostatistics PhD student, with broad interests in deriving clinically relevant features from high-dimensional data. His methodological works focuses on comprehensive modeling of uncertainty, better incorporation of hierarchical structure, and implementation of practical software."
   },
   {
-    "objectID": "about.html#teaching-experience---jhu-bsph",
-    "href": "about.html#teaching-experience---jhu-bsph",
-    "title": "About",
-    "section": "Teaching Experience - JHU BSPH",
-    "text": "Teaching Experience - JHU BSPH\nStatistical Computing and Machine Learning TA | August 2022 - present\nTA Training Planning Committee | August 2023, August 2024"
-  },
-  {
-    "objectID": "about.html#software-experience---privacystar-first-orion",
-    "href": "about.html#software-experience---privacystar-first-orion",
-    "title": "About",
-    "section": "Software Experience - PrivacyStar (First Orion)",
-    "text": "Software Experience - PrivacyStar (First Orion)\nSoftware Engineering Intern | May 2019 - August 2019"
-  },
-  {
-    "objectID": "about.html#software-experience---privacystar",
-    "href": "about.html#software-experience---privacystar",
-    "title": "About",
-    "section": "Software Experience - PrivacyStar",
-    "text": "Software Experience - PrivacyStar\nSoftware Engineering Intern | May 2019 - August 2019"
+    "objectID": "pubs.html",
+    "href": "pubs.html",
+    "title": "Publications",
+    "section": "",
+    "text": "Home\n    Publications\n  \n\n\n\n\n  \n    Glucose Color Index: Development and Validation of a Novel Measure of the Shape of Glycemic Variability\n    Sartini, Fang, Rooney, Selvin, Coresh, & Zeger\n    Diabetes Science and Technology\n    (2024)\n    \n      Details\n    \n    \n    \n      DOI\n    \n    \n    \n    \n    \n       Materials\n    \n    \n  \n\n  \n    Multilevel functional data analysis modeling of human glucose response to meal intake\n    Matabuena, Sartini, & Gude\n    ArXiv\n    (2024)\n    \n      Details\n    \n    \n    \n      DOI\n    \n    \n    \n    \n       Preprint\n    \n    \n    \n  \n\n  \n    The evolution of private reputations in information-abundant landscapes\n    Michel-Mata, Kawakatsu, Sartini, Kessinger, Plotkin, & Tarnita\n    Nature\n    (2024)\n    \n      Details\n    \n    \n    \n      DOI\n    \n    \n    \n    \n    \n       Materials\n    \n    \n  \n\n  \n    The Associations of Mean Glucose and Time in Range from Continuous Glucose Monitoring with HbA1c in Adults with Type 2 Diabetes\n    Selvin, Wang, Rooney, Echouffo-Tcheugui, Fang, Zeger, Sartini, Tang, Coresh, Aurora, & Punjabi\n    Diabetes Technology and Therapeutics\n    (2023)\n    \n      Details\n    \n    \n    \n      DOI\n    \n    \n    \n    \n  \n\n  \n    Within-person and between-sensor variability in continuous glucose monitoring metrics\n    Selvin, Wang, Rooney, Fang, Echouffo-Tcheugui, Zeger, Sartini, Tang, Coresh, Aurora, & Punjabi\n    Clinical Chemistry\n    (2023)\n    \n      Details\n    \n    \n    \n      DOI\n    \n    \n    \n    \n  \n\n\n\n\nNo matching items"
   }
 ]

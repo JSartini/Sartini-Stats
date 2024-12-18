@@ -1,6 +1,6 @@
 ---
 #title: "Joe Sartini"
-image: resources/Headshot.jpg
+image: resources/images/Headshot.jpg
 toc: false
 about:
   template: jolla
@@ -20,4 +20,4 @@ about:
       href: https://bsky.app/profile/jsartini.bsky.social
 ---
 
-Joe Sartini is currently a 4th year biostatistics PhD student, with broad interests in deriving clinically relevant features from high-dimensional data. His methodological works focuses on comprehensive modeling of uncertainty, better incorporation of hierarchical structure, and implementation of practical software.
+Joe Sartini is currently a 4th year biostatistics PhD student, with broad interests in deriving clinically relevant features from high-dimensional and longitudinal data. His methodological works focuses on comprehensive modeling of uncertainty, better incorporation of hierarchical structure, and implementation of practical software.

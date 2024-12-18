@@ -1,7 +1,14 @@
 [
   {
+    "listing": "/blog.html",
+    "items": [
+      "/posts/Visualizing.html"
+    ]
+  },
+  {
     "listing": "/pubs.html",
     "items": [
+      "/resources/publications/articles/sartini_BFPCA_2024.html",
       "/resources/publications/articles/sartini_GCI_2024.html",
       "/resources/publications/articles/matabuena_multilevel_2024.html",
       "/resources/publications/articles/michelmata_evolution_2024.html",

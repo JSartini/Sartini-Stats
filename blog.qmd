@@ -1,0 +1,9 @@
+---
+title: "Blog Posts"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: table
+  categories: true
+  date-format: short
+---

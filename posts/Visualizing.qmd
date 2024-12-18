@@ -1,0 +1,547 @@
+---
+title: "Data Visualization Principles"
+subtitle: "Challenges and Best Practices"
+author: "Joseph Sartini"
+date: 11/22/2024
+format: 
+  html: 
+    css: ../resources/styles/Visualizations.css
+editor: visual
+bibliography: ../resources/bibs/Visualizations.bib
+csl: ../resources/bibs/elsevier-vancouver.csl
+execute:
+    cache: true
+    echo: false
+    warning: false
+    message: false
+nocite: |
+  @Kahneman1973-KAHAAE, @tufte2001visual, @padilla_decision_2018, @IDF_nodate, @broman_advanced_2020, @simkin_information-processing_1987
+toc: false
+categories:
+  - statistical practice
+  - visualization
+  - data exploration
+---
+
+```{r lib}
+library(tidyverse)
+library(ggplot2)
+library(haven)
+library(splines)
+library(survival)
+library(survey)
+library(rnhanesdata)
+library(tidyfun)
+library(table1)
+library(flextable)
+library(officer)
+library(cowplot)
+library(ggmagnify)
+library(ggpubr)
+```
+
+```{r data}
+# Read in externally collated data
+full_data = read.csv("../resources/data/NHANES.csv")
+```
+
+## NHANES 2003-2006 {.smaller}
+
+### Factors of interest
+
+-   CKM Stage
+
+-   Minutes of objective Moderate-to-Vigorous Physical Activity (MVPA)
+
+-   Troponin T
+
+![](../resources/images/Actigraph.jpeg){height="300" width="250"}
+
+Actigraph GT3X [@Thornton_MLPA_2023]
+
+
+## "Table 1"
+
+::: panel-tabset
+### Initial Pass
+
+We use the [table1](https://cran.r-project.org/web/packages/table1/index.html) R package to make a simple, standard table 1:
+
+```{r bad_t1}
+for_table = full_data %>%
+  mutate(Year = case_when(Year == 3 ~ "2003-2004", 
+                          Year == 4 ~ "2005-2006"), 
+         CKM = factor(CKM, levels = 0:4, 
+                      labels = paste0("Stage ", 0:4)), 
+         Diabetes = factor(Diabetes), 
+         Hypertension = factor(Hypertension), 
+         Female = factor(Female))
+
+label(for_table$CKM) = "CKM Stage"
+label(for_table$Min_MVPA) = "MVPA"
+
+units(for_table$Age) = "yrs"
+units(for_table$Min_MVPA) = "min/day"
+
+render_binary = function(x, ...){
+  present_perc = mean(x == 1, na.rm = T)*100
+  sprintf("%1.2f%%", present_perc)
+}
+
+table1(~ Age + Female + Min_MVPA + Diabetes + Hypertension|CKM, overall = F, 
+       render.categorical = render_binary, data=for_table, 
+       rowlabelhead = "CKM") %>%
+  t1flex() %>%
+  align(align = "center", part = "all")
+```
+
+### Improvement 1
+
+We can increase the information density by removing unnecessary information:
+
+```{r better_t1}
+render_cat = function(x, ...){
+  present_perc = mean(x == 1, na.rm = T)*100
+  sprintf("%1.f%%", present_perc)
+}
+
+render_cont = function(x, ...){
+  mean_val = mean(x, na.rm = T)
+  se_val = sd(x, na.rm = T)/sqrt(sum(!is.na(x)))
+  lower = mean_val - 1.96*se_val
+  upper = mean_val + 1.96*se_val
+  sprintf("%1.1f (%1.1f, %1.1f)", mean_val, lower, upper) 
+}
+
+table1(~ Min_MVPA + Age + Female + Diabetes + Hypertension|CKM, 
+       render.categorical = render_cat, render.continuous = render_cont, 
+       rowlabelhead = "CKM", data=for_table, overall = F) %>%
+  t1flex()
+```
+
+### A New Perspective
+
+It is easier to perform comparisons vertically, rather than horizontally:
+
+```{r best_t1}
+for_table %>%
+  group_by(CKM) %>%
+  summarize(N = n(), 
+            MVPA = round(mean(Min_MVPA), 1), 
+            LMVPA = paste0("(", round(MVPA - 1.96*sd(Min_MVPA)/N, 1), ","), 
+            UMVPA = paste0(" ", round(MVPA + 1.96*sd(Min_MVPA)/N, 1), ")"),
+            MAge = round(mean(Age)), 
+            LAge = paste0("[", round(quantile(Age, c(0.25))), ","), 
+            RAge = paste0(" ", round(quantile(Age, c(0.75))), "]"), 
+            Female = paste0(round(mean(Female == 1)*100), "%"), 
+            Diabetes = paste0(round(mean(Diabetes==1)*100), "%"),
+            Hypertension = paste0(round(mean(Hypertension==1)*100), "%")) %>%
+  flextable() %>%
+  align(j = 2:11, align = "right", part = "all") %>%
+  width(width = 2) %>%
+  width(j = c(4,5,7,8), width = 0.3) %>%
+  width(j = c(3,6), width = 1) %>%
+  width(j = c(1,2,9,10,11), width = 1) %>%
+  set_header_labels(LMVPA = "", UMVPA = "", LAge = "", RAge = "", MAge = "Age")
+```
+
+### Principles
+
+-   Grouping by proximity (Gestalt Principle)
+
+-   Data-ink-ratio (Tufte)
+
+-   Encourage comparison (Tufte)
+
+-   Vertical contrasts are easier (Broman)
+
+:::
+
+## MVPA by CKM Status {.smaller}
+
+::: panel-tabset
+
+### Initial Pass
+
+We first leverage a standard bar chart with uncertainty bounds to first visualize the mean minutes of MVPA by CKM status:
+
+```{r bad_f1, fig.height=4, fig.width=7}
+full_data %>%
+  mutate(CKM = paste0("Stage ", CKM)) %>%
+  group_by(CKM) %>%
+  summarize(mMVPA = mean(Min_MVPA),
+            Lower = quantile(Min_MVPA, probs = c(0.10)), 
+            Upper = quantile(Min_MVPA, probs = c(0.90))) %>%
+  ggplot(aes(x = CKM)) + 
+  geom_col(aes(y = mMVPA), fill = "white", linewidth = 1, colour = "black") + 
+  geom_errorbar(aes(ymin = Lower, ymax = Upper), width = 0.5) +
+  labs(x = "CKM Status", y = "MVPA (min/day)",
+       title = "Comparison of MVPA among CKM Stages", 
+       subtitle = "Appears to be a dose-response relationship") + 
+  theme_bw()
+```
+
+
+### Improvement 1
+
+We can show a subsample of the actual data, and remove the bar portions which provide no additional information:
+
+```{r better_f1, fig.height=4, fig.width=7}
+summary_data = full_data %>%
+  mutate(CKM = paste0("Stage ", CKM)) %>%
+  group_by(CKM) %>%
+  summarize(mMVPA = mean(Min_MVPA),
+            Lower = quantile(Min_MVPA, probs = c(0.10)), 
+            Upper = quantile(Min_MVPA, probs = c(0.90)))
+
+full_data %>%
+  group_by(CKM) %>%
+  slice_sample(n = 200) %>%
+  mutate(CKM = paste0("Stage ", CKM)) %>%
+  ggplot(aes(x = CKM)) + 
+  geom_jitter(aes(y = Min_MVPA), alpha = 0.1, width = 0.2) + 
+  geom_point(data = summary_data, aes(y = mMVPA), size = 2, color = "blue") +
+  geom_errorbar(data = summary_data, aes(ymin = Lower, ymax = Upper), color = "blue",
+                width = 0.2, linewidth = 0.5) + 
+  labs(x = "CKM Status", y = "MVPA (min/day)", title = "Comparison of MVPA among CKM Stages", 
+       subtitle = "Main differentiation between stages 0-2 and 3-4") + 
+  theme_bw()
+```
+
+
+### Improvement 2
+
+We can invite comparison by linking the points together with a line, and scale the right-skewed data with a log transformation:
+
+```{r best_f1, fig.height=4, fig.width=7}
+summary_data = full_data %>%
+  mutate(CKM = paste0("Stage ", CKM)) %>%
+  group_by(CKM) %>%
+  summarize(mMVPA = mean(Min_MVPA),
+            Lower = quantile(Min_MVPA, probs = c(0.10)), 
+            Upper = quantile(Min_MVPA, probs = c(0.90)))
+
+full_data %>%
+  group_by(CKM) %>%
+  slice_sample(n = 200) %>%
+  mutate(CKM = paste0("Stage ", CKM)) %>%
+  ggplot(aes(x = CKM)) + 
+  geom_jitter(aes(y = Min_MVPA), alpha = 0.1, width = 0.2) + 
+  geom_point(data = summary_data, aes(y = mMVPA), size = 2, color = "blue") +
+  geom_line(data = summary_data, aes(y = mMVPA, group = "")) + 
+  geom_errorbar(data = summary_data, aes(ymin = Lower, ymax = Upper), color = "blue",
+                width = 0.2, linewidth = 0.5) + 
+  scale_y_continuous(transform = "log", breaks = c(1,5, 10, 50, 100)) + 
+  labs(x = "CKM Status", y = "MVPA (min/day)", title = "Comparison of MVPA among CKM Stages", 
+       subtitle = "Main differentiation between stages 0-2 and 3-4") + 
+  theme_bw()
+```
+
+### Principles
+
+-   Show the data (Tufte)
+
+-   Data-ink-ratio (Tufte)
+
+-   Data transforms (Broman)
+
+-   Grouping by continuity (Gestalt Principal)
+
+:::
+
+## MVPA by CKM Cont. {.scrollable}
+
+::: panel-tabset
+### Initial Pass
+
+Histograms are a common method for visualizing distributions such as that of MVPA within each CKM status:
+
+```{r bad_f2}
+full_data %>%
+  mutate(CKM = paste0("Stage ", CKM)) %>%
+  ggplot(aes(x = Min_MVPA)) + 
+  geom_histogram(fill = "white", color = "black") + 
+  facet_wrap(.~CKM, nrow = 1) + 
+  theme_bw() + 
+  labs(x = "MVPA (min/day)", y = "Frequency", 
+       title = "Distribution of MVPA by CKM Status", 
+       subtitle = "Stages 0-2 appear similar, while stages 3-4 look lower")
+```
+
+### Improvement 1
+
+We cannot really compare the histograms due to the information of interest being along the x-axis and the differing summative frequencies. We can instead vertically stack density plots:
+
+```{r better_f2, fig.height=12}
+full_data %>%
+  mutate(CKM = paste0("Stage ", CKM)) %>%
+  ggplot(aes(x = Min_MVPA)) + 
+  geom_density(alpha = 0.2) + 
+  facet_wrap(.~CKM, ncol = 1) + 
+  theme_bw() + 
+  labs(x = "MVPA (min/day)", y = "Frequency", 
+       title = "Distribution of MVPA by CKM Status", 
+       subtitle = "Stages 0-2 appear similar, while stages 3-4 look lower")
+```
+
+### Improvement 2
+
+The vertical stack of density plots is still not optimal for comparison, so we can overlay them on one plot with appropriate coloration.
+
+```{r best_f2}
+chosen_col = RColorBrewer::brewer.pal(7, "YlOrRd")[-c(1,2)]
+names(chosen_col) = paste0("Stage ", 0:4)
+
+full_data %>%
+  mutate(CKM = paste0("Stage ", CKM)) %>%
+  ggplot(aes(x = Min_MVPA)) + 
+  geom_density(aes(fill = CKM, group = CKM), linewidth = 0, alpha = 0.2) + 
+  scale_x_continuous(transform = "log", breaks = c(1,5, 10, 50, 100)) + 
+  theme_bw() + 
+  scale_fill_manual(values = chosen_col) + 
+  labs(x = "MVPA (min/day)", y = "Frequency", 
+       title = "Distribution of MVPA by CKM Status", 
+       subtitle = "Stages 0-2 appear similar, while stages 3-4 look lower")
+```
+
+### Principles
+
+-   Data density (Tufte)
+
+-   Same scales (Broman)
+
+-   Data transforms (Broman)
+
+-   Rapid vs deliberate thinking (Kahneman)
+
+:::
+
+## AHA Activity Guideline {.smaller}
+
+::: panel-tabset
+### Initial Pass
+
+To visualize the CKM status compositions within the subpopulations meeting and not meeting the AHA MVPA guideline, a first thought might be to use pie charts. This makes some sense, as we wish to display proportions within each group:
+
+```{r bad_f3, fig.height=4, fig.width=7}
+full_data %>%
+  mutate(CKM = paste0("Stage ", CKM),
+         AHA = case_when(Min_MVPA >= 150/7 ~ "Meets AHA Recommendation", 
+                         TRUE ~ "Does not Meet AHA Recommendation")) %>%
+  group_by(AHA, CKM) %>%
+  summarize(count = n()) %>% 
+  ungroup() %>%
+  group_by(AHA) %>%
+  mutate(perc = count/sum(count)) %>%
+  ungroup() %>%
+  ggplot(aes(x="", y=perc, fill=CKM)) +
+  geom_bar(stat="identity", width=1) +
+  facet_wrap(.~AHA) + 
+  coord_polar("y", start=0) + 
+  scale_fill_manual(values = chosen_col) + 
+  theme_void() + 
+  labs(fill = "CKM Status") + 
+  labs(title = "Comparison of CKM Status by PA Recommendation", 
+       subtitle = "Lower prevalence of later stage CKM in the group meeting the recommendation")
+```
+
+### Improvement 1
+
+Pie charts are notoriously difficult to accurately read, so we can transition to a stacked bar chart:
+
+```{r better_f3, fig.height=4, fig.width=7}
+full_data %>%
+  mutate(CKM = paste0("Stage ", CKM),
+         AHA = case_when(Min_MVPA >= 150/7 ~ "Meets AHA Recommendation", 
+                         TRUE ~ "Does not Meet AHA Recommendation")) %>%
+  group_by(AHA, CKM) %>%
+  summarize(count = n()) %>% 
+  ungroup() %>%
+  group_by(AHA) %>%
+  mutate(perc = count/sum(count)) %>%
+  ungroup() %>%
+  ggplot(aes(fill=CKM, y=perc, x=AHA)) + 
+    geom_bar(position="fill", stat="identity") + 
+    theme_bw() + 
+    scale_fill_manual(values = chosen_col) + 
+    labs(x = "", y = "Proportion", title = "Comparison of CKM Status by PA Recommendation", 
+         subtitle = "Lower prevalence of later stage CKM in the group meeting the recommendation", fill = "CKM Status") 
+```
+
+### Improvement 2
+
+While the stacked bar chart is an improvement, the relevant lengths are not juxtaposed to perform the comparison of interest. We can arrange them instead using a standard bar chart:
+
+```{r best_f3, fig.height=4, fig.width=7}
+AHA_col = RColorBrewer::brewer.pal(4, "RdBu")[-c(2,3)]
+names(AHA_col) = c("Unmet", "Met")
+
+full_data %>%
+  mutate(CKM = paste0("Stage ", CKM),
+         AHA = case_when(Min_MVPA >= 150/7 ~ "Met", 
+                         TRUE ~ "Unmet")) %>%
+  group_by(AHA, CKM) %>%
+  summarize(count = n()) %>% 
+  ungroup() %>%
+  group_by(AHA) %>%
+  mutate(perc = count/sum(count)) %>%
+  ungroup() %>%
+  ggplot(aes(x = CKM, y = perc, group = AHA, fill = AHA)) + 
+  geom_col(position = position_dodge()) + 
+  theme_bw() + 
+  scale_fill_manual(values = AHA_col) + 
+  labs(x = "CKM Status", y = "Proportion", title = "Comparison of CKM Status by PA Recommendation", 
+         subtitle = "Lower prevalence of later stage CKM in the group meeting the recommendation", fill = "AHA\nRec.")
+  
+```
+
+
+### Principles
+
+-   Easy comparison (Broman, Tufte, Simkin and Hastie)
+
+-   Grouping by proximity (Gestalt Principle)
+:::
+
+
+## MVPA vs Troponin T {.smaller}
+
+::: panel-tabset
+### Initial Pass
+
+We first model the expected probability of elevated troponin (by sex-specific cutpoint), adjusting for the known confounder of age.
+
+```{r bad_f4}
+tert_colors = RColorBrewer::brewer.pal(4, "YlOrRd")[-c(1)]
+names(tert_colors) = 3:1
+
+full_data %>%
+  mutate(DTT = case_when(TropT >= 15 & Female == 1 ~ 1, 
+                         TropT >= 22 & Female == 0 ~ 1, 
+                         TRUE ~ 0), 
+         PA_Q = as.factor(ntile(Min_MVPA, n = 3))) %>%
+  ggplot(aes(x = Age, y = DTT, group = PA_Q, color = PA_Q, fill = PA_Q)) + 
+  geom_smooth(method = "glm", method.args = list(family = "binomial")) + 
+  scale_color_manual(values = tert_colors) + 
+  scale_fill_manual(values = tert_colors) + 
+  labs(x = "Age (yrs)", y = "Probability Elevated Trop. T", 
+       color = "MVPA Tertile", fill = "MVPA Tertile", 
+       title = "Probability of Elevated Troponin over Life Course by MVPA Tertile", 
+       subtitle = "The lowest tertile appears to have significantly different likelihood") + 
+  theme_bw()
+```
+
+### Improvement
+
+Wisualizing expected probability of exceeding this threshold, particularly just using a model, obfuscates the data. Instead we can simply plot troponin vs activity and corresponding smooths, stratified by age:
+
+```{r better_f4, fig.height=6, fig.width=18}
+elev_colors = RColorBrewer::brewer.pal(4, "RdBu")[-c(2,3)]
+names(elev_colors) = c("Elevated", "Normal")
+
+mean_vals = full_data %>%
+  mutate(`Troponin T` = case_when(TropT >= 15 & Female == 1 ~ "Elevated", 
+                         TropT >= 22 & Female == 0 ~ "Elevated", 
+                         TRUE ~ "Normal"), 
+          Age_Group = case_when(Age >= 20 & Age < 45 ~ "Aged 20-44", 
+                               Age >= 45 & Age < 65 ~ "Aged 45-64", 
+                               Age >= 65 ~ "Aged 65+"), 
+          Min_MVPA = case_when(Min_MVPA == 0 ~ 1/14, 
+                              TRUE ~ Min_MVPA)) %>%
+  group_by(Age_Group) %>%
+  summarize(mean_vals = mean(TropT, na.rm = T))
+
+full_data %>%
+  mutate(`Troponin T` = case_when(TropT >= 15 & Female == 1 ~ "Elevated", 
+                         TropT >= 22 & Female == 0 ~ "Elevated", 
+                         TRUE ~ "Normal"), 
+         Age_Group = case_when(Age >= 20 & Age < 45 ~ "Aged 20-44", 
+                               Age >= 45 & Age < 65 ~ "Aged 45-64", 
+                               Age >= 65 ~ "Aged 65+"), 
+         Min_MVPA = case_when(Min_MVPA == 0 ~ 1/14, 
+                              TRUE ~ Min_MVPA)) %>%
+  ggplot(aes(x = Min_MVPA, y = TropT)) + 
+  geom_point(aes(color = `Troponin T`), alpha = 0.2) + 
+  geom_smooth(method = "glm", color = "black") + 
+  geom_hline(data = mean_vals, aes(yintercept = mean_vals), linetype = "dashed", color = "red") +
+  scale_color_manual(values = elev_colors) + 
+  scale_x_continuous(transform = "log", breaks = c(1, 5, 10, 50, 100)) + 
+  scale_y_continuous(transform = "log", breaks = c(1, 5, 10, 50, 100, 300)) + 
+  facet_wrap(.~Age_Group, nrow = 1) + 
+  labs(x = "MVPA (min/day)", y = "Troponin T (ng/L)",
+       title = "Associations between Troponin and MVPA Stratified by Age Group", 
+       subtitle = "Strength increases with age, associations are generally negative") + 
+  theme_bw()
+```
+
+### A New Perspective
+
+We want to both understand the marginal distributions of activity and troponin by age group, as well as the association between these two around the AHA recommendation. For these purposes, and to ease comparison, we combine into a single plot with marginal visualizations and a magnification plot:
+
+```{r best_f4}
+plot_df = full_data %>%
+  mutate(`Troponin T` = case_when(TropT >= 15 & Female == 1 ~ "Elevated", 
+                         TropT >= 22 & Female == 0 ~ "Elevated", 
+                         TRUE ~ "Normal"), 
+         `Age Group` = case_when(Age >= 20 & Age < 45 ~ "20-44", 
+                               Age >= 45 & Age < 65 ~ "45-64", 
+                               Age >= 65 ~ "65+"), 
+         Min_MVPA = case_when(Min_MVPA == 0 ~ 1/14,
+                              TRUE ~ Min_MVPA))
+
+sample_df = plot_df %>%
+  group_by(`Age Group`) %>%
+  slice_sample(n = 100)
+
+plot = plot_df %>%
+  ggplot(aes(x = Min_MVPA, y = TropT, color = `Age Group`, fill = `Age Group`)) + 
+  geom_point(data = sample_df, alpha = 0.2) + 
+  scale_x_continuous(transform = "log", breaks = c(1, 5, 10, 50, 100)) + 
+  scale_y_continuous(transform = "log", breaks = c(1, 5, 10, 50, 100, 300)) +
+  geom_vline(xintercept = 150/7, linetype = "dashed", color = "purple") + 
+  geom_smooth(aes(group = `Age Group`), se = F) + 
+  theme_bw() + 
+  labs(x = "MVPA (min/day)", y = "Expected Troponin T (ng/L)", 
+       title = "Associations between Troponin and MVPA Stratified by Age Group", 
+       subtitle = "Strength increases with age, associations are generally negative") + 
+  geom_magnify(from = c(ymin = 3, ymax = 25, xmin = 10, xmax = 50), 
+            to = c(ymin = 0.6, ymax = 200, xmin = 0.1, xmax = 1))
+
+xdens <- axis_canvas(plot, axis = "x")+
+    geom_density(data = plot_df, aes(x = Min_MVPA, group = `Age Group`, fill = `Age Group`),
+                 position = "identity", alpha = 0.5, color = "black") +
+    geom_vline(xintercept = 150/7, linetype = "dashed", color = "purple") + 
+    scale_x_continuous(transform = "log")
+
+ydens <- axis_canvas(plot, axis = "y", coord_flip = T)+
+    geom_density(data = plot_df, aes(x = TropT, group = `Age Group`, fill = `Age Group`), 
+                 position = "identity", alpha = 0.5, color = "black") +
+    coord_flip() +
+    scale_x_continuous(transform = "log")
+
+plot = insert_xaxis_grob(plot, xdens, grid::unit(.2, "null"), position = "top")
+plot = insert_yaxis_grob(plot, ydens, grid::unit(.2, "null"), position = "right")
+ggdraw(plot)
+```
+
+
+### Principles
+
+-   Let the data talk (Tufte, Broman)
+
+-   Rapid AND deliberate elements (Kahneman)
+
+-   Visualize multiple scales (Tufte)
+
+-   Grouping by enclosure (Gestalt Principle)
+
+:::
+
+## Further Reading
+
+::: {#refs}
+:::
+
+
+
+

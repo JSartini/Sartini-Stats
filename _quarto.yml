@@ -13,11 +13,13 @@ website:
         text: Publications
       - href: soft.qmd
         text: Software
+      - href: blog.qmd
+        text: Blog Posts
 
 format:
   html:
     theme: spacelab
-    css: styles.css
+    css: resources/styles/styles.css
     toc: true
     page-layout: full
 

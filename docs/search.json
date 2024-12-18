@@ -1,73 +1,45 @@
 [
   {
-    "objectID": "soft.html",
-    "href": "soft.html",
-    "title": "Software",
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog Posts",
     "section": "",
-    "text": "R/rGCI | Supporting R software for calculation of the novel Glucose Color Index (GCI) frequency-domain summary of Continuous Glucose Monitoring Data"
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\n11/22/24\n\n\nData Visualization Principles\n\n\nJoseph Sartini\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "soft.html#github",
-    "href": "soft.html#github",
-    "title": "Software",
+    "objectID": "pubs.html",
+    "href": "pubs.html",
+    "title": "Publications",
     "section": "",
-    "text": "R/rGCI | Supporting R software for calculation of the novel Glucose Color Index (GCI) frequency-domain summary of Continuous Glucose Monitoring Data"
+    "text": "Home\n    Publications\n  \n\n\n\n\n  \n    Fast Bayesian Functional Principal Components Analysis\n    Sartini, Zhou, Selvin, Zeger, & Crainiceanu\n    ArXiv\n    (2024)\n    \n      Details\n    \n    \n    \n      DOI\n    \n    \n    \n    \n       Preprint\n    \n    \n    \n    \n       Materials\n    \n    \n  \n\n  \n    Glucose Color Index: Development and Validation of a Novel Measure of the Shape of Glycemic Variability\n    Sartini, Fang, Rooney, Selvin, Coresh, & Zeger\n    Diabetes Science and Technology\n    (2024)\n    \n      Details\n    \n    \n    \n      DOI\n    \n    \n    \n    \n    \n       Materials\n    \n    \n  \n\n  \n    Multilevel functional data analysis modeling of human glucose response to meal intake\n    Matabuena, Sartini, & Gude\n    ArXiv\n    (2024)\n    \n      Details\n    \n    \n    \n      DOI\n    \n    \n    \n    \n       Preprint\n    \n    \n    \n  \n\n  \n    The evolution of private reputations in information-abundant landscapes\n    Michel-Mata, Kawakatsu, Sartini, Kessinger, Plotkin, & Tarnita\n    Nature\n    (2024)\n    \n      Details\n    \n    \n    \n      DOI\n    \n    \n    \n    \n    \n       Materials\n    \n    \n  \n\n  \n    The Associations of Mean Glucose and Time in Range from Continuous Glucose Monitoring with HbA1c in Adults with Type 2 Diabetes\n    Selvin, Wang, Rooney, Echouffo-Tcheugui, Fang, Zeger, Sartini, Tang, Coresh, Aurora, & Punjabi\n    Diabetes Technology and Therapeutics\n    (2023)\n    \n      Details\n    \n    \n    \n      DOI\n    \n    \n    \n    \n  \n\n  \n    Within-person and between-sensor variability in continuous glucose monitoring metrics\n    Selvin, Wang, Rooney, Fang, Echouffo-Tcheugui, Zeger, Sartini, Tang, Coresh, Aurora, & Punjabi\n    Clinical Chemistry\n    (2023)\n    \n      Details\n    \n    \n    \n      DOI\n    \n    \n    \n    \n  \n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About Me",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Sartini-Stats",
     "section": "",
-    "text": "Johns Hopkins University - Bloomberg SPH | August 2021 - present\n\n\n\nPrinceton University | August 2017 - May 2021"
+    "text": "Joe Sartini is currently a 4th year biostatistics PhD student, with broad interests in deriving clinically relevant features from high-dimensional and longitudinal data. His methodological works focuses on comprehensive modeling of uncertainty, better incorporation of hierarchical structure, and implementation of practical software."
   },
   {
-    "objectID": "about.html#education",
-    "href": "about.html#education",
-    "title": "About Me",
+    "objectID": "resources/publications/articles/selvin_associations_2023.html",
+    "href": "resources/publications/articles/selvin_associations_2023.html",
+    "title": "The Associations of Mean Glucose and Time in Range from Continuous Glucose Monitoring with HbA1c in Adults with Type 2 Diabetes",
     "section": "",
-    "text": "Johns Hopkins University - Bloomberg SPH | August 2021 - present\n\n\n\nPrinceton University | August 2017 - May 2021"
+    "text": "Selvin, E., Wang, D., Rooney, M. R., Echouffo-Tcheugui, J., Fang, M., Zeger, S., Sartini, J., Tang, O., Coresh, J., Aurora, R. N., & Punjabi, N. M. (2023). The Associations of Mean Glucose and Time in Range from Continuous Glucose Monitoring with HbA1c in Adults with Type 2 Diabetes. Diabetes technology & therapeutics, 25(1), 86–90. https://doi.org/10.1089/dia.2022.0178"
   },
   {
-    "objectID": "about.html#research-groups",
-    "href": "about.html#research-groups",
-    "title": "About Me",
-    "section": "Research Groups",
-    "text": "Research Groups\n\nJohns Hopkins University\n\nWearable and Implantable Technology (WIT) Working Group | December 2022 - present\nZeger Lab | August 2022 - present\n\n\n\nPrinceton University\n\nIndirect Reciprocity Working Group | November 2019 - August 2021\nTransportation Systems Lab | May 2020 - September 2020\n\n\n\nUniversity of Arkansas\n\nSystems Engineering Lab | May 2020 - May 2021"
-  },
-  {
-    "objectID": "about.html#teaching-experience",
-    "href": "about.html#teaching-experience",
-    "title": "About Me",
-    "section": "Teaching Experience",
-    "text": "Teaching Experience\n\nJohns Hopkins University\n\nStatistical Computing and Machine Learning TA | August 2022 - present\nTA Training Planning Committee | August 2023, August 2024\n\n\n\nPrinceton Univeristy\n\nStatistical Courses TA | August 2020 - May 2021"
-  },
-  {
-    "objectID": "about.html#software-experience",
-    "href": "about.html#software-experience",
-    "title": "About Me",
-    "section": "Software Experience",
-    "text": "Software Experience\nSoftware Engineering Intern | PriacyStar | May 2019 - August 2019"
-  },
-  {
-    "objectID": "resources/publications/articles/selvin_variability_2023.html",
-    "href": "resources/publications/articles/selvin_variability_2023.html",
-    "title": "Within-person and between-sensor variability in continuous glucose monitoring metrics",
+    "objectID": "resources/publications/articles/selvin_associations_2023.html#citation-apa-7",
+    "href": "resources/publications/articles/selvin_associations_2023.html#citation-apa-7",
+    "title": "The Associations of Mean Glucose and Time in Range from Continuous Glucose Monitoring with HbA1c in Adults with Type 2 Diabetes",
     "section": "",
-    "text": "Selvin, E., Wang, D., Rooney, M. R., Fang, M., Echouffo-Tcheugui, J. B., Zeger, S., Sartini, J., Tang, O., Coresh, J., Nisha Aurora, R., & Punjabi, N. M. (2023). Within-Person and Between-Sensor Variability in Continuous Glucose Monitoring Metrics. Clinical chemistry, 69(2), 180–188. https://doi.org/10.1093/clinchem/hvac192"
+    "text": "Selvin, E., Wang, D., Rooney, M. R., Echouffo-Tcheugui, J., Fang, M., Zeger, S., Sartini, J., Tang, O., Coresh, J., Aurora, R. N., & Punjabi, N. M. (2023). The Associations of Mean Glucose and Time in Range from Continuous Glucose Monitoring with HbA1c in Adults with Type 2 Diabetes. Diabetes technology & therapeutics, 25(1), 86–90. https://doi.org/10.1089/dia.2022.0178"
   },
   {
-    "objectID": "resources/publications/articles/selvin_variability_2023.html#citation-apa-7",
-    "href": "resources/publications/articles/selvin_variability_2023.html#citation-apa-7",
-    "title": "Within-person and between-sensor variability in continuous glucose monitoring metrics",
-    "section": "",
-    "text": "Selvin, E., Wang, D., Rooney, M. R., Fang, M., Echouffo-Tcheugui, J. B., Zeger, S., Sartini, J., Tang, O., Coresh, J., Nisha Aurora, R., & Punjabi, N. M. (2023). Within-Person and Between-Sensor Variability in Continuous Glucose Monitoring Metrics. Clinical chemistry, 69(2), 180–188. https://doi.org/10.1093/clinchem/hvac192"
-  },
-  {
-    "objectID": "resources/publications/articles/selvin_variability_2023.html#abstract",
-    "href": "resources/publications/articles/selvin_variability_2023.html#abstract",
-    "title": "Within-person and between-sensor variability in continuous glucose monitoring metrics",
+    "objectID": "resources/publications/articles/selvin_associations_2023.html#abstract",
+    "href": "resources/publications/articles/selvin_associations_2023.html#abstract",
+    "title": "The Associations of Mean Glucose and Time in Range from Continuous Glucose Monitoring with HbA1c in Adults with Type 2 Diabetes",
     "section": "Abstract",
-    "text": "Abstract\nBackground: The within-person and between-sensor variability of metrics from different interstitial continuous glucose monitoring (CGM) sensors in adults with type 2 diabetes not taking insulin is unclear. Methods: Secondary analysis of data from 172 participants from the HYPNOS randomized clinical trial. Participants simultaneously wore Dexcom G4 and Abbott Libre Pro CGM sensors for up to 2-weeks at baseline and, again, at the 3-month follow-up visit. Results: At baseline (up to 2-weeks of CGM), mean glucose for both the Abbot and Dexcom sensors was approximately 150 mg/dl and time-in-range (70-180 mg/dL) was just below 80%. When comparing the same sensor at two different time points (two 2-week wear periods, 3 months apart), the within-person variability (CVw) in mean glucose was 17.4% (Abbott) and 14.2% (Dexcom). CVw for percent time-in-range: 20.1% (Abbott) and 18.6% (Dexcom). At baseline, the Pearson’s correlation of mean glucose from the two sensors worn simultaneously was r=0.86, root mean squared error (RMSE), 13 mg/dL; for time-in-range, r=0.88, RMSE 8%-points. Conclusions: Substantial variation was observed within sensors over time and across two different sensors worn simultaneously on the same individuals. Clinicians should be aware of this variability when using CGM technology to make clinical decisions."
+    "text": "Abstract\nAssociations of mean glucose and time in range (70–180 mg/dL) from continuous glucose monitoring (CGM) with HbA1c in adults with type 2 diabetes are not well characterized. We conducted a secondary analysis of 186 participants from the Hyperglycemic Profiles in Obstructive Sleep Apnea (HYPNOS) trial. Participants simultaneously wore Dexcom G4 and Abbott Libre Pro CGM sensors up to 4 weeks. Mean HbA1c was 7.7% (SD, 1.3). There were strong negative Pearson’s correlations of HbA1c with CGM time in range (−0.79, Abbott; −0.81, Dexcom) and strong positive correlations with CGM mean glucose (Dexcom, 0.84; Abbott, 0.82). However, there were large differences in CGM mean glucose (±20 mg/dL) and time in range (±14%) at any given HbA1c value. Mean glucose and HbA1c are strongly correlated in type 2 diabetes patients not taking insulin but discordance is evident at the individual level. Clinicians should expect discordance and use HbA1c and CGM in a complementary manner. ClinicalTrials.gov Identifier: NCT02454153"
   },
   {
     "objectID": "resources/publications/articles/sartini_GCI_2024.html",
@@ -112,6 +84,62 @@
     "text": "Abstract\nReputations are critical to human societies, as individuals are treated differently based on their social standing1,2. For instance, those who garner a good reputation by helping others are more likely to be rewarded by third parties3,4,5. Achieving widespread cooperation in this way requires that reputations accurately reflect behaviour6 and that individuals agree about each other’s standings7. With few exceptions8,9,10, theoretical work has assumed that information is limited, which hinders consensus7,11 unless there are mechanisms to enforce agreement, such as empathy12, gossip13,14,15 or public institutions16. Such mechanisms face challenges in a world where empathy, effective communication and institutional trust are compromised17,18,19. However, information about others is now abundant and readily available, particularly through social media. Here we demonstrate that assigning private reputations by aggregating several observations of an individual can accurately capture behaviour, foster emergent agreement without enforcement mechanisms and maintain cooperation, provided individuals exhibit some tolerance for bad actions. This finding holds for both first- and second-order norms of judgement and is robust even when norms vary within a population. When the aggregation rule itself can evolve, selection indeed favours the use of several observations and tolerant judgements. Nonetheless, even when information is freely accessible, individuals do not typically evolve to use all of it. This method of assessing reputations—‘look twice, forgive once’, in a nutshell—is simple enough to have arisen early in human culture and powerful enough to persist as a fundamental component of social heuristics."
   },
   {
+    "objectID": "posts/Visualizing.html",
+    "href": "posts/Visualizing.html",
+    "title": "Data Visualization Principles",
+    "section": "",
+    "text": "CKM Stage\nMinutes of objective Moderate-to-Vigorous Physical Activity (MVPA)\nTroponin T\n\n\nActigraph GT3X [1]"
+  },
+  {
+    "objectID": "posts/Visualizing.html#nhanes-2003-2006",
+    "href": "posts/Visualizing.html#nhanes-2003-2006",
+    "title": "Data Visualization Principles",
+    "section": "",
+    "text": "CKM Stage\nMinutes of objective Moderate-to-Vigorous Physical Activity (MVPA)\nTroponin T\n\n\nActigraph GT3X [1]"
+  },
+  {
+    "objectID": "posts/Visualizing.html#table-1",
+    "href": "posts/Visualizing.html#table-1",
+    "title": "Data Visualization Principles",
+    "section": "“Table 1”",
+    "text": "“Table 1”\n\nInitial PassImprovement 1A New PerspectivePrinciples\n\n\nWe use the table1 R package to make a simple, standard table 1:\n\n\nCKMStage 0(N=487)Stage 1(N=1179)Stage 2(N=3963)Stage 3(N=772)Stage 4(N=845)Age (yrs)  Mean (SD)34.1 (12.4)38.9 (14.1)48.5 (15.1)76.7 (7.44)68.8 (12.8)  Median [Min, Max]32.0 [20.0, 85.0]36.0 [20.0, 85.0]48.0 [20.0, 85.0]78.0 [32.0, 85.0]70.0 [26.0, 85.0]Female67.56%55.47%48.25%43.78%42.72%MVPA (min/day)  Mean (SD)27.0 (22.6)21.7 (21.1)18.2 (19.9)6.45 (10.3)7.39 (12.1)  Median [Min, Max]21.9 [0, 187]15.7 [0, 181]11.9 [0, 175]2.43 [0, 83.7]2.43 [0, 107]Diabetes0.00%0.00%12.06%33.42%35.15%Hypertension0.00%0.00%72.55%93.78%94.91%\n\n\n\n\nWe can increase the information density by removing unnecessary information:\n\n\nCKMStage 0(N=487)Stage 1(N=1179)Stage 2(N=3963)Stage 3(N=772)Stage 4(N=845)MVPA (min/day)27.0 (25.0, 29.0)21.7 (20.5, 22.9)18.2 (17.6, 18.8)6.4 (5.7, 7.2)7.4 (6.6, 8.2)Age (yrs)34.1 (33.0, 35.2)38.9 (38.1, 39.7)48.5 (48.1, 49.0)76.7 (76.1, 77.2)68.8 (68.0, 69.7)Female68%55%48%44%43%Diabetes0%0%12%33%35%Hypertension0%0%73%94%95%\n\n\n\n\nIt is easier to perform comparisons vertically, rather than horizontally:\n\n\nCKM StageNMVPAAgeFemaleDiabetesHypertensionStage 048727.0(26.9, 27.1)34[24, 40]68%0%0%Stage 11,17921.7(21.7, 21.7)39[28, 47]55%0%0%Stage 23,96318.2(18.2, 18.2)49[37, 61]48%12%73%Stage 37726.4(6.4, 6.4)77[72, 83]44%33%94%Stage 48457.4(7.4, 7.4)69[61, 80]43%35%95%\n\n\n\n\n\nGrouping by proximity (Gestalt Principle)\nData-ink-ratio (Tufte)\nEncourage comparison (Tufte)\nVertical contrasts are easier (Broman)"
+  },
+  {
+    "objectID": "posts/Visualizing.html#mvpa-by-ckm-status",
+    "href": "posts/Visualizing.html#mvpa-by-ckm-status",
+    "title": "Data Visualization Principles",
+    "section": "MVPA by CKM Status",
+    "text": "MVPA by CKM Status\n\nInitial PassImprovement 1Improvement 2Principles\n\n\nWe first leverage a standard bar chart with uncertainty bounds to first visualize the mean minutes of MVPA by CKM status:\n\n\n\n\n\n\n\n\n\n\n\nWe can show a subsample of the actual data, and remove the bar portions which provide no additional information:\n\n\n\n\n\n\n\n\n\n\n\nWe can invite comparison by linking the points together with a line, and scale the right-skewed data with a log transformation:\n\n\n\n\n\n\n\n\n\n\n\n\nShow the data (Tufte)\nData-ink-ratio (Tufte)\nData transforms (Broman)\nGrouping by continuity (Gestalt Principal)"
+  },
+  {
+    "objectID": "posts/Visualizing.html#mvpa-by-ckm-cont.",
+    "href": "posts/Visualizing.html#mvpa-by-ckm-cont.",
+    "title": "Data Visualization Principles",
+    "section": "MVPA by CKM Cont.",
+    "text": "MVPA by CKM Cont.\n\nInitial PassImprovement 1Improvement 2Principles\n\n\nHistograms are a common method for visualizing distributions such as that of MVPA within each CKM status:\n\n\n\n\n\n\n\n\n\n\n\nWe cannot really compare the histograms due to the information of interest being along the x-axis and the differing summative frequencies. We can instead vertically stack density plots:\n\n\n\n\n\n\n\n\n\n\n\nThe vertical stack of density plots is still not optimal for comparison, so we can overlay them on one plot with appropriate coloration.\n\n\n\n\n\n\n\n\n\n\n\n\nData density (Tufte)\nSame scales (Broman)\nData transforms (Broman)\nRapid vs deliberate thinking (Kahneman)"
+  },
+  {
+    "objectID": "posts/Visualizing.html#aha-activity-guideline",
+    "href": "posts/Visualizing.html#aha-activity-guideline",
+    "title": "Data Visualization Principles",
+    "section": "AHA Activity Guideline",
+    "text": "AHA Activity Guideline\n\nInitial PassImprovement 1Improvement 2Principles\n\n\nTo visualize the CKM status compositions within the subpopulations meeting and not meeting the AHA MVPA guideline, a first thought might be to use pie charts. This makes some sense, as we wish to display proportions within each group:\n\n\n\n\n\n\n\n\n\n\n\nPie charts are notoriously difficult to accurately read, so we can transition to a stacked bar chart:\n\n\n\n\n\n\n\n\n\n\n\nWhile the stacked bar chart is an improvement, the relevant lengths are not juxtaposed to perform the comparison of interest. We can arrange them instead using a standard bar chart:\n\n\n\n\n\n\n\n\n\n\n\n\nEasy comparison (Broman, Tufte, Simkin and Hastie)\nGrouping by proximity (Gestalt Principle)"
+  },
+  {
+    "objectID": "posts/Visualizing.html#mvpa-vs-troponin-t",
+    "href": "posts/Visualizing.html#mvpa-vs-troponin-t",
+    "title": "Data Visualization Principles",
+    "section": "MVPA vs Troponin T",
+    "text": "MVPA vs Troponin T\n\nInitial PassImprovementA New PerspectivePrinciples\n\n\nWe first model the expected probability of elevated troponin (by sex-specific cutpoint), adjusting for the known confounder of age.\n\n\n\n\n\n\n\n\n\n\n\nWisualizing expected probability of exceeding this threshold, particularly just using a model, obfuscates the data. Instead we can simply plot troponin vs activity and corresponding smooths, stratified by age:\n\n\n\n\n\n\n\n\n\n\n\nWe want to both understand the marginal distributions of activity and troponin by age group, as well as the association between these two around the AHA recommendation. For these purposes, and to ease comparison, we combine into a single plot with marginal visualizations and a magnification plot:\n\n\n\n\n\n\n\n\n\n\n\n\nLet the data talk (Tufte, Broman)\nRapid AND deliberate elements (Kahneman)\nVisualize multiple scales (Tufte)\nGrouping by enclosure (Gestalt Principle)"
+  },
+  {
+    "objectID": "posts/Visualizing.html#further-reading",
+    "href": "posts/Visualizing.html#further-reading",
+    "title": "Data Visualization Principles",
+    "section": "Further Reading",
+    "text": "Further Reading\n\n\n[1] Thornton C, Kolehmainen N, Nazarpour K. Using unsupervised machine learning to quantify physical activity from accelerometry in a diverse and rapidly changing population. PLOS Digital Health 2023;2:e0000220. https://doi.org/10.1371/journal.pdig.0000220.\n\n\n[2] Kahneman D. Attention and effort. Prentice-Hall; 1973.\n\n\n[3] Tufte ER. The visual display of quantitative information. Second. Cheshire, Connecticut: Graphics Press; 2001.\n\n\n[4] What are the Gestalt Principles? — updated 2024. The Interaction Design Foundation n.d.\n\n\n[5] Simkin D, Hastie R. An Information-Processing Analysis of Graph Perception. Journal of the American Statistical Association 1987;82:454–65. https://doi.org/10.1080/01621459.1987.10478448.\n\n\n[6] Broman K. Advanced data analysis 2020.\n\n\n[7] Padilla LM, Creem-Regehr SH, Hegarty M, Stefanucci JK. Decision making with visualizations: A cognitive framework across disciplines. Cognitive Research: Principles and Implications 2018;3:29. https://doi.org/10.1186/s41235-018-0120-9."
+  },
+  {
     "objectID": "resources/publications/articles/matabuena_multilevel_2024.html",
     "href": "resources/publications/articles/matabuena_multilevel_2024.html",
     "title": "Multilevel functional data analysis modeling of human glucose response to meal intake",
@@ -133,38 +161,94 @@
     "text": "Abstract\nGlucose meal response information collected via Continuous Glucose Monitoring (CGM) is relevant to the assessment of individual metabolic status and the support of personalized diet prescriptions. However, the complexity of the data produced by CGM monitors pushes the limits of existing analytic methods. CGM data often exhibits substantial within-person variability and has a natural multilevel structure. This research is motivated by the analysis of CGM data from individuals without diabetes in the AEGIS study. The dataset includes detailed information on meal timing and nutrition for each individual over different days. The primary focus of this study is to examine CGM glucose responses following patients’ meals and explore the time-dependent associations with dietary and patient characteristics. Motivated by this problem, we propose a new analytical framework based on multilevel functional models, including a new functional mixed R-square coefficient. The use of these models illustrates 3 key points: (i) The importance of analyzing glucose responses across the entire functional domain when making diet recommendations; (ii) The differential metabolic responses between normoglycemic and prediabetic patients, particularly with regards to lipid intake; (iii) The importance of including random, person-level effects when modelling this scientific problem."
   },
   {
-    "objectID": "resources/publications/articles/selvin_associations_2023.html",
-    "href": "resources/publications/articles/selvin_associations_2023.html",
-    "title": "The Associations of Mean Glucose and Time in Range from Continuous Glucose Monitoring with HbA1c in Adults with Type 2 Diabetes",
+    "objectID": "resources/publications/articles/sartini_BFPCA_2024.html",
+    "href": "resources/publications/articles/sartini_BFPCA_2024.html",
+    "title": "Fast Bayesian Functional Principal Components Analysis",
     "section": "",
-    "text": "Selvin, E., Wang, D., Rooney, M. R., Echouffo-Tcheugui, J., Fang, M., Zeger, S., Sartini, J., Tang, O., Coresh, J., Aurora, R. N., & Punjabi, N. M. (2023). The Associations of Mean Glucose and Time in Range from Continuous Glucose Monitoring with HbA1c in Adults with Type 2 Diabetes. Diabetes technology & therapeutics, 25(1), 86–90. https://doi.org/10.1089/dia.2022.0178"
+    "text": "Sartini, J., Zhou, X., Selvin, L., Zeger, S., & Crainiceanu, C. (2024). Fast Bayesian Functional Principal Components Analysis (arXiv:2412.11340). arXiv. https://doi.org/10.48550/arXiv.2412.11340"
   },
   {
-    "objectID": "resources/publications/articles/selvin_associations_2023.html#citation-apa-7",
-    "href": "resources/publications/articles/selvin_associations_2023.html#citation-apa-7",
-    "title": "The Associations of Mean Glucose and Time in Range from Continuous Glucose Monitoring with HbA1c in Adults with Type 2 Diabetes",
+    "objectID": "resources/publications/articles/sartini_BFPCA_2024.html#citation-apa-7",
+    "href": "resources/publications/articles/sartini_BFPCA_2024.html#citation-apa-7",
+    "title": "Fast Bayesian Functional Principal Components Analysis",
     "section": "",
-    "text": "Selvin, E., Wang, D., Rooney, M. R., Echouffo-Tcheugui, J., Fang, M., Zeger, S., Sartini, J., Tang, O., Coresh, J., Aurora, R. N., & Punjabi, N. M. (2023). The Associations of Mean Glucose and Time in Range from Continuous Glucose Monitoring with HbA1c in Adults with Type 2 Diabetes. Diabetes technology & therapeutics, 25(1), 86–90. https://doi.org/10.1089/dia.2022.0178"
+    "text": "Sartini, J., Zhou, X., Selvin, L., Zeger, S., & Crainiceanu, C. (2024). Fast Bayesian Functional Principal Components Analysis (arXiv:2412.11340). arXiv. https://doi.org/10.48550/arXiv.2412.11340"
   },
   {
-    "objectID": "resources/publications/articles/selvin_associations_2023.html#abstract",
-    "href": "resources/publications/articles/selvin_associations_2023.html#abstract",
-    "title": "The Associations of Mean Glucose and Time in Range from Continuous Glucose Monitoring with HbA1c in Adults with Type 2 Diabetes",
+    "objectID": "resources/publications/articles/sartini_BFPCA_2024.html#abstract",
+    "href": "resources/publications/articles/sartini_BFPCA_2024.html#abstract",
+    "title": "Fast Bayesian Functional Principal Components Analysis",
     "section": "Abstract",
-    "text": "Abstract\nAssociations of mean glucose and time in range (70–180 mg/dL) from continuous glucose monitoring (CGM) with HbA1c in adults with type 2 diabetes are not well characterized. We conducted a secondary analysis of 186 participants from the Hyperglycemic Profiles in Obstructive Sleep Apnea (HYPNOS) trial. Participants simultaneously wore Dexcom G4 and Abbott Libre Pro CGM sensors up to 4 weeks. Mean HbA1c was 7.7% (SD, 1.3). There were strong negative Pearson’s correlations of HbA1c with CGM time in range (−0.79, Abbott; −0.81, Dexcom) and strong positive correlations with CGM mean glucose (Dexcom, 0.84; Abbott, 0.82). However, there were large differences in CGM mean glucose (±20 mg/dL) and time in range (±14%) at any given HbA1c value. Mean glucose and HbA1c are strongly correlated in type 2 diabetes patients not taking insulin but discordance is evident at the individual level. Clinicians should expect discordance and use HbA1c and CGM in a complementary manner. ClinicalTrials.gov Identifier: NCT02454153"
+    "text": "Abstract\nFunctional Principal Components Analysis (FPCA) is one of the most successful and widely used analytic tools for exploration and dimension reduction of functional data. Standard implementations of FPCA estimate the principal components from the data but ignore their sampling variability in subsequent inferences. To address this problem, we propose the Fast Bayesian Functional Principal Components Analy- sis (Fast BayesFPCA), that treats principal components as parameters on the Stiefel manifold. To ensure efficiency, stability, and scalability we introduce three innova- tions: (1) project all eigenfunctions onto an orthonormal spline basis, reducing mod- eling considerations to a smaller-dimensional Stiefel manifold; (2) induce a uniform prior on the Stiefel manifold of the principal component spline coefficients via the polar representation of a matrix with entries following independent standard Normal priors; and (3) constrain sampling using the assumed FPCA structure to improve stability. We demonstrate the application of Fast BayesFPCA to characterize the variability in mealtime glucose from the Dietary Approaches to Stop Hypertension for Diabetes Continuous Glucose Monitoring (DASH4D CGM) study. All relevant STAN code and simulation routines are available as supplementary material."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Sartini-Stats",
+    "objectID": "resources/publications/articles/selvin_variability_2023.html",
+    "href": "resources/publications/articles/selvin_variability_2023.html",
+    "title": "Within-person and between-sensor variability in continuous glucose monitoring metrics",
     "section": "",
-    "text": "Joe Sartini is currently a 4th year biostatistics PhD student, with broad interests in deriving clinically relevant features from high-dimensional data. His methodological works focuses on comprehensive modeling of uncertainty, better incorporation of hierarchical structure, and implementation of practical software."
+    "text": "Selvin, E., Wang, D., Rooney, M. R., Fang, M., Echouffo-Tcheugui, J. B., Zeger, S., Sartini, J., Tang, O., Coresh, J., Nisha Aurora, R., & Punjabi, N. M. (2023). Within-Person and Between-Sensor Variability in Continuous Glucose Monitoring Metrics. Clinical chemistry, 69(2), 180–188. https://doi.org/10.1093/clinchem/hvac192"
   },
   {
-    "objectID": "pubs.html",
-    "href": "pubs.html",
-    "title": "Publications",
+    "objectID": "resources/publications/articles/selvin_variability_2023.html#citation-apa-7",
+    "href": "resources/publications/articles/selvin_variability_2023.html#citation-apa-7",
+    "title": "Within-person and between-sensor variability in continuous glucose monitoring metrics",
     "section": "",
-    "text": "Home\n    Publications\n  \n\n\n\n\n  \n    Glucose Color Index: Development and Validation of a Novel Measure of the Shape of Glycemic Variability\n    Sartini, Fang, Rooney, Selvin, Coresh, & Zeger\n    Diabetes Science and Technology\n    (2024)\n    \n      Details\n    \n    \n    \n      DOI\n    \n    \n    \n    \n    \n       Materials\n    \n    \n  \n\n  \n    Multilevel functional data analysis modeling of human glucose response to meal intake\n    Matabuena, Sartini, & Gude\n    ArXiv\n    (2024)\n    \n      Details\n    \n    \n    \n      DOI\n    \n    \n    \n    \n       Preprint\n    \n    \n    \n  \n\n  \n    The evolution of private reputations in information-abundant landscapes\n    Michel-Mata, Kawakatsu, Sartini, Kessinger, Plotkin, & Tarnita\n    Nature\n    (2024)\n    \n      Details\n    \n    \n    \n      DOI\n    \n    \n    \n    \n    \n       Materials\n    \n    \n  \n\n  \n    The Associations of Mean Glucose and Time in Range from Continuous Glucose Monitoring with HbA1c in Adults with Type 2 Diabetes\n    Selvin, Wang, Rooney, Echouffo-Tcheugui, Fang, Zeger, Sartini, Tang, Coresh, Aurora, & Punjabi\n    Diabetes Technology and Therapeutics\n    (2023)\n    \n      Details\n    \n    \n    \n      DOI\n    \n    \n    \n    \n  \n\n  \n    Within-person and between-sensor variability in continuous glucose monitoring metrics\n    Selvin, Wang, Rooney, Fang, Echouffo-Tcheugui, Zeger, Sartini, Tang, Coresh, Aurora, & Punjabi\n    Clinical Chemistry\n    (2023)\n    \n      Details\n    \n    \n    \n      DOI\n    \n    \n    \n    \n  \n\n\n\n\nNo matching items"
+    "text": "Selvin, E., Wang, D., Rooney, M. R., Fang, M., Echouffo-Tcheugui, J. B., Zeger, S., Sartini, J., Tang, O., Coresh, J., Nisha Aurora, R., & Punjabi, N. M. (2023). Within-Person and Between-Sensor Variability in Continuous Glucose Monitoring Metrics. Clinical chemistry, 69(2), 180–188. https://doi.org/10.1093/clinchem/hvac192"
+  },
+  {
+    "objectID": "resources/publications/articles/selvin_variability_2023.html#abstract",
+    "href": "resources/publications/articles/selvin_variability_2023.html#abstract",
+    "title": "Within-person and between-sensor variability in continuous glucose monitoring metrics",
+    "section": "Abstract",
+    "text": "Abstract\nBackground: The within-person and between-sensor variability of metrics from different interstitial continuous glucose monitoring (CGM) sensors in adults with type 2 diabetes not taking insulin is unclear. Methods: Secondary analysis of data from 172 participants from the HYPNOS randomized clinical trial. Participants simultaneously wore Dexcom G4 and Abbott Libre Pro CGM sensors for up to 2-weeks at baseline and, again, at the 3-month follow-up visit. Results: At baseline (up to 2-weeks of CGM), mean glucose for both the Abbot and Dexcom sensors was approximately 150 mg/dl and time-in-range (70-180 mg/dL) was just below 80%. When comparing the same sensor at two different time points (two 2-week wear periods, 3 months apart), the within-person variability (CVw) in mean glucose was 17.4% (Abbott) and 14.2% (Dexcom). CVw for percent time-in-range: 20.1% (Abbott) and 18.6% (Dexcom). At baseline, the Pearson’s correlation of mean glucose from the two sensors worn simultaneously was r=0.86, root mean squared error (RMSE), 13 mg/dL; for time-in-range, r=0.88, RMSE 8%-points. Conclusions: Substantial variation was observed within sensors over time and across two different sensors worn simultaneously on the same individuals. Clinicians should be aware of this variability when using CGM technology to make clinical decisions."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "Johns Hopkins University - Bloomberg SPH | August 2021 - present\n\n\n\nPrinceton University | August 2017 - May 2021"
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About Me",
+    "section": "",
+    "text": "Johns Hopkins University - Bloomberg SPH | August 2021 - present\n\n\n\nPrinceton University | August 2017 - May 2021"
+  },
+  {
+    "objectID": "about.html#research-groups",
+    "href": "about.html#research-groups",
+    "title": "About Me",
+    "section": "Research Groups",
+    "text": "Research Groups\n\nJohns Hopkins University\n\nWearable and Implantable Technology (WIT) Working Group | December 2022 - present\nZeger Lab | August 2022 - present\n\n\n\nPrinceton University\n\nIndirect Reciprocity Working Group | November 2019 - August 2021\nTransportation Systems Lab | May 2020 - September 2020\n\n\n\nUniversity of Arkansas\n\nSystems Engineering Lab | May 2020 - May 2021"
+  },
+  {
+    "objectID": "about.html#teaching-experience",
+    "href": "about.html#teaching-experience",
+    "title": "About Me",
+    "section": "Teaching Experience",
+    "text": "Teaching Experience\n\nJohns Hopkins University\n\nStatistical Computing and Machine Learning TA | August 2022 - present\nTA Training Planning Committee | August 2023, August 2024\n\n\n\nPrinceton Univeristy\n\nStatistical Courses TA | August 2020 - May 2021"
+  },
+  {
+    "objectID": "about.html#software-experience",
+    "href": "about.html#software-experience",
+    "title": "About Me",
+    "section": "Software Experience",
+    "text": "Software Experience\nSoftware Engineering Intern | PriacyStar | May 2019 - August 2019"
+  },
+  {
+    "objectID": "soft.html",
+    "href": "soft.html",
+    "title": "Software",
+    "section": "",
+    "text": "R/rGCI | Supporting R software for calculation of the novel Glucose Color Index (GCI) frequency-domain summary of Continuous Glucose Monitoring Data"
+  },
+  {
+    "objectID": "soft.html#github",
+    "href": "soft.html#github",
+    "title": "Software",
+    "section": "",
+    "text": "R/rGCI | Supporting R software for calculation of the novel Glucose Color Index (GCI) frequency-domain summary of Continuous Glucose Monitoring Data"
   }
 ]

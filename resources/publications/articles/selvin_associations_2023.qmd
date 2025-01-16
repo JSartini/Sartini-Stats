@@ -8,8 +8,6 @@ doi: "https://doi.org/10.1089/dia.2022.0178"
 toc: false
 categories:
   - continuous glucose monitoring
-  - application
-  - journal article
 ---
 
 ## Citation (APA 7)

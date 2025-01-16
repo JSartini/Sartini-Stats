@@ -8,10 +8,8 @@ doi: "https://doi.org/10.1038/s41586-024-07977-x"
 materials: "https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-024-07977-x/MediaObjects/41586_2024_7977_MOESM1_ESM.pdf"
 toc: false
 categories:
-  - indirect reciprocity
   - evolutionary game theory
-  - cooperation
-  - journal article
+  - indirect reciprocity
 ---
 
 ## Citation (APA)

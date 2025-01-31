@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Blog Posts",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\n11/22/24\n\n\nData Visualization Principles\n\n\nJoseph Sartini\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\n1/31/25\n\n\nSTAN Crash Course\n\n\nJoseph Sartini\n\n\n\n\n11/22/24\n\n\nData Visualization Principles\n\n\nJoseph Sartini\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "pubs.html",
@@ -138,6 +138,195 @@
     "title": "Data Visualization Principles",
     "section": "Further Reading",
     "text": "Further Reading\n\n\n[1] Thornton C, Kolehmainen N, Nazarpour K. Using unsupervised machine learning to quantify physical activity from accelerometry in a diverse and rapidly changing population. PLOS Digital Health 2023;2:e0000220. https://doi.org/10.1371/journal.pdig.0000220.\n\n\n[2] Kahneman D. Attention and effort. Prentice-Hall; 1973.\n\n\n[3] Tufte ER. The visual display of quantitative information. Second. Cheshire, Connecticut: Graphics Press; 2001.\n\n\n[4] What are the Gestalt Principles? — updated 2024. The Interaction Design Foundation n.d.\n\n\n[5] Simkin D, Hastie R. An Information-Processing Analysis of Graph Perception. Journal of the American Statistical Association 1987;82:454–65. https://doi.org/10.1080/01621459.1987.10478448.\n\n\n[6] Broman K. Advanced data analysis 2020.\n\n\n[7] Padilla LM, Creem-Regehr SH, Hegarty M, Stefanucci JK. Decision making with visualizations: A cognitive framework across disciplines. Cognitive Research: Principles and Implications 2018;3:29. https://doi.org/10.1186/s41235-018-0120-9."
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#what-is-stan",
+    "href": "posts/STAN_Intro.html#what-is-stan",
+    "title": "STAN Crash Course",
+    "section": "What is STAN?",
+    "text": "What is STAN?\n\n\nBayesian probabilistic programming language\nMultiple posterior sampling routines\n\nHamiltonian Monte Carlo\nVariational Inference\nLaplace approximation\n\nBased on C++\nInterfaces with Python, Julia, R, and Unix Shell"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#structure-of-a-stan-script",
+    "href": "posts/STAN_Intro.html#structure-of-a-stan-script",
+    "title": "STAN Crash Course",
+    "section": "Structure of a STAN Script",
+    "text": "Structure of a STAN Script\n\nfunctions {\n  // ... function declarations and definitions ...\n}\ndata {\n  // ... declarations ...\n}\ntransformed data {\n   // ... declarations ... statements ...\n}\nparameters {\n   // ... declarations ...\n}\ntransformed parameters {\n   // ... declarations ... statements ...\n}\nmodel {\n   // ... declarations ... statements ...\n}\ngenerated quantities {\n   // ... declarations ... statements ...\n}\n\n\nAll blocks are optional, an empty string is actually a valid STAN code. Order is important, they must be in the above order Variables have scope over all subsequent blocks"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#section---functions",
+    "href": "posts/STAN_Intro.html#section---functions",
+    "title": "STAN Crash Course",
+    "section": "Section - functions",
+    "text": "Section - functions\n\n\nComplex indexing\n\nSparsely observed data\n\nGenerating quantities/structures\n\nSplines, etc.\n\nSuffixes for particular functions\n\nContaining RNG: “_rng”\nModifying target density: “_lp”\n\n\n\n\nRNG functions can only be used on data/generated quantities"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#section---data",
+    "href": "posts/STAN_Intro.html#section---data",
+    "title": "STAN Crash Course",
+    "section": "Section - data",
+    "text": "Section - data\n\n\nLikelihood data\n\nIndexing arrays\n\nAll constants\n\nArray extents\n\nCommonly used linear transforms\n\n\n\nOften need more information in this block than you think to fully specify the model."
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#section---transformed-data",
+    "href": "posts/STAN_Intro.html#section---transformed-data",
+    "title": "STAN Crash Course",
+    "section": "Section - transformed data",
+    "text": "Section - transformed data\n\n\nFunctions of data variables\nOnly evaluated once\n\nPrior to sampling\n\nHelpful for book-keeping\n\nSimplify data inputs\n\nRandom data sub-samples"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#section---parameters",
+    "href": "posts/STAN_Intro.html#section---parameters",
+    "title": "STAN Crash Course",
+    "section": "Section - parameters",
+    "text": "Section - parameters\n\n\nSpecify sampled quantities\n\nVariable names\nExtents\n\nDefinitions only, no statements\nRead from underlying sampler\nCan provide initial values\n\n\n\n\nWill get more into how to provide initial values shortly"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#section---transformed-parameters",
+    "href": "posts/STAN_Intro.html#section---transformed-parameters",
+    "title": "STAN Crash Course",
+    "section": "Section - transformed parameters",
+    "text": "Section - transformed parameters\n\n\nDeterministic functions\nPart of target posterior\nEvaluated with each sample\n\nInverse transform\nLog absolute Jacobian\n\nGood for re-parameterization\n\nStability\nLatent modeling\n\n\n\n\n\nCan include data, transformed data, and parameters as inputs\nNeed inverse transform and log absolute Jacobian to be efficient, as they can greatly slow down the sampling process otherwise\nNatural scale vs sampling efficiency (NUTS and standard HMC prefer unconstrained parameters). However, gradient calculations usually dwarf these differences"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#section---model",
+    "href": "posts/STAN_Intro.html#section---model",
+    "title": "STAN Crash Course",
+    "section": "Section - model",
+    "text": "Section - model\n\n\nDefine the target posterior\n\nSum of log density functions\n\nPrior distributions on (transformed) parameters\nData/model likelihood\nMost computational expense\nORDER MATTERS\n\n\n\nIt is often important to know which subgroup of operations within the model block is consuming the majority of computation time (after deciding that efficient is insufficient). We will get to how this can be done (do not optimize unless necessary)."
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#section---generated-quantities",
+    "href": "posts/STAN_Intro.html#section---generated-quantities",
+    "title": "STAN Crash Course",
+    "section": "Section - generated quantities",
+    "text": "Section - generated quantities\n\n\nExecuted after samples are generated\nFunctions of model output\n\nPredictions for new data\nSimulate new data\nExtract posterior estimates\nCalculate model fit criterion"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#example-model---glm",
+    "href": "posts/STAN_Intro.html#example-model---glm",
+    "title": "STAN Crash Course",
+    "section": "Example Model - GLM",
+    "text": "Example Model - GLM\n\ndata {\n  int N;  // Number of observations\n  int P;  // Number of fixed effect covariates\n  \n  array[N] int&lt;lower=0, upper=1&gt; Y;  // Binary outcomes\n  matrix[N, P] X;                    // Fixed effects design matrix\n}\nparameters {\n   vector[P] beta;  // Coefficients\n}\nmodel {\n   Y ~ bernoulli_logit(X * beta);\n}\n\n\nWhile there is no explicit prior on beta here, that just means that STAN is choosing the equivalent to a uniform prior under the hood"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#running-the-model-in-r",
+    "href": "posts/STAN_Intro.html#running-the-model-in-r",
+    "title": "STAN Crash Course",
+    "section": "Running the Model in R",
+    "text": "Running the Model in R\n\nfit_df = mtcars %&gt;%\n  mutate(Efficient = case_when(mpg &gt;= median(mpg) ~ 1,\n                               TRUE ~ 0)) %&gt;%\n  mutate(am = as.factor(am))\nfit_matrix = model.matrix(~cyl + disp + hp + drat + wt + am, fit_df)\n\ndata_list = list(N = nrow(mtcars), P = ncol(fit_matrix), \n                 Y = fit_df$Efficient, X = fit_matrix)\n\nmodel = sampling(\n  first_model, \n  data = data_list, \n  chains = 4, \n  iter = 1000, \n  warmup = 500, \n  # init = ,\n  # control = list(adapt_delta = , \n  #                max_treedepth = , \n  #                stepsize_jitter = ), \n  verbose = F,\n  refresh = 0\n)"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#convergence-monitoring",
+    "href": "posts/STAN_Intro.html#convergence-monitoring",
+    "title": "STAN Crash Course",
+    "section": "Convergence Monitoring",
+    "text": "Convergence Monitoring\n\ncheck_hmc_diagnostics(model)\n\n\nDivergences:\n\n\n0 of 2000 iterations ended with a divergence.\n\n\n\nTree depth:\n\n\n1212 of 2000 iterations saturated the maximum tree depth of 10 (60.6%).\nTry increasing 'max_treedepth' to avoid saturation.\n\n\n\nEnergy:\n\n\nE-BFMI indicated no pathological behavior.\n\n\n\nsummary(model)$summary[,\"Rhat\"]\n\n beta[1]  beta[2]  beta[3]  beta[4]  beta[5]  beta[6]  beta[7]     lp__ \n1.923170 1.723521 1.993757 2.009383 2.005175 1.466857 1.997620 1.016072"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#hamiltonian-monte-carlo",
+    "href": "posts/STAN_Intro.html#hamiltonian-monte-carlo",
+    "title": "STAN Crash Course",
+    "section": "Hamiltonian Monte Carlo",
+    "text": "Hamiltonian Monte Carlo\n\nHMC Visualization: By Justinkunimune - github.com/jkunimune/hamiltonian-mc, CC0"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#hamiltonian-monte-carlo-cont.",
+    "href": "posts/STAN_Intro.html#hamiltonian-monte-carlo-cont.",
+    "title": "STAN Crash Course",
+    "section": "Hamiltonian Monte Carlo Cont.",
+    "text": "Hamiltonian Monte Carlo Cont.\n\n\nVersion of Metropolis-Hastings\nHamiltonian Dynamics used to propose next state\n\nDescribe trajectory with momentum\nDistribution \\(\\approx\\) potential energy field\nLeapfrog integrator\n\nMomentum: reduced correlation between samples\nEnergy conservation: high acceptance probability\n\n\n\n\nLeapfrog integrator uses model gradient to take steps, why it is important to keep this efficient (analytical gradients built-in by STAN for many things)\nUse MH step to compensate for numerical issues in the Leapfrog algorithm, but acceptance probability should be high if things go well (not needed in perfect world)"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#divergences",
+    "href": "posts/STAN_Intro.html#divergences",
+    "title": "STAN Crash Course",
+    "section": "Divergences",
+    "text": "Divergences\n\n\nSimulated trajectory \\(\\neq\\) true trajectory\nStep-size resolution \\(&gt;\\) true posterior geometry\nHamiltonian departs from initial value\n\nTotal energy (kinetic + potential)\n\nSampler stops using Hamiltonian dynamics at that step"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#tree-depth-warnings",
+    "href": "posts/STAN_Intro.html#tree-depth-warnings",
+    "title": "STAN Crash Course",
+    "section": "Tree Depth Warnings",
+    "text": "Tree Depth Warnings\n\n\nTree depth controls number of simulation steps\n\n\\(\\leq 2^{max\\_treedepth}\\) steps\n\nPrimarily an efficiency concern\nGenerally recommended to not increase\n\nOften model misspecification"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#est.-bayesian-fraction-of-miss.-info.",
+    "href": "posts/STAN_Intro.html#est.-bayesian-fraction-of-miss.-info.",
+    "title": "STAN Crash Course",
+    "section": "Est. Bayesian Fraction of Miss. Info.",
+    "text": "Est. Bayesian Fraction of Miss. Info.\n\n\nPosterior decomposes into energy equivalence classes\nLow EBFMI indicates getting “stuck” in energy sets\n\nSTAN monitors energy during sampling\n\nInsufficiently exploring the posterior\n\nTails too large, etc"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#accessing-model-outputs-1",
+    "href": "posts/STAN_Intro.html#accessing-model-outputs-1",
+    "title": "STAN Crash Course",
+    "section": "Accessing Model Outputs (1)",
+    "text": "Accessing Model Outputs (1)\n\nsamples = extract(model)\n\nbeta_0 = map(1:dim(samples$beta)[1], function(x){\n  return(data.frame(beta0 = samples$beta[x,1], \n                    Sample = x))\n}) %&gt;% list_rbind()"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#accessing-model-outputs-2",
+    "href": "posts/STAN_Intro.html#accessing-model-outputs-2",
+    "title": "STAN Crash Course",
+    "section": "Accessing Model Outputs (2)",
+    "text": "Accessing Model Outputs (2)\n\nsamples = extract(model, \"beta\", permuted = FALSE)\n\nbeta_0 = map(1:dim(samples)[1], function(x){\n  return(data.frame(beta0 = samples[x,,1], \n                    Chain = 1:4, \n                    sample = x))\n}) %&gt;% list_rbind()"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#shinystan-debugging",
+    "href": "posts/STAN_Intro.html#shinystan-debugging",
+    "title": "STAN Crash Course",
+    "section": "ShinySTAN Debugging",
+    "text": "ShinySTAN Debugging\n\nlaunch_shinystan(model)"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#updated-model",
+    "href": "posts/STAN_Intro.html#updated-model",
+    "title": "STAN Crash Course",
+    "section": "Updated Model",
+    "text": "Updated Model\n\ndata {\n  int N;  // Number of observations\n  int P;  // Number of fixed effect covariates\n  \n  array[N] int&lt;lower=0, upper=1&gt; Y;  // Binary outcomes\n  matrix[N, P] X;                    // Fixed effects design matrix\n}\ntransformed data {\n  matrix[N, P] Q_coef = qr_thin_Q(X) * sqrt(N-1);\n  matrix[P, P] R_coef = qr_thin_R(X) / sqrt(N-1);\n  matrix[P, P] R_coef_inv = inverse(R_coef);\n}\nparameters {\n  vector[P] theta;  // Coefficients\n}\nmodel {\n  theta ~ normal(0, 100);\n  Y ~ bernoulli_logit(Q_coef * theta);\n}\ngenerated quantities {\n  vector[P] beta = R_coef_inv * theta;\n}"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#updated-model---cont.",
+    "href": "posts/STAN_Intro.html#updated-model---cont.",
+    "title": "STAN Crash Course",
+    "section": "Updated Model - Cont.",
+    "text": "Updated Model - Cont.\n\nmodel = sampling(\n  second_model, \n  data = data_list, \n  chains = 4, \n  iter = 2500, \n  warmup = 1000, \n  control = list(adapt_delta = 0.95),\n  verbose = F,\n  refresh = 0\n)"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#updated-model---performance",
+    "href": "posts/STAN_Intro.html#updated-model---performance",
+    "title": "STAN Crash Course",
+    "section": "Updated Model - Performance",
+    "text": "Updated Model - Performance\n\ncheck_hmc_diagnostics(model)\n\n\nDivergences:\n\n\n0 of 6000 iterations ended with a divergence.\n\n\n\nTree depth:\n\n\n0 of 6000 iterations saturated the maximum tree depth of 10.\n\n\n\nEnergy:\n\n\nE-BFMI indicated no pathological behavior.\n\n\n\nsummary(model)$summary[,\"Rhat\"]\n\ntheta[1] theta[2] theta[3] theta[4] theta[5] theta[6] theta[7]  beta[1] \n1.008158 1.008355 1.008586 1.007905 1.007851 1.009806 1.006988 1.003329 \n beta[2]  beta[3]  beta[4]  beta[5]  beta[6]  beta[7]     lp__ \n1.004720 1.007981 1.007719 1.007684 1.005141 1.006988 1.001514"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#updated-model-visualization",
+    "href": "posts/STAN_Intro.html#updated-model-visualization",
+    "title": "STAN Crash Course",
+    "section": "Updated Model Visualization",
+    "text": "Updated Model Visualization"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#profiling-the-model-with-cmdstanr-1",
+    "href": "posts/STAN_Intro.html#profiling-the-model-with-cmdstanr-1",
+    "title": "STAN Crash Course",
+    "section": "Profiling the Model with CmdStanR (1)",
+    "text": "Profiling the Model with CmdStanR (1)\n\ndata {\n  int N;  // Number of observations\n  int P;  // Number of fixed effect covariates\n  \n  array[N] int&lt;lower=0, upper=1&gt; Y;  // Binary outcomes\n  matrix[N, P] X;                    // Fixed effects design matrix\n}\ntransformed data {\n  matrix[N, P] Q_coef = qr_thin_Q(X) * sqrt(N-1);\n  matrix[P, P] R_coef = qr_thin_R(X) / sqrt(N-1);\n  matrix[P, P] R_coef_inv = inverse(R_coef);\n}\nparameters {\n  vector[P] theta;  // Coefficients\n}\nmodel {\n  profile(\"Priors\") {\n    target += normal_lpdf(theta| 0, 100);\n  }\n  profile(\"Likelihood\") {\n    target += bernoulli_logit_lpmf(Y| Q_coef * theta);\n  }\n}\ngenerated quantities {\n  profile(\"Generated\") {\n    vector[P] beta = R_coef_inv * theta;\n  }\n}"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#profiling-the-model-with-cmdstanr-2",
+    "href": "posts/STAN_Intro.html#profiling-the-model-with-cmdstanr-2",
+    "title": "STAN Crash Course",
+    "section": "Profiling the Model with CmdStanR (2)",
+    "text": "Profiling the Model with CmdStanR (2)\n\nmodel = cmdstan_model(\"Profile_Mod.stan\")\nfit = model$sample(data = data_list, chains = 1)\nfit$profiles()[[1]][,c(1,3,4,5,8)]\n\n\n\n        name  total_time forward_time reverse_time autodiff_calls\n1  Generated 0.000207372  0.000207372   0.00000000              0\n2 Likelihood 0.207650000  0.166084000   0.04156580         173843\n3     Priors 0.038129100  0.033164100   0.00496496         173843"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#resource-links",
+    "href": "posts/STAN_Intro.html#resource-links",
+    "title": "STAN Crash Course",
+    "section": "Resource Links",
+    "text": "Resource Links\n\nSTAN Manual\nIntroduction to HMC\nBayesian Workflow\n\n\nIntro to HMC by Michael Betancourt\nBayesian Workflow by Gelman et. al."
   },
   {
     "objectID": "resources/publications/articles/michelmata_evolution_2024.html",

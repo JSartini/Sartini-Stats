@@ -1,0 +1,561 @@
+---
+title: "STAN Crash Course"
+author: "Joseph Sartini"
+date: 01/31/2025
+format: 
+  revealjs:
+    theme: simple
+    self-contained: false
+    auto-stretch: true
+editor: source
+execute: 
+  cache: true
+---
+
+```{r libraries}
+library(car)
+library(tidyverse)
+library(rstan)
+library(cmdstanr)
+library(shinystan)
+```
+
+
+## What is STAN? {.smaller}
+
+::: {.incremental}
+- Bayesian probabilistic programming language
+
+- Multiple posterior sampling routines
+
+    - Hamiltonian Monte Carlo
+    
+    - Variational Inference
+    
+    - Laplace approximation
+
+- Based on C++
+
+- Interfaces with Python, Julia, R, and Unix Shell
+:::
+
+## Structure of a STAN Script
+
+```{stan output.var="blank"}
+#| eval: true
+#| echo: true
+
+functions {
+  // ... function declarations and definitions ...
+}
+data {
+  // ... declarations ...
+}
+transformed data {
+   // ... declarations ... statements ...
+}
+parameters {
+   // ... declarations ...
+}
+transformed parameters {
+   // ... declarations ... statements ...
+}
+model {
+   // ... declarations ... statements ...
+}
+generated quantities {
+   // ... declarations ... statements ...
+}
+```
+
+::: notes
+All blocks are optional, an empty string is actually a valid STAN code.
+Order is important, they must be in the above order
+Variables have scope over all subsequent blocks
+:::
+
+## Section - functions
+
+::: {.incremental}
+- Complex indexing
+
+    - Sparsely observed data
+
+- Generating quantities/structures
+
+    - Splines, etc.
+
+- Suffixes for particular functions
+    
+    - Containing RNG: "_rng"
+    
+    - Modifying target density: "_lp" 
+:::
+
+::: notes
+RNG functions can only be used on data/generated quantities
+:::
+
+## Section - data
+
+::: {.incremental}
+- Likelihood data
+
+    - Indexing arrays
+
+- All constants
+
+    - Array extents
+    
+- Commonly used linear transforms
+:::
+
+::: notes
+Often need more information in this block than you think to fully specify the model.
+:::
+
+## Section - transformed data
+
+::: {.incremental}
+- Functions of data variables
+
+- Only evaluated once
+
+    - Prior to sampling
+    
+- Helpful for book-keeping
+
+    - Simplify data inputs
+
+- Random data sub-samples
+:::
+
+## Section - parameters
+
+::: {.incremental}
+- Specify sampled quantities
+
+    - Variable names
+    
+    - Extents
+
+- Definitions only, no statements
+
+- Read from underlying sampler
+
+- Can provide initial values
+:::
+
+::: notes
+- Will get more into how to provide initial values shortly
+:::
+
+## Section - transformed parameters
+
+::: {.incremental}
+- Deterministic functions
+    
+- Part of target posterior
+
+- Evaluated with each sample
+
+    - Inverse transform
+    
+    - Log absolute Jacobian
+    
+- Good for re-parameterization
+
+    - Stability 
+    
+    - Latent modeling
+:::
+
+::: notes
+- Can include data, transformed data, and parameters as inputs
+
+- Need inverse transform and log absolute Jacobian to be efficient, as they can greatly slow down the sampling process otherwise
+
+- Natural scale vs sampling efficiency (NUTS and standard HMC prefer unconstrained parameters). However, gradient calculations usually dwarf these differences
+:::
+
+## Section - model
+
+::: {.incremental}
+- Define the target posterior
+
+    - Sum of log density functions
+
+- Prior distributions on (transformed) parameters
+
+- Data/model likelihood
+
+- Most computational expense
+
+- ORDER MATTERS
+:::
+
+::: notes
+It is often important to know which subgroup of operations within the model block is consuming the majority of computation time (after deciding that efficient is insufficient). We will get to how this can be done (do not optimize unless necessary).
+:::
+
+## Section - generated quantities
+
+::: {.incremental}
+- Executed after samples are generated
+
+- Functions of model output
+
+    - Predictions for new data
+    
+    - Simulate new data
+    
+    - Extract posterior estimates
+    
+    - Calculate model fit criterion
+:::
+
+## Example Model - GLM
+
+```{stan output.var = "first_model"}
+#| eval: true
+#| echo: true
+
+data {
+  int N;  // Number of observations
+  int P;  // Number of fixed effect covariates
+  
+  array[N] int<lower=0, upper=1> Y;  // Binary outcomes
+  matrix[N, P] X;                    // Fixed effects design matrix
+}
+parameters {
+   vector[P] beta;  // Coefficients
+}
+model {
+   Y ~ bernoulli_logit(X * beta);
+}
+```
+
+::: notes
+While there is no explicit prior on beta here, that just means that STAN is choosing the equivalent to a uniform prior under the hood
+:::
+
+## Running the Model in R
+
+```{r fitmod, echo=TRUE, warning=FALSE}
+fit_df = mtcars %>%
+  mutate(Efficient = case_when(mpg >= median(mpg) ~ 1,
+                               TRUE ~ 0)) %>%
+  mutate(am = as.factor(am))
+fit_matrix = model.matrix(~cyl + disp + hp + drat + wt + am, fit_df)
+
+data_list = list(N = nrow(mtcars), P = ncol(fit_matrix), 
+                 Y = fit_df$Efficient, X = fit_matrix)
+
+model = sampling(
+  first_model, 
+  data = data_list, 
+  chains = 4, 
+  iter = 1000, 
+  warmup = 500, 
+  # init = ,
+  # control = list(adapt_delta = , 
+  #                max_treedepth = , 
+  #                stepsize_jitter = ), 
+  verbose = F,
+  refresh = 0
+)
+```
+
+## Convergence Monitoring
+
+```{r convergence_v1, echo=TRUE, warning=TRUE, message=TRUE}
+check_hmc_diagnostics(model)
+```
+
+```{r summary_v1, echo=TRUE, warning=TRUE, message=TRUE}
+summary(model)$summary[,"Rhat"]
+```
+
+## Hamiltonian Monte Carlo
+
+![HMC Visualization: By Justinkunimune - github.com/jkunimune/hamiltonian-mc, CC0](../resources/images/Hamiltonian_Monte_Carlo.gif)
+
+## Hamiltonian Monte Carlo Cont. {.smaller}
+
+::: {.incremental}
+- Version of Metropolis-Hastings
+
+- Hamiltonian Dynamics used to propose next state
+
+    - Describe trajectory with momentum
+    
+    - Distribution $\approx$ potential energy field
+    
+    - Leapfrog integrator
+
+- Momentum: reduced correlation between samples
+
+- Energy conservation: high acceptance probability
+:::
+
+::: notes
+- Leapfrog integrator uses model gradient to take steps, why it is important to keep this efficient (analytical gradients built-in by STAN for many things)
+
+- Use MH step to compensate for numerical issues in the Leapfrog algorithm, but acceptance probability should be high if things go well (not needed in perfect world)
+:::
+
+## Divergences
+
+::: {.incremental}
+- Simulated trajectory $\neq$ true trajectory
+
+- Step-size resolution $>$ true posterior geometry
+
+- Hamiltonian departs from initial value
+
+    - Total energy (kinetic + potential)
+    
+- Sampler stops using Hamiltonian dynamics at that step
+:::
+
+## Tree Depth Warnings
+
+::: {.incremental}
+- Tree depth controls number of simulation steps
+
+    - $\leq 2^{max\_treedepth}$ steps
+    
+- Primarily an efficiency concern
+
+- Generally recommended to not increase
+
+    - Often model misspecification
+:::
+
+## Est. Bayesian Fraction of Miss. Info.
+
+::: {.incremental}
+- Posterior decomposes into energy equivalence classes
+
+- Low EBFMI indicates getting "stuck" in energy sets
+
+     - STAN monitors energy during sampling
+     
+- Insufficiently exploring the posterior
+
+    - Tails too large, etc
+:::
+
+## Accessing Model Outputs (1) {.scrollable}
+
+```{r permuted_mod_all, echo = TRUE}
+samples = extract(model)
+
+beta_0 = map(1:dim(samples$beta)[1], function(x){
+  return(data.frame(beta0 = samples$beta[x,1], 
+                    Sample = x))
+}) %>% list_rbind()
+```
+
+```{r pma_vis, echo = FALSE}
+beta_0 %>%
+  ggplot(aes(x = beta0)) + 
+  geom_histogram(aes(y=..density..), fill = "white", color = "black", position = "identity") +
+  geom_density(aes(y=..density..), alpha = 0) + 
+  theme_bw() + 
+  labs(x = parse(text = "Intercept~beta[0]"), 
+       y = "Distribution", 
+       title = parse(text = "Posterior~of~beta[0]"))
+```
+
+
+## Accessing Model Outputs (2) {.scrollable}
+
+```{r sampled_mod_single, echo = TRUE}
+samples = extract(model, "beta", permuted = FALSE)
+
+beta_0 = map(1:dim(samples)[1], function(x){
+  return(data.frame(beta0 = samples[x,,1], 
+                    Chain = 1:4, 
+                    sample = x))
+}) %>% list_rbind()
+```
+
+```{r sms_vis, echo = FALSE}
+beta_0 %>%
+  mutate(Chain = as.factor(Chain)) %>%
+  filter(sample <= 200) %>%
+  ggplot(aes(x = sample, y = beta0, color = Chain, group = Chain)) +
+  geom_line() + 
+  theme_bw() + 
+  labs(x = "Sample", y = parse(text = "beta[0]"), 
+       title = parse(text = "Trace~Plot~of~beta[0]"))
+```
+
+## ShinySTAN Debugging
+
+```{r shinystan_start, echo=TRUE, eval=FALSE}
+launch_shinystan(model)
+```
+
+![](../resources/images/ShinySTAN.png){fig-align="center"}
+
+## Updated Model
+
+```{stan output.var = "second_model"}
+#| eval: true
+#| echo: true
+
+data {
+  int N;  // Number of observations
+  int P;  // Number of fixed effect covariates
+  
+  array[N] int<lower=0, upper=1> Y;  // Binary outcomes
+  matrix[N, P] X;                    // Fixed effects design matrix
+}
+transformed data {
+  matrix[N, P] Q_coef = qr_thin_Q(X) * sqrt(N-1);
+  matrix[P, P] R_coef = qr_thin_R(X) / sqrt(N-1);
+  matrix[P, P] R_coef_inv = inverse(R_coef);
+}
+parameters {
+  vector[P] theta;  // Coefficients
+}
+model {
+  theta ~ normal(0, 100);
+  Y ~ bernoulli_logit(Q_coef * theta);
+}
+generated quantities {
+  vector[P] beta = R_coef_inv * theta;
+}
+```
+
+## Updated Model - Cont.
+
+```{r fitmod2, echo=TRUE, message=FALSE}
+model = sampling(
+  second_model, 
+  data = data_list, 
+  chains = 4, 
+  iter = 2500, 
+  warmup = 1000, 
+  control = list(adapt_delta = 0.95),
+  verbose = F,
+  refresh = 0
+)
+```
+
+## Updated Model - Performance
+
+```{r convergence_v2, echo=TRUE, warning=TRUE, message=TRUE}
+check_hmc_diagnostics(model)
+```
+
+```{r summary_v2, echo=TRUE, warning=TRUE, message=TRUE}
+summary(model)$summary[,"Rhat"]
+```
+
+## Updated Model Visualization {.scrollable}
+
+```{r vis_v2, echo=FALSE}
+samples = extract(model)
+
+beta_0 = map(1:dim(samples$beta)[1], function(x){
+  return(data.frame(beta0 = samples$beta[x,1], 
+                    Sample = x))
+}) %>% list_rbind()
+
+beta_0 %>%
+  ggplot(aes(x = beta0)) + 
+  geom_histogram(aes(y=..density..), fill = "white", color = "black", position = "identity") +
+  geom_density(aes(y=..density..), alpha = 0) + 
+  theme_bw() + 
+  labs(x = parse(text = "Intercept~beta[0]"), 
+       y = "Posterior Distribution", 
+       title = parse(text = "Posterior~of~beta[0]"))
+
+
+samples = extract(model, "beta", permuted = FALSE)
+
+beta_0 = map(1:dim(samples)[1], function(x){
+  return(data.frame(beta0 = samples[x,,1], 
+                    Chain = 1:4, 
+                    sample = x))
+}) %>% list_rbind()
+
+beta_0 %>%
+  mutate(Chain = as.factor(Chain)) %>%
+  filter(sample <= 200) %>%
+  ggplot(aes(x = sample, y = beta0, color = Chain, group = Chain)) +
+  geom_line() + 
+  theme_bw() + 
+  labs(x = "Sample", y = parse(text = "beta[0]"), 
+       title = parse(text = "Trace~Plot~of~beta[0]"))
+```
+
+## Profiling the Model with CmdStanR (1)
+
+```{stan output.var="Profile_Mod"}
+#| eval: true
+#| echo: true
+
+data {
+  int N;  // Number of observations
+  int P;  // Number of fixed effect covariates
+  
+  array[N] int<lower=0, upper=1> Y;  // Binary outcomes
+  matrix[N, P] X;                    // Fixed effects design matrix
+}
+transformed data {
+  matrix[N, P] Q_coef = qr_thin_Q(X) * sqrt(N-1);
+  matrix[P, P] R_coef = qr_thin_R(X) / sqrt(N-1);
+  matrix[P, P] R_coef_inv = inverse(R_coef);
+}
+parameters {
+  vector[P] theta;  // Coefficients
+}
+model {
+  profile("Priors") {
+    target += normal_lpdf(theta| 0, 100);
+  }
+  profile("Likelihood") {
+    target += bernoulli_logit_lpmf(Y| Q_coef * theta);
+  }
+}
+generated quantities {
+  profile("Generated") {
+    vector[P] beta = R_coef_inv * theta;
+  }
+}
+```
+
+## Profiling the Model with CmdStanR (2)
+
+```{r profile_code1, echo=TRUE, eval=FALSE}
+model = cmdstan_model("Profile_Mod.stan")
+fit = model$sample(data = data_list, chains = 1)
+fit$profiles()[[1]][,c(1,3,4,5,8)]
+```
+
+```{r profile_code2, output=FALSE}
+model = cmdstan_model("../resources/codes/Profile_Mod.stan")
+fit = model$sample(data = data_list, chains = 1)
+```
+
+```{r profile_code3, echo=FALSE}
+fit$profiles()[[1]][,c(1,3,4,5,8)]
+```
+
+## Resource Links
+
+- [STAN Manual](https://mc-stan.org/docs/reference-manual/)
+
+- [Introduction to HMC](https://arxiv.org/pdf/1701.02434)
+
+- [Bayesian Workflow](https://arxiv.org/pdf/2011.01808)
+
+::: notes
+Intro to HMC by Michael Betancourt
+
+Bayesian Workflow by Gelman et. al.
+:::

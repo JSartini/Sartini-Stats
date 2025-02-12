@@ -49,11 +49,11 @@ full_data = read.csv("../resources/data/NHANES.csv")
 
 ### Factors of interest
 
--   CKM Stage
+-   Cardiovascular-Kidney-Metabolic (CKM) Syndrome Stage
 
--   Minutes of objective Moderate-to-Vigorous Physical Activity (MVPA)
+-   Troponin T/I
 
--   Troponin T
+-   Minutes of Moderate-to-Vigorous Physical Activity (MVPA)
 
 ![](../resources/images/Actigraph.jpeg){height="300" width="250"}
 

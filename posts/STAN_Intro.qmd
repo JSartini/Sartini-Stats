@@ -1,9 +1,10 @@
 ---
 title: "STAN Introduction"
+author: Joseph Sartini
+date: 01/31/2025
 format: 
   revealjs:
     theme: simple
-    author: Joseph Sartini
     self-contained: false
     auto-stretch: true
 editor: source
@@ -20,7 +21,7 @@ library(shinystan)
 
 ## What is STAN?
 
-::: {.incremental}
+::: {}
 - Bayesian probabilistic programming language
 
 - Multiple posterior sampling routines
@@ -73,7 +74,7 @@ Variables have scope over all subsequent blocks
 
 ## Section - functions
 
-::: {.incremental}
+::: {}
 - Complex indexing
 
     - Sparsely observed data
@@ -95,7 +96,7 @@ RNG functions can only be used on data/generated quantities
 
 ## Section - data
 
-::: {.incremental}
+::: {}
 - Likelihood data
 
     - Indexing arrays
@@ -113,7 +114,7 @@ Often need more information in this block than you think to fully specify the mo
 
 ## Section - transformed data
 
-::: {.incremental}
+::: {}
 - Functions of data variables
 
 - Only evaluated once
@@ -129,7 +130,7 @@ Often need more information in this block than you think to fully specify the mo
 
 ## Section - parameters
 
-::: {.incremental}
+::: {}
 - Specify sampled quantities
 
     - Variable names
@@ -149,7 +150,7 @@ Often need more information in this block than you think to fully specify the mo
 
 ## Section - transformed parameters
 
-::: {.incremental}
+::: {}
 - Deterministic functions
     
 - Part of target posterior
@@ -177,7 +178,7 @@ Often need more information in this block than you think to fully specify the mo
 
 ## Section - model
 
-::: {.incremental}
+::: {}
 - Define the target posterior
 
     - Sum of log density functions
@@ -197,7 +198,7 @@ It is often important to know which subgroup of operations within the model bloc
 
 ## Section - generated quantities
 
-::: {.incremental}
+::: {}
 - Executed after samples are generated
 
 - Functions of model output
@@ -275,11 +276,11 @@ summary(model)$summary[,"Rhat"]
 
 ## Hamiltonian Monte Carlo
 
-![HMC Visualization: By Justinkunimune - github.com/jkunimune/hamiltonian-mc, CC0](Images/Hamiltonian_Monte_Carlo.gif)
+![HMC Visualization: By Justinkunimune - github.com/jkunimune/hamiltonian-mc, CC0](../resources/images/Hamiltonian_Monte_Carlo.gif)
 
 ## Hamiltonian Monte Carlo Continued
 
-::: {.incremental}
+::: {}
 - Version of Metropolis-Hastings
 
 - Hamiltonian Dynamics used to propose next state
@@ -303,7 +304,7 @@ summary(model)$summary[,"Rhat"]
 
 ## Divergences
 
-::: {.incremental}
+::: {}
 - Simulated trajectory $\neq$ true trajectory
 
 - Global step size $>$ true posterior geometry resolution
@@ -321,7 +322,7 @@ summary(model)$summary[,"Rhat"]
 
 ## Tree Depth Warnings
 
-::: {.incremental}
+::: {}
 - Tree depth controls number of simulation steps
 
     - $\leq 2^{max\_treedepth}$ steps
@@ -335,7 +336,7 @@ summary(model)$summary[,"Rhat"]
 
 ## Est. Bayesian Fraction of Miss. Info.
 
-::: {.incremental}
+::: {}
 - Posterior decomposes into energy equivalence classes
 
 - Low EBFMI indicates getting "stuck" in energy sets
@@ -418,27 +419,27 @@ beta_0 %>%
 launch_shinystan(model)
 ```
 
-![](Images/ShinySTAN.png){fig-align="center"}
+![](../resources/images/ShinySTAN.png){fig-align="center"}
 
 ## ShinySTAN - NUTS Summary
 
-![](Images/Diagnose_NUTS.png){fig-align="center"}
+![](../resources/images//Diagnose_NUTS.png){fig-align="center"}
 
 ## ShinySTAN - Divergences
 
-![](Images/Diagnose_Diverge.png){fig-align="center"}
+![](../resources/images//Diagnose_Diverge.png){fig-align="center"}
 
 ## ShinySTAN - Treedepth
 
-![](Images/Diagnose_Treedepth.png){fig-align="center"}
+![](../resources/images//Diagnose_Treedepth.png){fig-align="center"}
 
 ## ShinySTAN - Energy
 
-![](Images/Diagnose_Energy.png){fig-align="center"}
+![](../resources/images//Diagnose_Energy.png){fig-align="center"}
 
 ## ShinySTAN - Autocorrelation
 
-![](Images/Autocorrelation.png){fig-align="center"}
+![](../resources/images//Autocorrelation.png){fig-align="center"}
 
 ## How to Update the Model
 

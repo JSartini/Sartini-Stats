@@ -11,6 +11,7 @@
   <meta name="generator" content="quarto-1.4.549">
 
   <meta name="author" content="Joseph Sartini">
+  <meta name="dcterms.date" content="2025-01-31">
   <title>Sartini-Stats - STAN Introduction</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -401,20 +402,21 @@ Joseph Sartini
 </div>
 </div>
 
+  <p class="date">2025-01-31</p>
 </section>
 <section id="what-is-stan" class="slide level2">
 <h2>What is STAN?</h2>
 <div>
 <ul>
-<li class="fragment"><p>Bayesian probabilistic programming language</p></li>
-<li class="fragment"><p>Multiple posterior sampling routines</p>
+<li><p>Bayesian probabilistic programming language</p></li>
+<li><p>Multiple posterior sampling routines</p>
 <ul>
-<li class="fragment"><p>Hamiltonian Monte Carlo</p></li>
-<li class="fragment"><p>Variational Inference</p></li>
-<li class="fragment"><p>Laplace approximation</p></li>
+<li><p>Hamiltonian Monte Carlo</p></li>
+<li><p>Variational Inference</p></li>
+<li><p>Laplace approximation</p></li>
 </ul></li>
-<li class="fragment"><p>Based on C++</p></li>
-<li class="fragment"><p>Interfaces with Python, Julia, R, and Unix Shell</p></li>
+<li><p>Based on C++</p></li>
+<li><p>Interfaces with Python, Julia, R, and Unix Shell</p></li>
 </ul>
 </div>
 </section>
@@ -461,18 +463,18 @@ Joseph Sartini
 <h2>Section - functions</h2>
 <div>
 <ul>
-<li class="fragment"><p>Complex indexing</p>
+<li><p>Complex indexing</p>
 <ul>
-<li class="fragment">Sparsely observed data</li>
+<li>Sparsely observed data</li>
 </ul></li>
-<li class="fragment"><p>Generating quantities/structures</p>
+<li><p>Generating quantities/structures</p>
 <ul>
-<li class="fragment">Splines, etc.</li>
+<li>Splines, etc.</li>
 </ul></li>
-<li class="fragment"><p>Suffixes for particular functions</p>
+<li><p>Suffixes for particular functions</p>
 <ul>
-<li class="fragment"><p>Containing RNG: “_rng”</p></li>
-<li class="fragment"><p>Modifying target density: “_lp”</p></li>
+<li><p>Containing RNG: “_rng”</p></li>
+<li><p>Modifying target density: “_lp”</p></li>
 </ul></li>
 </ul>
 </div>
@@ -494,15 +496,15 @@ Joseph Sartini
 <h2>Section - data</h2>
 <div>
 <ul>
-<li class="fragment"><p>Likelihood data</p>
+<li><p>Likelihood data</p>
 <ul>
-<li class="fragment">Indexing arrays</li>
+<li>Indexing arrays</li>
 </ul></li>
-<li class="fragment"><p>All constants</p>
+<li><p>All constants</p>
 <ul>
-<li class="fragment">Array extents</li>
+<li>Array extents</li>
 </ul></li>
-<li class="fragment"><p>Commonly used linear transforms</p></li>
+<li><p>Commonly used linear transforms</p></li>
 </ul>
 </div>
 <aside class="notes">
@@ -523,16 +525,16 @@ Joseph Sartini
 <h2>Section - transformed data</h2>
 <div>
 <ul>
-<li class="fragment"><p>Functions of data variables</p></li>
-<li class="fragment"><p>Only evaluated once</p>
+<li><p>Functions of data variables</p></li>
+<li><p>Only evaluated once</p>
 <ul>
-<li class="fragment">Prior to sampling</li>
+<li>Prior to sampling</li>
 </ul></li>
-<li class="fragment"><p>Helpful for book-keeping</p>
+<li><p>Helpful for book-keeping</p>
 <ul>
-<li class="fragment">Simplify data inputs</li>
+<li>Simplify data inputs</li>
 </ul></li>
-<li class="fragment"><p>Random data sub-samples</p></li>
+<li><p>Random data sub-samples</p></li>
 </ul>
 </div>
 </section>
@@ -540,14 +542,14 @@ Joseph Sartini
 <h2>Section - parameters</h2>
 <div>
 <ul>
-<li class="fragment"><p>Specify sampled quantities</p>
+<li><p>Specify sampled quantities</p>
 <ul>
-<li class="fragment"><p>Variable names</p></li>
-<li class="fragment"><p>Extents</p></li>
+<li><p>Variable names</p></li>
+<li><p>Extents</p></li>
 </ul></li>
-<li class="fragment"><p>Definitions only, no statements</p></li>
-<li class="fragment"><p>Read from underlying sampler</p></li>
-<li class="fragment"><p>Can provide initial values</p></li>
+<li><p>Definitions only, no statements</p></li>
+<li><p>Read from underlying sampler</p></li>
+<li><p>Can provide initial values</p></li>
 </ul>
 </div>
 <aside class="notes">
@@ -570,17 +572,17 @@ Joseph Sartini
 <h2>Section - transformed parameters</h2>
 <div>
 <ul>
-<li class="fragment"><p>Deterministic functions</p></li>
-<li class="fragment"><p>Part of target posterior</p></li>
-<li class="fragment"><p>Evaluated with each sample</p>
+<li><p>Deterministic functions</p></li>
+<li><p>Part of target posterior</p></li>
+<li><p>Evaluated with each sample</p>
 <ul>
-<li class="fragment"><p>Inverse transform</p></li>
-<li class="fragment"><p>Log absolute Jacobian</p></li>
+<li><p>Inverse transform</p></li>
+<li><p>Log absolute Jacobian</p></li>
 </ul></li>
-<li class="fragment"><p>Good for re-parameterization</p>
+<li><p>Good for re-parameterization</p>
 <ul>
-<li class="fragment"><p>Stability</p></li>
-<li class="fragment"><p>Latent modeling</p></li>
+<li><p>Stability</p></li>
+<li><p>Latent modeling</p></li>
 </ul></li>
 </ul>
 </div>
@@ -606,14 +608,14 @@ Joseph Sartini
 <h2>Section - model</h2>
 <div>
 <ul>
-<li class="fragment"><p>Define the target posterior</p>
+<li><p>Define the target posterior</p>
 <ul>
-<li class="fragment">Sum of log density functions</li>
+<li>Sum of log density functions</li>
 </ul></li>
-<li class="fragment"><p>Prior distributions on (transformed) parameters</p></li>
-<li class="fragment"><p>Data/model likelihood</p></li>
-<li class="fragment"><p>Most computational expense</p></li>
-<li class="fragment"><p>ORDER MATTERS</p></li>
+<li><p>Prior distributions on (transformed) parameters</p></li>
+<li><p>Data/model likelihood</p></li>
+<li><p>Most computational expense</p></li>
+<li><p>ORDER MATTERS</p></li>
 </ul>
 </div>
 <aside class="notes">
@@ -634,13 +636,13 @@ Joseph Sartini
 <h2>Section - generated quantities</h2>
 <div>
 <ul>
-<li class="fragment"><p>Executed after samples are generated</p></li>
-<li class="fragment"><p>Functions of model output</p>
+<li><p>Executed after samples are generated</p></li>
+<li><p>Functions of model output</p>
 <ul>
-<li class="fragment"><p>Predictions for new data</p></li>
-<li class="fragment"><p>Simulate new data</p></li>
-<li class="fragment"><p>Extract posterior estimates</p></li>
-<li class="fragment"><p>Calculate model fit criterion</p></li>
+<li><p>Predictions for new data</p></li>
+<li><p>Simulate new data</p></li>
+<li><p>Extract posterior estimates</p></li>
+<li><p>Calculate model fit criterion</p></li>
 </ul></li>
 </ul>
 </div>
@@ -719,7 +721,7 @@ Divergences:</code></pre>
 Tree depth:</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>1149 of 2000 iterations saturated the maximum tree depth of 10 (57.45%).
+<pre><code>1246 of 2000 iterations saturated the maximum tree depth of 10 (62.3%).
 Try increasing 'max_treedepth' to avoid saturation.</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
@@ -734,27 +736,27 @@ Energy:</code></pre>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">summary</span>(model)<span class="sc">$</span>summary[,<span class="st">"Rhat"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> beta[1]  beta[2]  beta[3]  beta[4]  beta[5]  beta[6]  beta[7]     lp__ 
-2.025709 2.123651 2.175899 2.207492 2.194655 1.577225 2.159283 1.035047 </code></pre>
+1.515704 1.669643 1.563934 1.582427 1.574460 1.856891 1.557981 1.051830 </code></pre>
 </div>
 </div>
 </section>
 <section id="hamiltonian-monte-carlo" class="slide level2">
 <h2>Hamiltonian Monte Carlo</h2>
 
-<img data-src="Images/Hamiltonian_Monte_Carlo.gif" class="r-stretch quarto-figure-center"><p class="caption">HMC Visualization: By Justinkunimune - github.com/jkunimune/hamiltonian-mc, CC0</p></section>
+<img data-src="../resources/images/Hamiltonian_Monte_Carlo.gif" class="r-stretch quarto-figure-center"><p class="caption">HMC Visualization: By Justinkunimune - github.com/jkunimune/hamiltonian-mc, CC0</p></section>
 <section id="hamiltonian-monte-carlo-continued" class="slide level2">
 <h2>Hamiltonian Monte Carlo Continued</h2>
 <div>
 <ul>
-<li class="fragment"><p>Version of Metropolis-Hastings</p></li>
-<li class="fragment"><p>Hamiltonian Dynamics used to propose next state</p>
+<li><p>Version of Metropolis-Hastings</p></li>
+<li><p>Hamiltonian Dynamics used to propose next state</p>
 <ul>
-<li class="fragment"><p>Trajectory with momentum</p></li>
-<li class="fragment"><p>Distribution <span class="math inline">\(\approx\)</span> potential energy field</p></li>
-<li class="fragment"><p>Leapfrog integrator stepwise approximation</p></li>
+<li><p>Trajectory with momentum</p></li>
+<li><p>Distribution <span class="math inline">\(\approx\)</span> potential energy field</p></li>
+<li><p>Leapfrog integrator stepwise approximation</p></li>
 </ul></li>
-<li class="fragment"><p>Momentum: reduced correlation between samples</p></li>
-<li class="fragment"><p>Energy conservation: high acceptance probability</p></li>
+<li><p>Momentum: reduced correlation between samples</p></li>
+<li><p>Energy conservation: high acceptance probability</p></li>
 </ul>
 </div>
 <aside class="notes">
@@ -778,17 +780,17 @@ Energy:</code></pre>
 <h2>Divergences</h2>
 <div>
 <ul>
-<li class="fragment"><p>Simulated trajectory <span class="math inline">\(\neq\)</span> true trajectory</p></li>
-<li class="fragment"><p>Global step size <span class="math inline">\(&gt;\)</span> true posterior geometry resolution</p>
+<li><p>Simulated trajectory <span class="math inline">\(\neq\)</span> true trajectory</p></li>
+<li><p>Global step size <span class="math inline">\(&gt;\)</span> true posterior geometry resolution</p>
 <ul>
-<li class="fragment">Leapfrog first order approximataion</li>
+<li>Leapfrog first order approximataion</li>
 </ul></li>
-<li class="fragment"><p>Hamiltonian departs from initial value</p>
+<li><p>Hamiltonian departs from initial value</p>
 <ul>
-<li class="fragment"><p>Total energy (kinetic + potential)</p></li>
-<li class="fragment"><p>Should be preserved along trajectory</p></li>
+<li><p>Total energy (kinetic + potential)</p></li>
+<li><p>Should be preserved along trajectory</p></li>
 </ul></li>
-<li class="fragment"><p>Sampler WILL NOT accept samples after divergence</p></li>
+<li><p>Sampler WILL NOT accept samples after divergence</p></li>
 </ul>
 </div>
 </section>
@@ -796,14 +798,14 @@ Energy:</code></pre>
 <h2>Tree Depth Warnings</h2>
 <div>
 <ul>
-<li class="fragment"><p>Tree depth controls number of simulation steps</p>
+<li><p>Tree depth controls number of simulation steps</p>
 <ul>
-<li class="fragment"><span class="math inline">\(\leq 2^{max\_treedepth}\)</span> steps</li>
+<li><span class="math inline">\(\leq 2^{max\_treedepth}\)</span> steps</li>
 </ul></li>
-<li class="fragment"><p>Primarily an efficiency concern</p></li>
-<li class="fragment"><p>Generally recommended to not increase</p>
+<li><p>Primarily an efficiency concern</p></li>
+<li><p>Generally recommended to not increase</p>
 <ul>
-<li class="fragment">Often model misspecification</li>
+<li>Often model misspecification</li>
 </ul></li>
 </ul>
 </div>
@@ -812,14 +814,14 @@ Energy:</code></pre>
 <h2>Est. Bayesian Fraction of Miss. Info.</h2>
 <div>
 <ul>
-<li class="fragment"><p>Posterior decomposes into energy equivalence classes</p></li>
-<li class="fragment"><p>Low EBFMI indicates getting “stuck” in energy sets</p>
+<li><p>Posterior decomposes into energy equivalence classes</p></li>
+<li><p>Low EBFMI indicates getting “stuck” in energy sets</p>
 <ul>
-<li class="fragment">STAN monitors energy during sampling</li>
+<li>STAN monitors energy during sampling</li>
 </ul></li>
-<li class="fragment"><p>Insufficiently exploring the posterior</p>
+<li><p>Insufficiently exploring the posterior</p>
 <ul>
-<li class="fragment">Tails too large, etc</li>
+<li>Tails too large, etc</li>
 </ul></li>
 </ul>
 </div>
@@ -859,27 +861,27 @@ Energy:</code></pre>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">launch_shinystan</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
-<img data-src="Images/ShinySTAN.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="../resources/images/ShinySTAN.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="shinystan---nuts-summary" class="slide level2">
 <h2>ShinySTAN - NUTS Summary</h2>
 
-<img data-src="Images/Diagnose_NUTS.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="../resources/images//Diagnose_NUTS.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="shinystan---divergences" class="slide level2">
 <h2>ShinySTAN - Divergences</h2>
 
-<img data-src="Images/Diagnose_Diverge.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="../resources/images//Diagnose_Diverge.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="shinystan---treedepth" class="slide level2">
 <h2>ShinySTAN - Treedepth</h2>
 
-<img data-src="Images/Diagnose_Treedepth.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="../resources/images//Diagnose_Treedepth.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="shinystan---energy" class="slide level2">
 <h2>ShinySTAN - Energy</h2>
 
-<img data-src="Images/Diagnose_Energy.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="../resources/images//Diagnose_Energy.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="shinystan---autocorrelation" class="slide level2">
 <h2>ShinySTAN - Autocorrelation</h2>
 
-<img data-src="Images/Autocorrelation.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="../resources/images//Autocorrelation.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="how-to-update-the-model" class="slide level2">
 <h2>How to Update the Model</h2>
 <div class="cell" data-output.var="second_model">
@@ -952,9 +954,9 @@ Energy:</code></pre>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">summary</span>(model)<span class="sc">$</span>summary[,<span class="st">"Rhat"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>theta[1] theta[2] theta[3] theta[4] theta[5] theta[6] theta[7]  beta[1] 
-1.014679 1.014837 1.007013 1.014057 1.014239 1.013769 1.013649 1.008787 
+1.022641 1.022835 1.009543 1.022226 1.022812 1.019794 1.022354 1.017068 
  beta[2]  beta[3]  beta[4]  beta[5]  beta[6]  beta[7]     lp__ 
-1.003727 1.014810 1.014065 1.014206 1.003868 1.013649 1.005481 </code></pre>
+1.006945 1.023051 1.022486 1.022930 1.002514 1.022354 1.005698 </code></pre>
 </div>
 </div>
 </section>
@@ -1023,10 +1025,10 @@ Energy:</code></pre>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>        name  total_time forward_time reverse_time autodiff_calls
-1  Generated 0.000162888  0.000162888   0.00000000              0
-2 Likelihood 0.144603000  0.115724000   0.02887910         172453
-3     Priors 0.026033600  0.022650500   0.00338311         172453</code></pre>
+<pre><code>        name total_time forward_time reverse_time autodiff_calls
+1  Generated 0.00015283   0.00015283   0.00000000              0
+2 Likelihood 0.13750200   0.10993300   0.02756940         170575
+3     Priors 0.02505130   0.02181140   0.00323987         170575</code></pre>
 </div>
 </div>
 </section>

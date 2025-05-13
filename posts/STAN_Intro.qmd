@@ -1,15 +1,12 @@
 ---
-title: "STAN Crash Course"
-author: "Joseph Sartini"
-date: 01/31/2025
+title: "STAN Introduction"
 format: 
   revealjs:
     theme: simple
+    author: Joseph Sartini
     self-contained: false
     auto-stretch: true
 editor: source
-execute: 
-  cache: true
 ---
 
 ```{r libraries}
@@ -21,7 +18,7 @@ library(shinystan)
 ```
 
 
-## What is STAN? {.smaller}
+## What is STAN?
 
 ::: {.incremental}
 - Bayesian probabilistic programming language
@@ -278,20 +275,20 @@ summary(model)$summary[,"Rhat"]
 
 ## Hamiltonian Monte Carlo
 
-![HMC Visualization: By Justinkunimune - github.com/jkunimune/hamiltonian-mc, CC0](../resources/images/Hamiltonian_Monte_Carlo.gif)
+![HMC Visualization: By Justinkunimune - github.com/jkunimune/hamiltonian-mc, CC0](Images/Hamiltonian_Monte_Carlo.gif)
 
-## Hamiltonian Monte Carlo Cont. {.smaller}
+## Hamiltonian Monte Carlo Continued
 
 ::: {.incremental}
 - Version of Metropolis-Hastings
 
 - Hamiltonian Dynamics used to propose next state
 
-    - Describe trajectory with momentum
+    - Trajectory with momentum
     
     - Distribution $\approx$ potential energy field
     
-    - Leapfrog integrator
+    - Leapfrog integrator stepwise approximation
 
 - Momentum: reduced correlation between samples
 
@@ -309,13 +306,17 @@ summary(model)$summary[,"Rhat"]
 ::: {.incremental}
 - Simulated trajectory $\neq$ true trajectory
 
-- Step-size resolution $>$ true posterior geometry
+- Global step size $>$ true posterior geometry resolution
+
+    - Leapfrog first order approximataion
 
 - Hamiltonian departs from initial value
 
     - Total energy (kinetic + potential)
     
-- Sampler stops using Hamiltonian dynamics at that step
+    - Should be preserved along trajectory
+    
+- Sampler WILL NOT accept samples after divergence
 :::
 
 ## Tree Depth Warnings
@@ -346,7 +347,26 @@ summary(model)$summary[,"Rhat"]
     - Tails too large, etc
 :::
 
-## Accessing Model Outputs (1) {.scrollable}
+## Geometric Intuition
+
+```{r intuition_figure}
+samples = extract(model)
+
+betas = map(1:dim(samples$beta)[1], function(x){
+  return(data.frame(beta0 = samples$beta[x,5],
+                    beta1 = samples$beta[x,6],
+                    Sample = x))
+}) %>% list_rbind()
+
+betas %>%
+  ggplot(aes(x = beta0, y = beta1)) + 
+  geom_density_2d_filled() + 
+  theme_bw() + 
+  theme(legend.position = "none") + 
+  labs(x = parse(text = "beta[4]~Axle~Ratio"), y = parse(text = "beta[5]~Weight"))
+```
+
+## Return to our Example: Model Outputs {.scrollable}
 
 ```{r permuted_mod_all, echo = TRUE}
 samples = extract(model)
@@ -369,7 +389,7 @@ beta_0 %>%
 ```
 
 
-## Accessing Model Outputs (2) {.scrollable}
+## Model Outputs (2) {.scrollable}
 
 ```{r sampled_mod_single, echo = TRUE}
 samples = extract(model, "beta", permuted = FALSE)
@@ -398,9 +418,29 @@ beta_0 %>%
 launch_shinystan(model)
 ```
 
-![](../resources/images/ShinySTAN.png){fig-align="center"}
+![](Images/ShinySTAN.png){fig-align="center"}
 
-## Updated Model
+## ShinySTAN - NUTS Summary
+
+![](Images/Diagnose_NUTS.png){fig-align="center"}
+
+## ShinySTAN - Divergences
+
+![](Images/Diagnose_Diverge.png){fig-align="center"}
+
+## ShinySTAN - Treedepth
+
+![](Images/Diagnose_Treedepth.png){fig-align="center"}
+
+## ShinySTAN - Energy
+
+![](Images/Diagnose_Energy.png){fig-align="center"}
+
+## ShinySTAN - Autocorrelation
+
+![](Images/Autocorrelation.png){fig-align="center"}
+
+## How to Update the Model
 
 ```{stan output.var = "second_model"}
 #| eval: true
@@ -430,7 +470,7 @@ generated quantities {
 }
 ```
 
-## Updated Model - Cont.
+## Running the Updated Model
 
 ```{r fitmod2, echo=TRUE, message=FALSE}
 model = sampling(
@@ -445,7 +485,7 @@ model = sampling(
 )
 ```
 
-## Updated Model - Performance
+## Updated Model Performance
 
 ```{r convergence_v2, echo=TRUE, warning=TRUE, message=TRUE}
 check_hmc_diagnostics(model)
@@ -493,6 +533,26 @@ beta_0 %>%
        title = parse(text = "Trace~Plot~of~beta[0]"))
 ```
 
+## Updated Geometry
+
+```{r intuition_update}
+samples = extract(model)
+
+betas = map(1:dim(samples$beta)[1], function(x){
+  return(data.frame(beta0 = samples$beta[x,5],
+                    beta1 = samples$beta[x,6],
+                    Sample = x))
+}) %>% list_rbind()
+
+betas %>%
+  ggplot(aes(x = beta0, y = beta1)) + 
+  geom_density_2d_filled() + 
+  theme_bw() + 
+  theme(legend.position = "none") + 
+  labs(x = parse(text = "beta[4]~Axle~Ratio"), y = parse(text = "beta[5]~Weight"))
+```
+
+
 ## Profiling the Model with CmdStanR (1)
 
 ```{stan output.var="Profile_Mod"}
@@ -538,7 +598,7 @@ fit$profiles()[[1]][,c(1,3,4,5,8)]
 ```
 
 ```{r profile_code2, output=FALSE}
-model = cmdstan_model("../resources/codes/Profile_Mod.stan")
+model = cmdstan_model("Profile_Mod.stan")
 fit = model$sample(data = data_list, chains = 1)
 ```
 

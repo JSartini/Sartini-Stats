@@ -11,8 +11,7 @@
   <meta name="generator" content="quarto-1.4.549">
 
   <meta name="author" content="Joseph Sartini">
-  <meta name="dcterms.date" content="2025-01-31">
-  <title>Sartini-Stats - STAN Crash Course</title>
+  <title>Sartini-Stats - STAN Introduction</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -392,7 +391,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">STAN Crash Course</h1>
+  <h1 class="title">STAN Introduction</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -402,9 +401,8 @@ Joseph Sartini
 </div>
 </div>
 
-  <p class="date">2025-01-31</p>
 </section>
-<section id="what-is-stan" class="slide level2 smaller">
+<section id="what-is-stan" class="slide level2">
 <h2>What is STAN?</h2>
 <div>
 <ul>
@@ -721,7 +719,7 @@ Divergences:</code></pre>
 Tree depth:</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>1212 of 2000 iterations saturated the maximum tree depth of 10 (60.6%).
+<pre><code>1149 of 2000 iterations saturated the maximum tree depth of 10 (57.45%).
 Try increasing 'max_treedepth' to avoid saturation.</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
@@ -736,24 +734,24 @@ Energy:</code></pre>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">summary</span>(model)<span class="sc">$</span>summary[,<span class="st">"Rhat"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> beta[1]  beta[2]  beta[3]  beta[4]  beta[5]  beta[6]  beta[7]     lp__ 
-1.923170 1.723521 1.993757 2.009383 2.005175 1.466857 1.997620 1.016072 </code></pre>
+2.025709 2.123651 2.175899 2.207492 2.194655 1.577225 2.159283 1.035047 </code></pre>
 </div>
 </div>
 </section>
 <section id="hamiltonian-monte-carlo" class="slide level2">
 <h2>Hamiltonian Monte Carlo</h2>
 
-<img data-src="../resources/images/Hamiltonian_Monte_Carlo.gif" class="r-stretch quarto-figure-center"><p class="caption">HMC Visualization: By Justinkunimune - github.com/jkunimune/hamiltonian-mc, CC0</p></section>
-<section id="hamiltonian-monte-carlo-cont." class="slide level2 smaller">
-<h2>Hamiltonian Monte Carlo Cont.</h2>
+<img data-src="Images/Hamiltonian_Monte_Carlo.gif" class="r-stretch quarto-figure-center"><p class="caption">HMC Visualization: By Justinkunimune - github.com/jkunimune/hamiltonian-mc, CC0</p></section>
+<section id="hamiltonian-monte-carlo-continued" class="slide level2">
+<h2>Hamiltonian Monte Carlo Continued</h2>
 <div>
 <ul>
 <li class="fragment"><p>Version of Metropolis-Hastings</p></li>
 <li class="fragment"><p>Hamiltonian Dynamics used to propose next state</p>
 <ul>
-<li class="fragment"><p>Describe trajectory with momentum</p></li>
+<li class="fragment"><p>Trajectory with momentum</p></li>
 <li class="fragment"><p>Distribution <span class="math inline">\(\approx\)</span> potential energy field</p></li>
-<li class="fragment"><p>Leapfrog integrator</p></li>
+<li class="fragment"><p>Leapfrog integrator stepwise approximation</p></li>
 </ul></li>
 <li class="fragment"><p>Momentum: reduced correlation between samples</p></li>
 <li class="fragment"><p>Energy conservation: high acceptance probability</p></li>
@@ -781,12 +779,16 @@ Energy:</code></pre>
 <div>
 <ul>
 <li class="fragment"><p>Simulated trajectory <span class="math inline">\(\neq\)</span> true trajectory</p></li>
-<li class="fragment"><p>Step-size resolution <span class="math inline">\(&gt;\)</span> true posterior geometry</p></li>
+<li class="fragment"><p>Global step size <span class="math inline">\(&gt;\)</span> true posterior geometry resolution</p>
+<ul>
+<li class="fragment">Leapfrog first order approximataion</li>
+</ul></li>
 <li class="fragment"><p>Hamiltonian departs from initial value</p>
 <ul>
-<li class="fragment">Total energy (kinetic + potential)</li>
+<li class="fragment"><p>Total energy (kinetic + potential)</p></li>
+<li class="fragment"><p>Should be preserved along trajectory</p></li>
 </ul></li>
-<li class="fragment"><p>Sampler stops using Hamiltonian dynamics at that step</p></li>
+<li class="fragment"><p>Sampler WILL NOT accept samples after divergence</p></li>
 </ul>
 </div>
 </section>
@@ -822,8 +824,12 @@ Energy:</code></pre>
 </ul>
 </div>
 </section>
-<section id="accessing-model-outputs-1" class="slide level2 scrollable">
-<h2>Accessing Model Outputs (1)</h2>
+<section id="geometric-intuition" class="slide level2">
+<h2>Geometric Intuition</h2>
+
+<img data-src="STAN_Intro_files/figure-revealjs/intuition_figure-1.png" width="960" class="r-stretch"></section>
+<section id="return-to-our-example-model-outputs" class="slide level2 scrollable">
+<h2>Return to our Example: Model Outputs</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>samples <span class="ot">=</span> <span class="fu">extract</span>(model)</span>
 <span id="cb13-2"><a></a></span>
@@ -834,8 +840,8 @@ Energy:</code></pre>
 </div>
 
 <img data-src="STAN_Intro_files/figure-revealjs/pma_vis-1.png" width="960" class="r-stretch"></section>
-<section id="accessing-model-outputs-2" class="slide level2 scrollable">
-<h2>Accessing Model Outputs (2)</h2>
+<section id="model-outputs-2" class="slide level2 scrollable">
+<h2>Model Outputs (2)</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>samples <span class="ot">=</span> <span class="fu">extract</span>(model, <span class="st">"beta"</span>, <span class="at">permuted =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb14-2"><a></a></span>
@@ -853,9 +859,29 @@ Energy:</code></pre>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">launch_shinystan</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
-<img data-src="../resources/images/ShinySTAN.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="updated-model" class="slide level2">
-<h2>Updated Model</h2>
+<img data-src="Images/ShinySTAN.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="shinystan---nuts-summary" class="slide level2">
+<h2>ShinySTAN - NUTS Summary</h2>
+
+<img data-src="Images/Diagnose_NUTS.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="shinystan---divergences" class="slide level2">
+<h2>ShinySTAN - Divergences</h2>
+
+<img data-src="Images/Diagnose_Diverge.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="shinystan---treedepth" class="slide level2">
+<h2>ShinySTAN - Treedepth</h2>
+
+<img data-src="Images/Diagnose_Treedepth.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="shinystan---energy" class="slide level2">
+<h2>ShinySTAN - Energy</h2>
+
+<img data-src="Images/Diagnose_Energy.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="shinystan---autocorrelation" class="slide level2">
+<h2>ShinySTAN - Autocorrelation</h2>
+
+<img data-src="Images/Autocorrelation.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="how-to-update-the-model" class="slide level2">
+<h2>How to Update the Model</h2>
 <div class="cell" data-output.var="second_model">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb16-1"><a></a><span class="kw">data</span> {</span>
 <span id="cb16-2"><a></a>  <span class="dt">int</span> N;  <span class="co">// Number of observations</span></span>
@@ -881,8 +907,8 @@ Energy:</code></pre>
 <span id="cb16-22"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="updated-model---cont." class="slide level2">
-<h2>Updated Model - Cont.</h2>
+<section id="running-the-updated-model" class="slide level2">
+<h2>Running the Updated Model</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>model <span class="ot">=</span> <span class="fu">sampling</span>(</span>
 <span id="cb17-2"><a></a>  second_model, </span>
@@ -896,8 +922,8 @@ Energy:</code></pre>
 <span id="cb17-10"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="updated-model---performance" class="slide level2">
-<h2>Updated Model - Performance</h2>
+<section id="updated-model-performance" class="slide level2">
+<h2>Updated Model Performance</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">check_hmc_diagnostics</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -926,9 +952,9 @@ Energy:</code></pre>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">summary</span>(model)<span class="sc">$</span>summary[,<span class="st">"Rhat"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>theta[1] theta[2] theta[3] theta[4] theta[5] theta[6] theta[7]  beta[1] 
-1.008158 1.008355 1.008586 1.007905 1.007851 1.009806 1.006988 1.003329 
+1.014679 1.014837 1.007013 1.014057 1.014239 1.013769 1.013649 1.008787 
  beta[2]  beta[3]  beta[4]  beta[5]  beta[6]  beta[7]     lp__ 
-1.004720 1.007981 1.007719 1.007684 1.005141 1.006988 1.001514 </code></pre>
+1.003727 1.014810 1.014065 1.014206 1.003868 1.013649 1.005481 </code></pre>
 </div>
 </div>
 </section>
@@ -951,6 +977,10 @@ Energy:</code></pre>
 </div>
 </div>
 </section>
+<section id="updated-geometry" class="slide level2">
+<h2>Updated Geometry</h2>
+
+<img data-src="STAN_Intro_files/figure-revealjs/intuition_update-1.png" width="960" class="r-stretch"></section>
 <section id="profiling-the-model-with-cmdstanr-1" class="slide level2">
 <h2>Profiling the Model with CmdStanR (1)</h2>
 <div class="cell" data-output.var="Profile_Mod">
@@ -994,9 +1024,9 @@ Energy:</code></pre>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>        name  total_time forward_time reverse_time autodiff_calls
-1  Generated 0.000207372  0.000207372   0.00000000              0
-2 Likelihood 0.207650000  0.166084000   0.04156580         173843
-3     Priors 0.038129100  0.033164100   0.00496496         173843</code></pre>
+1  Generated 0.000162888  0.000162888   0.00000000              0
+2 Likelihood 0.144603000  0.115724000   0.02887910         172453
+3     Priors 0.026033600  0.022650500   0.00338311         172453</code></pre>
 </div>
 </div>
 </section>

@@ -494,13 +494,13 @@
     "href": "soft.html",
     "title": "Software",
     "section": "",
-    "text": "R/rGCI | Supporting R software for calculation of the novel Glucose Color Index (GCI) frequency-domain summary of Continuous Glucose Monitoring Data"
+    "text": "rGCI | Supporting R software for calculation of the novel Glucose Color Index (GCI) frequency-domain summary of Continuous Glucose Monitoring Data\nFAST Bayesian FPCA | STAN and R codes providing simulation and model fitting routines in support of the manuscript introducing the FAST approach to fitting Bayesian Functional Principal Components Analysis"
   },
   {
     "objectID": "soft.html#github",
     "href": "soft.html#github",
     "title": "Software",
     "section": "",
-    "text": "R/rGCI | Supporting R software for calculation of the novel Glucose Color Index (GCI) frequency-domain summary of Continuous Glucose Monitoring Data"
+    "text": "rGCI | Supporting R software for calculation of the novel Glucose Color Index (GCI) frequency-domain summary of Continuous Glucose Monitoring Data\nFAST Bayesian FPCA | STAN and R codes providing simulation and model fitting routines in support of the manuscript introducing the FAST approach to fitting Bayesian Functional Principal Components Analysis"
   }
 ]

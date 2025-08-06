@@ -4,4 +4,8 @@ title: "Software"
 
 ## GitHub
 
-- [R/rGCI](https://jsartini.github.io/rGCI/) | Supporting R software for calculation of the novel Glucose Color Index (GCI) frequency-domain summary of Continuous Glucose Monitoring Data
+- [rGCI](https://jsartini.github.io/rGCI/) | Supporting R software for calculation of the novel Glucose Color Index (GCI) frequency-domain summary of Continuous Glucose Monitoring Data
+
+- [FAST Bayesian FPCA](https://github.com/JSartini/FAST-BFPCA) | STAN and R codes providing simulation and model fitting routines in support of the manuscript introducing the FAST approach to fitting Bayesian Functional Principal Components Analysis
+
+***

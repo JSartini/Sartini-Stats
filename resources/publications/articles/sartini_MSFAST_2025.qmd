@@ -5,14 +5,14 @@ author: "Sartini, Zeger, & Crainiceanu"
 year: "2025"
 publication: "ArXiv"
 preprint: "https://arxiv.org/abs/2509.03512"
-doi: "10.48550/arXiv.2509.03512"
+doi: "https://doi.org/10.48550/arXiv.2509.03512"
 materials: "https://github.com/JSartini/MSFAST_B-m-FPCA"
 toc: false
 categories:
   - functional data analysis
   - principal components analysis
   - Bayesian methods
-  - continuous glucose monitoring
+  - anthropometric measurements
 ---
 
 Citation (APA 7)

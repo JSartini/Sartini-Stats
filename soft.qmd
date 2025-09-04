@@ -4,8 +4,10 @@ title: "Software"
 
 ## GitHub
 
-- [rGCI](https://jsartini.github.io/rGCI/) | Supporting R software for calculation of the novel Glucose Color Index (GCI) frequency-domain summary of Continuous Glucose Monitoring Data
+- [MSFAST Bayesian Multivariate Sparse FPCA](https://github.com/JSartini/MSFAST_B-m-FPCA) | Supporting material for the manuscript introducing the MSFAST approach to Bayesian Functional Principal Components Analysis for multivariate, sparsely-observed data. Includes STAN and R codes providing univariate and multivariate sparse data simulations comparing MSFAST with existing implementations, evaluating estimation accuracy and inference validity. Additionally includes a vignette illustrating a real analysis on the CONTENT child growth data.
 
-- [FAST Bayesian FPCA](https://github.com/JSartini/FAST-BFPCA) | STAN and R codes providing simulation and model fitting routines in support of the manuscript introducing the FAST approach to fitting Bayesian Functional Principal Components Analysis
+- [FAST Bayesian FPCA](https://github.com/JSartini/FAST-BFPCA) | Supporting material for the manuscript introducing the FAST approach to fitting Bayesian Functional Principal Components Analysis. Includes STAN and R codes providing simulation and model fitting routines comparing FAST with existing implementations on a simple simulation scenario and a multilevel scenario, evaluating estimation accuracy and inference validity.
+
+- [rGCI](https://jsartini.github.io/rGCI/) | Supporting R software for calculation of the novel Glucose Color Index (GCI) frequency-domain summary of Continuous Glucose Monitoring Data.
 
 ***

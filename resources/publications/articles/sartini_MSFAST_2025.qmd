@@ -1,0 +1,24 @@
+---
+title: "Bayesian Multivariate Sparse Functional PCA"
+type: "article"
+author: "Sartini, Zeger, & Crainiceanu"
+year: "2025"
+publication: "ArXiv"
+preprint: "https://arxiv.org/abs/2509.03512"
+doi: "10.48550/arXiv.2509.03512"
+materials: "https://github.com/JSartini/MSFAST_B-m-FPCA"
+toc: false
+categories:
+  - functional data analysis
+  - principal components analysis
+  - Bayesian methods
+  - continuous glucose monitoring
+---
+
+Citation (APA 7)
+
+> Sartini, J., Zeger, S., & Crainiceanu, C. (2025). *Bayesian Multivariate Sparse Functional PCA* (No. arXiv:2509.03512). arXiv. <https://doi.org/10.48550/arXiv.2509.03512>
+
+Abstract
+
+Functional Principal Components Analysis (FPCA) provides a parsimonious, semi-parametric model for multivariate, sparsely-observed functional data. Frequentist FPCA approaches estimate principal components (PCs) from the data, then condition on these estimates in subsequent analyses. As an alternative, we propose a fully Bayesian inferential framework for multivariate, sparse functional data (MSFAST) which explicitly models the PCs and incorporates their uncertainty. MSFAST builds upon the FAST approach to FPCA for univariate, densely-observed functional data. Like FAST, MSFAST represents PCs using orthonormal splines, samples the orthonormal spline coefficients using parameter expansion, and enforces eigenvalue ordering during model fit. MSFAST extends FAST to multivariate, sparsely-observed data by (1) standardizing each functional covariate to mitigate poor posterior conditioning due to disparate scales; (2) using a better-suited orthogonal spline basis; (3) parallelizing likelihood calculations over covariates; (4) updating parameterizations and priors for computational stability; (5) using a Procrustes-based posterior alignment procedure; and (6) providing efficient prediction routines. We evaluated MSFAST alongside existing implementations using simulations. MSFAST produces uniquely valid inferences and accurate estimates, particularly for smaller signals. MSFAST is motivated by and applied to a study of child growth, with an accompanying vignette illustrating the implementation step-by-step.

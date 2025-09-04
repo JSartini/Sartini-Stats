@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Sartini, Zhou, Selvin, Zeger, &amp; Crainiceanu">
+<meta name="author" content="Sartini, Zeger, &amp; Crainiceanu">
 
-<title>Sartini-Stats - Fast Bayesian Functional Principal Components Analysis</title>
+<title>Sartini-Stats - Bayesian Multivariate Sparse Functional PCA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -122,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Fast Bayesian Functional Principal Components Analysis</h1>
+<h1 class="title">Bayesian Multivariate Sparse Functional PCA</h1>
   <div class="quarto-categories">
     <div class="quarto-category">functional data analysis</div>
     <div class="quarto-category">principal components analysis</div>
@@ -138,7 +138,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Sartini, Zhou, Selvin, Zeger, &amp; Crainiceanu </p>
+             <p>Sartini, Zeger, &amp; Crainiceanu </p>
           </div>
   </div>
     
@@ -148,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
     <div class="quarto-title-meta-heading">Doi</div>
     <div class="quarto-title-meta-contents">
       <p class="doi">
-        <a href="https://doi.org/10.48550/arXiv.2412.11340">10.48550/arXiv.2412.11340</a>
+        <a href="https://doi.org/10.48550/arXiv.2509.03512">10.48550/arXiv.2509.03512</a>
       </p>
     </div>
   </div>
@@ -159,18 +159,14 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="citation-apa-7" class="level2">
-<h2 class="anchored" data-anchor-id="citation-apa-7">Citation (APA 7)</h2>
+<p>Citation (APA 7)</p>
 <blockquote class="blockquote">
-<p>Sartini, J., Zhou, X., Selvin, L., Zeger, S., &amp; Crainiceanu, C. (2025). <em>Fast Bayesian Functional Principal Components Analysis</em> (No.&nbsp;arXiv:2412.11340). arXiv. <a href="https://doi.org/10.48550/arXiv.2412.11340" class="uri">https://doi.org/10.48550/arXiv.2412.11340</a></p>
+<p>Sartini, J., Zeger, S., &amp; Crainiceanu, C. (2025). <em>Bayesian Multivariate Sparse Functional PCA</em> (No.&nbsp;arXiv:2509.03512). arXiv. <a href="https://doi.org/10.48550/arXiv.2509.03512" class="uri">https://doi.org/10.48550/arXiv.2509.03512</a></p>
 </blockquote>
-</section>
-<section id="abstract" class="level2">
-<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
-<p>Functional Principal Components Analysis (FPCA) is a widely used analytic tool for dimension reduction of functional data. Traditional implementations of FPCA estimate the principal components from the data, then treat these estimates as fixed in subsequent analyses. To account for the uncertainty of PC estimates, we propose FAST, a fully-Bayesian FPCA with three core components: (1) projection of eigenfunctions onto an orthonormal spline basis; (2) efficient sampling of the orthonormal spline coefficient matrix using polar decomposition; and (3) ordering eigenvalues during sampling. Extensive simulation studies show that FAST is very stable and performs better compared to existing methods. FAST is motivated by and applied to a study of the variability in mealtime glucose from the Dietary Approaches to Stop Hypertension for Diabetes Continuous Glucose Monitoring (DASH4D CGM) study. All relevant STAN code and simulation routines are available as supplementary material.</p>
+<p>Abstract</p>
+<p>Functional Principal Components Analysis (FPCA) provides a parsimonious, semi-parametric model for multivariate, sparsely-observed functional data. Frequentist FPCA approaches estimate principal components (PCs) from the data, then condition on these estimates in subsequent analyses. As an alternative, we propose a fully Bayesian inferential framework for multivariate, sparse functional data (MSFAST) which explicitly models the PCs and incorporates their uncertainty. MSFAST builds upon the FAST approach to FPCA for univariate, densely-observed functional data. Like FAST, MSFAST represents PCs using orthonormal splines, samples the orthonormal spline coefficients using parameter expansion, and enforces eigenvalue ordering during model fit. MSFAST extends FAST to multivariate, sparsely-observed data by (1) standardizing each functional covariate to mitigate poor posterior conditioning due to disparate scales; (2) using a better-suited orthogonal spline basis; (3) parallelizing likelihood calculations over covariates; (4) updating parameterizations and priors for computational stability; (5) using a Procrustes-based posterior alignment procedure; and (6) providing efficient prediction routines. We evaluated MSFAST alongside existing implementations using simulations. MSFAST produces uniquely valid inferences and accurate estimates, particularly for smaller signals. MSFAST is motivated by and applied to a study of child growth, with an accompanying vignette illustrating the implementation step-by-step.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

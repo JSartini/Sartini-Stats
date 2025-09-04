@@ -2,11 +2,11 @@
 title: "Fast Bayesian Functional Principal Components Analysis"
 type: "article"
 author: "Sartini, Zhou, Selvin, Zeger, & Crainiceanu"
-year: "2024"
+year: "2025"
 publication: "ArXiv"
-preprint: "http://arxiv.org/abs/2412.11340"
+preprint: "https://arxiv.org/abs/2412.11340"
 doi: "10.48550/arXiv.2412.11340"
-materials: "https://github.com/JSartini/FAST_BayesFPCA_Supplement/tree/main"
+materials: "https://github.com/JSartini/FAST-BFPCA"
 toc: false
 categories:
   - functional data analysis
@@ -17,8 +17,8 @@ categories:
 
 ## Citation (APA 7)
 
-> Sartini, J., Zhou, X., Selvin, L., Zeger, S., & Crainiceanu, C. (2024). Fast Bayesian Functional Principal Components Analysis (arXiv:2412.11340). arXiv. https://doi.org/10.48550/arXiv.2412.11340
+> Sartini, J., Zhou, X., Selvin, L., Zeger, S., & Crainiceanu, C. (2025). *Fast Bayesian Functional Principal Components Analysis* (No. arXiv:2412.11340). arXiv. <https://doi.org/10.48550/arXiv.2412.11340>
 
 ## Abstract
 
-Functional Principal Components Analysis (FPCA) is one of the most successful and widely used analytic tools for exploration and dimension reduction of functional data. Standard implementations of FPCA estimate the principal components from the data but ignore their sampling variability in subsequent inferences. To address this problem, we propose the Fast Bayesian Functional Principal Components Analy- sis (Fast BayesFPCA), that treats principal components as parameters on the Stiefel manifold. To ensure efficiency, stability, and scalability we introduce three innova- tions: (1) project all eigenfunctions onto an orthonormal spline basis, reducing mod- eling considerations to a smaller-dimensional Stiefel manifold; (2) induce a uniform prior on the Stiefel manifold of the principal component spline coefficients via the polar representation of a matrix with entries following independent standard Normal priors; and (3) constrain sampling using the assumed FPCA structure to improve stability. We demonstrate the application of Fast BayesFPCA to characterize the variability in mealtime glucose from the Dietary Approaches to Stop Hypertension for Diabetes Continuous Glucose Monitoring (DASH4D CGM) study. All relevant STAN code and simulation routines are available as supplementary material.
+Functional Principal Components Analysis (FPCA) is a widely used analytic tool for dimension reduction of functional data. Traditional implementations of FPCA estimate the principal components from the data, then treat these estimates as fixed in subsequent analyses. To account for the uncertainty of PC estimates, we propose FAST, a fully-Bayesian FPCA with three core components: (1) projection of eigenfunctions onto an orthonormal spline basis; (2) efficient sampling of the orthonormal spline coefficient matrix using polar decomposition; and (3) ordering eigenvalues during sampling. Extensive simulation studies show that FAST is very stable and performs better compared to existing methods. FAST is motivated by and applied to a study of the variability in mealtime glucose from the Dietary Approaches to Stop Hypertension for Diabetes Continuous Glucose Monitoring (DASH4D CGM) study. All relevant STAN code and simulation routines are available as supplementary material.

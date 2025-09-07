@@ -1,11 +1,12 @@
 ---
-#title: "Joe Sartini"
+title: "Joe Sartini"
 image: resources/images/Headshot.jpg
 toc: false
 about:
-  template: jolla
-  image-shape: round
-  image-width: 17em
+  id: hero-heading
+  template: marquee
+  image-shape: rounded
+  image-width: 12cm
   links:
     - icon: linkedin
       text: LinkedIn
@@ -20,4 +21,34 @@ about:
       href: https://bsky.app/profile/jsartini.bsky.social
 ---
 
-Joe Sartini is currently a 4th year biostatistics PhD student, with broad interests in deriving clinically relevant features from high-dimensional and longitudinal data. His methodological works focuses on comprehensive modeling of uncertainty, better incorporation of hierarchical structure, and implementation of practical software.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+:::{#hero-heading}
+
+I am a 5th year PhD student in the [Biostatistics Department](https://publichealth.jhu.edu/departments/biostatistics) at the [Johns Hopkins University Bloomberg School of Public Health](https://publichealth.jhu.edu).
+
+I am concluding my degree requirements, with tentative graduation in Spring 2026. My PhD advisors are [Dr. Scott Zeger](https://publichealth.jhu.edu/faculty/784/scott-l-zeger) and [Dr. Ciprian Crainiceanu](http://ciprianstats.org). For my applied work, I am mentored by [Dr. Elizabeth Selvin](https://publichealth.jhu.edu/faculty/1882/elizabeth-selvin) and [Dr. Michael Fang](https://publichealth.jhu.edu/faculty/4192/michael-fang). I previously completed a BSE in [Operations Research and Financial Engineering](https://orfe.princeton.edu) from [Princeton University](https://www.princeton.edu) in 2021.
+
+
+:::
+
+:::
+
+::: {.column width="5%"}
+<!-- empty column to create gap -->
+:::
+
+::: {.column width="45%"}
+
+Motivated by increasingly prevalent multivariate, longitudinal, potentially non-Gaussian datasets (e.g. multiple wearable technologies in the [ARIC](https://aric.cscc.unc.edu/aric9/) study), my research focuses on developing statistical methods for comprehensive modeling of complex covariance structure, with emphasis on implementing efficient and approachable software.
+
+When not working on methods or analyzing a dataset, I can usually be found either weightlifting or running. 
+
+![Struggling Post-Baltimore Marathon](resources/images/Marathon.png)
+
+:::
+
+::::

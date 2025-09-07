@@ -18,7 +18,7 @@ website:
 
 format:
   html:
-    theme: spacelab
+    theme: sandstone
     css: resources/styles/styles.css
     toc: true
     page-layout: full

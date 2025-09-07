@@ -16,9 +16,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Sartini-Stats",
+    "title": "Joe Sartini",
     "section": "",
-    "text": "Joe Sartini is currently a 4th year biostatistics PhD student, with broad interests in deriving clinically relevant features from high-dimensional and longitudinal data. His methodological works focuses on comprehensive modeling of uncertainty, better incorporation of hierarchical structure, and implementation of practical software."
+    "text": "I am a 5th year PhD student in the Biostatistics Department at the Johns Hopkins University Bloomberg School of Public Health.\nI am concluding my degree requirements, with tentative graduation in Spring 2026. My PhD advisors are Dr. Scott Zeger and Dr. Ciprian Crainiceanu. For my applied work, I am mentored by Dr. Elizabeth Selvin and Dr. Michael Fang. I previously completed a BSE in Operations Research and Financial Engineering from Princeton University in 2021.\n \n    \n  \n    \n     LinkedIn\n  \n  \n    \n     GitHub\n  \n  \n    \n     Email\n  \n  \n      Bluesky\n  \n\n\n  \n\n\n\n\n\nMotivated by increasingly prevalent multivariate, longitudinal, potentially non-Gaussian datasets (e.g. multiple wearable technologies in the ARIC study), my research focuses on developing statistical methods for comprehensive modeling of complex covariance structure, with emphasis on implementing efficient and approachable software.\nWhen not working on methods or analyzing a dataset, I can usually be found either weightlifting or running.\n\n\n\nStruggling Post-Baltimore Marathon"
   },
   {
     "objectID": "resources/publications/articles/selvin_associations_2023.html",
@@ -473,14 +473,14 @@
     "href": "about.html#research-groups",
     "title": "About Me",
     "section": "Research Groups",
-    "text": "Research Groups\n\nJohns Hopkins University\n\nWearable and Implantable Technology (WIT) Working Group | December 2022 - present\nZeger Lab | August 2022 - present\n\n\n\nPrinceton University\n\nIndirect Reciprocity Working Group | November 2019 - August 2021\nTransportation Systems Lab | May 2020 - September 2020\n\n\n\nUniversity of Arkansas\n\nSystems Engineering Lab | May 2020 - May 2021"
+    "text": "Research Groups\n\nJohns Hopkins University\n\nWearable and Implantable Technology (WIT) Working Group | December 2022 - present\nDiabetes Data Group | August 2022 - present\nZeger Lab | August 2022 - present\n\n\n\n\nPresentation of Applied Research at AHA Epi/Lifestyle 2025\n\n\n\n\nPrinceton University\n\nIndirect Reciprocity Working Group | November 2019 - August 2021\nTransportation Systems Lab | May 2020 - September 2020\n\n\n\nUniversity of Arkansas\n\nSystems Engineering Lab | May 2020 - May 2021"
   },
   {
     "objectID": "about.html#teaching-experience",
     "href": "about.html#teaching-experience",
     "title": "About Me",
     "section": "Teaching Experience",
-    "text": "Teaching Experience\n\nJohns Hopkins University\n\nStatistical Computing and Machine Learning TA | August 2022 - present\nTA Training Planning Committee | August 2023, August 2024\n\n\n\nPrinceton Univeristy\n\nStatistical Courses TA | August 2020 - May 2021"
+    "text": "Teaching Experience\n\nJohns Hopkins University\n\nAnalysis of Longitudinal and Multilevel Data Lead TA | Fall 2025\nPrivate Tutoring in Statistical Methods and Theory | May 2023 - present\nStatistical Computing and Machine Learning TA | August 2022 - present\nTA Training Planning Committee | 2023-2025\n\n\n\n\nGuest Lecture to Undergraduate Biostatistics Students Covering my Research\n\n\n\n\nPrinceton Univeristy\n\nStatistical Courses TA | August 2020 - May 2021"
   },
   {
     "objectID": "about.html#honors-and-awards",
@@ -494,7 +494,7 @@
     "href": "about.html#software-experience",
     "title": "About Me",
     "section": "Software Experience",
-    "text": "Software Experience\nSoftware Engineering Intern | PriacyStar | May 2019 - August 2019"
+    "text": "Software Experience\nSoftware Engineering Intern | PrivacyStar | May 2019 - August 2019"
   },
   {
     "objectID": "soft.html",

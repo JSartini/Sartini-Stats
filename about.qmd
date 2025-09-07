@@ -8,11 +8,11 @@ title: "About Me"
 
 Johns Hopkins University - Bloomberg SPH \| August 2021 - present
 
-#### B.S.E. in Operations Research and Financial Engineering
+#### BSE in Operations Research and Financial Engineering
 
 Princeton University \| August 2017 - May 2021
 
-***
+------------------------------------------------------------------------
 
 \vspace{2em}
 
@@ -20,21 +20,25 @@ Princeton University \| August 2017 - May 2021
 
 #### Johns Hopkins University
 
-- Wearable and Implantable Technology (WIT) Working Group \| December 2022 - present
+-   Wearable and Implantable Technology (WIT) Working Group \| December 2022 - present
 
-- Zeger Lab \| August 2022 - present
+-   Diabetes Data Group \| August 2022 - present
 
-#### Princeton University 
+-   Zeger Lab \| August 2022 - present
 
-- Indirect Reciprocity Working Group \| November 2019 - August 2021
+![Presentation of Applied Research at AHA Epi/Lifestyle 2025](resources/images/Speaking.png)
 
-- Transportation Systems Lab \| May 2020 - September 2020
+#### Princeton University
+
+-   Indirect Reciprocity Working Group \| November 2019 - August 2021
+
+-   Transportation Systems Lab \| May 2020 - September 2020
 
 #### University of Arkansas
 
-- Systems Engineering Lab \| May 2020 - May 2021
+-   Systems Engineering Lab \| May 2020 - May 2021
 
-***
+------------------------------------------------------------------------
 
 \vspace{2em}
 
@@ -42,34 +46,40 @@ Princeton University \| August 2017 - May 2021
 
 #### Johns Hopkins University
 
-- Statistical Computing and Machine Learning TA \| August 2022 - present
+-   Analysis of Longitudinal and Multilevel Data Lead TA \| Fall 2025
 
-- TA Training Planning Committee \| August 2023, August 2024
+-   Private Tutoring in Statistical Methods and Theory \| May 2023 - present
+
+-   Statistical Computing and Machine Learning TA \| August 2022 - present
+
+-   TA Training Planning Committee \| 2023-2025
+
+![Guest Lecture to Undergraduate Biostatistics Students Covering my Research](resources/images/teach.png){fig-align="left" width=500}
 
 #### Princeton Univeristy
 
-- Statistical Courses TA \| August 2020 - May 2021 
+-   Statistical Courses TA \| August 2020 - May 2021
 
-***
+------------------------------------------------------------------------
 
 \vspace{2em}
 
 ## Honors and Awards
 
-- Louis I. and Thomas D. Dublin [Award](https://publichealth.jhu.edu/departments/biostatistics/about/honors-and-awards/departmental-student-awards "Description") for the Advancement of Epidemiology and Biostatistics \| 2025
+-   Louis I. and Thomas D. Dublin [Award](https://publichealth.jhu.edu/departments/biostatistics/about/honors-and-awards/departmental-student-awards "Description") for the Advancement of Epidemiology and Biostatistics \| 2025
 
-- Helen Abbey [Award](https://publichealth.jhu.edu/departments/biostatistics/about/honors-and-awards/departmental-student-awards "Description") for Commitment to Teaching \| 2024
+-   Helen Abbey [Award](https://publichealth.jhu.edu/departments/biostatistics/about/honors-and-awards/departmental-student-awards "Description") for Commitment to Teaching \| 2024
 
-- Ahmet S. Çakmak [Prize](https://orfe.princeton.edu/undergraduate/awards "Description") for Innovative Research \| 2021
+-   Ahmet S. Çakmak [Prize](https://orfe.princeton.edu/undergraduate/awards "Description") for Innovative Research \| 2021
 
-- George J. Mueller [Award](https://engineering.princeton.edu/news/2021/05/27/class-day-celebrates-graduates-courage-creativity-and-optimism "Announcement Page") for High Scholarly Achievement and Quality Athletic Performance \| 2021
+-   George J. Mueller [Award](https://engineering.princeton.edu/news/2021/05/27/class-day-celebrates-graduates-courage-creativity-and-optimism "Announcement Page") for High Scholarly Achievement and Quality Athletic Performance \| 2021
 
-***
+------------------------------------------------------------------------
 
 \vspace{2em}
 
 ## Software Experience
 
-Software Engineering Intern \| PriacyStar \| May 2019 - August 2019
+Software Engineering Intern \| [PrivacyStar](https://www.privacystar.com) \| May 2019 - August 2019
 
-***
+------------------------------------------------------------------------

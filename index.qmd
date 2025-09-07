@@ -47,7 +47,7 @@ Motivated by increasingly prevalent multivariate, longitudinal, potentially non-
 
 When not working on methods or analyzing a dataset, I can usually be found either weightlifting or running. 
 
-![Struggling Post-Baltimore Marathon](resources/images/Marathon.png)
+![Struggling Post-Baltimore Marathon](resources/images/Marathon.jpg)
 
 :::
 

@@ -26,7 +26,7 @@ Princeton University \| August 2017 - May 2021
 
 -   Zeger Lab \| August 2022 - present
 
-![Presentation of Applied Research at AHA Epi/Lifestyle 2025](resources/images/Speaking.png)
+![Presentation of Applied Research at AHA Epi/Lifestyle 2025](resources/images/Speaking.jpg)
 
 #### Princeton University
 
@@ -54,7 +54,7 @@ Princeton University \| August 2017 - May 2021
 
 -   TA Training Planning Committee \| 2023-2025
 
-![Guest Lecture to Undergraduate Biostatistics Students Covering my Research](resources/images/teach.png){fig-align="left" width=500}
+![Guest Lecture to Undergraduate Biostatistics Students Covering my Research](resources/images/Teach.jpg){fig-align="left" width="500"}
 
 #### Princeton Univeristy
 

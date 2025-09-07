@@ -71,7 +71,35 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-articles .list');
+    const listingTargetEl = window.document.querySelector('#listing-Publications .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-project','listing-website','listing-format','listing-editor','listing-execute','listing-language','listing-title','listing-type','listing-author','listing-year','listing-publication','listing-doi','listing-materials','listing-toc','listing-categories','listing-path','listing-outputHref','listing-description','listing-filename','listing-file-modified','listing-reading-time','listing-word-count',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      
+      searchColumns: ["listing-project","listing-website","listing-format","listing-editor","listing-execute","listing-language","listing-title","listing-type","listing-author","listing-year","listing-publication","listing-doi","listing-materials","listing-toc","listing-categories","listing-path","listing-outputHref","listing-description","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-Publications'] = new List('listing-Publications', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-Pre-prints .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
@@ -84,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-articles'] = new List('listing-articles', options);
+    window['quarto-listings']['listing-Pre-prints'] = new List('listing-Pre-prints', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -176,7 +204,7 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(8)</span></div><div class="category" data-category="Bayesian methods">Bayesian methods <span class="quarto-category-count">(2)</span></div><div class="category" data-category="accelerometry">accelerometry <span class="quarto-category-count">(1)</span></div><div class="category" data-category="anthropometric measurements">anthropometric measurements <span class="quarto-category-count">(1)</span></div><div class="category" data-category="continuous glucose monitoring">continuous glucose monitoring <span class="quarto-category-count">(5)</span></div><div class="category" data-category="evolutionary game theory">evolutionary game theory <span class="quarto-category-count">(1)</span></div><div class="category" data-category="frequency domain analysis">frequency domain analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="functional data analysis">functional data analysis <span class="quarto-category-count">(4)</span></div><div class="category" data-category="hierarchical structure">hierarchical structure <span class="quarto-category-count">(1)</span></div><div class="category" data-category="indirect reciprocity">indirect reciprocity <span class="quarto-category-count">(1)</span></div><div class="category" data-category="principal components analysis">principal components analysis <span class="quarto-category-count">(2)</span></div><div class="category" data-category="random effects inference">random effects inference <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(8)</span></div><div class="category" data-category="Bayesian methods">Bayesian methods <span class="quarto-category-count">(2)</span></div><div class="category" data-category="accelerometry">accelerometry <span class="quarto-category-count">(1)</span></div><div class="category" data-category="anthropometrics">anthropometrics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="continuous glucose monitoring">continuous glucose monitoring <span class="quarto-category-count">(5)</span></div><div class="category" data-category="evolutionary game theory">evolutionary game theory <span class="quarto-category-count">(1)</span></div><div class="category" data-category="frequency domain analysis">frequency domain analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="functional data analysis">functional data analysis <span class="quarto-category-count">(4)</span></div><div class="category" data-category="hierarchical structure">hierarchical structure <span class="quarto-category-count">(1)</span></div><div class="category" data-category="indirect reciprocity">indirect reciprocity <span class="quarto-category-count">(1)</span></div><div class="category" data-category="principal components analysis">principal components analysis <span class="quarto-category-count">(2)</span></div><div class="category" data-category="random effects inference">random effects inference <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
 
@@ -199,21 +227,105 @@ window.Quarto = {
 </header>
 
 
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Publications</li>
-  </ol>
-</nav>
-<div id="listing-articles" class="quarto-listing quarto-listing-container-custom">
+<section id="in-print" class="level2">
+<h2 class="anchored" data-anchor-id="in-print">In-Print</h2>
+<div id="listing-Publications" class="quarto-listing quarto-listing-container-custom">
 <ul class="pub-list list">
 
-  <li data-index="0" data-categories="functional data analysis,principal components analysis,Bayesian methods,anthropometric measurements" data-listing-file-modified-sort="1757022729091" data-listing-reading-time-sort="2" data-listing-word-count-sort="209" style="margin-top:20px;">
+  <li data-index="0" data-categories="frequency domain analysis,continuous glucose monitoring" data-listing-file-modified-sort="1737054008611" data-listing-reading-time-sort="2" data-listing-word-count-sort="291" style="margin-top:20px;">
+    <span class="listing-title lead">Glucose Color Index: Development and Validation of a Novel Measure of the Shape of Glycemic Variability</span><br>
+    <span class="listing-author">Sartini, Fang, Rooney, Selvin, Coresh, &amp; Zeger</span><br>
+    <span class="listing-publication fst-italic ">Diabetes Science and Technology</span>
+    <span class="listing-year">(2024)</span><br>
+    <a href="./resources/publications/in_print/sartini_GCI_2024.html" class="btn btn-primary btn-sm">
+      Details
+    </a>
+    
+    <a href="https://doi.org/10.1177/19322968241245654" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">
+      DOI
+    </a>
+    
+    
+    
+    <a href="https://journals.sagepub.com/doi/suppl/10.1177/19322968241245654/suppl_file/sj-docx-1-dst-10.1177_19322968241245654.docx" class="btn btn-light btn-sm" target="_blank" rel="noopener noreferrer">
+      <i class="bi bi-file-earmark-zip"></i> Materials
+    </a>
+    
+  </li>
+
+  <li data-index="1" data-categories="evolutionary game theory,indirect reciprocity" data-listing-file-modified-sort="1737054041392" data-listing-reading-time-sort="2" data-listing-word-count-sort="259" style="margin-top:20px;">
+    <span class="listing-title lead">The evolution of private reputations in information-abundant landscapes</span><br>
+    <span class="listing-author">Michel-Mata, Kawakatsu, Sartini, Kessinger, Plotkin, &amp; Tarnita</span><br>
+    <span class="listing-publication fst-italic ">Nature</span>
+    <span class="listing-year">(2024)</span><br>
+    <a href="./resources/publications/in_print/michelmata_evolution_2024.html" class="btn btn-primary btn-sm">
+      Details
+    </a>
+    
+    <a href="https://doi.org/10.1038/s41586-024-07977-x" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">
+      DOI
+    </a>
+    
+    
+    
+    <a href="https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-024-07977-x/MediaObjects/41586_2024_7977_MOESM1_ESM.pdf" class="btn btn-light btn-sm" target="_blank" rel="noopener noreferrer">
+      <i class="bi bi-file-earmark-zip"></i> Materials
+    </a>
+    
+  </li>
+
+  <li data-index="2" data-categories="continuous glucose monitoring" data-listing-file-modified-sort="1737053984040" data-listing-reading-time-sort="2" data-listing-word-count-sort="209" style="margin-top:20px;">
+    <span class="listing-title lead">The Associations of Mean Glucose and Time in Range from Continuous Glucose Monitoring with HbA1c in Adults with Type 2 Diabetes</span><br>
+    <span class="listing-author">Selvin, Wang, Rooney, Echouffo-Tcheugui, Fang, Zeger, Sartini, Tang, Coresh, Aurora, &amp; Punjabi</span><br>
+    <span class="listing-publication fst-italic ">Diabetes Technology and Therapeutics</span>
+    <span class="listing-year">(2023)</span><br>
+    <a href="./resources/publications/in_print/selvin_associations_2023.html" class="btn btn-primary btn-sm">
+      Details
+    </a>
+    
+    <a href="https://doi.org/10.1089/dia.2022.0178" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">
+      DOI
+    </a>
+    
+    
+    
+  </li>
+
+  <li data-index="3" data-categories="continuous glucose monitoring" data-listing-file-modified-sort="1737053959816" data-listing-reading-time-sort="2" data-listing-word-count-sort="239" style="margin-top:20px;">
+    <span class="listing-title lead">Within-person and between-sensor variability in continuous glucose monitoring metrics</span><br>
+    <span class="listing-author">Selvin, Wang, Rooney, Fang, Echouffo-Tcheugui, Zeger, Sartini, Tang, Coresh, Aurora, &amp; Punjabi</span><br>
+    <span class="listing-publication fst-italic ">Clinical Chemistry</span>
+    <span class="listing-year">(2023)</span><br>
+    <a href="./resources/publications/in_print/selvin_variability_2023.html" class="btn btn-primary btn-sm">
+      Details
+    </a>
+    
+    <a href="https://doi.org/10.1093/clinchem/hvac192" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">
+      DOI
+    </a>
+    
+    
+    
+  </li>
+
+</ul>
+
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</section>
+<section id="pre-print" class="level2">
+<h2 class="anchored" data-anchor-id="pre-print">Pre-Print</h2>
+<div id="listing-Pre-prints" class="quarto-listing quarto-listing-container-custom">
+<ul class="pub-list list">
+
+  <li data-index="0" data-categories="functional data analysis,principal components analysis,Bayesian methods,anthropometrics" data-listing-file-modified-sort="1757281634806" data-listing-reading-time-sort="2" data-listing-word-count-sort="209" style="margin-top:20px;">
     <span class="listing-title lead">Bayesian Multivariate Sparse Functional PCA</span><br>
     <span class="listing-author">Sartini, Zeger, &amp; Crainiceanu</span><br>
     <span class="listing-publication fst-italic ">ArXiv</span>
     <span class="listing-year">(2025)</span><br>
-    <a href="./resources/publications/articles/sartini_MSFAST_2025.html" class="btn btn-primary btn-sm">
+    <a href="./resources/publications/pre_print/sartini_MSFAST_2025.html" class="btn btn-primary btn-sm">
       Details
     </a>
     
@@ -238,7 +350,7 @@ window.Quarto = {
     <span class="listing-author">Sartini, Zhou, Selvin, Zeger, &amp; Crainiceanu</span><br>
     <span class="listing-publication fst-italic ">ArXiv</span>
     <span class="listing-year">(2025)</span><br>
-    <a href="./resources/publications/articles/sartini_BFPCA_2024.html" class="btn btn-primary btn-sm">
+    <a href="./resources/publications/pre_print/sartini_BFPCA_2024.html" class="btn btn-primary btn-sm">
       Details
     </a>
     
@@ -263,7 +375,7 @@ window.Quarto = {
     <span class="listing-author">Zhou, Cui, Sartini, &amp; Crainiceanu</span><br>
     <span class="listing-publication fst-italic ">ArXiv</span>
     <span class="listing-year">(2025)</span><br>
-    <a href="./resources/publications/articles/zhou_prediction_2025.html" class="btn btn-primary btn-sm">
+    <a href="./resources/publications/pre_print/zhou_prediction_2025.html" class="btn btn-primary btn-sm">
       Details
     </a>
     
@@ -279,33 +391,12 @@ window.Quarto = {
     
   </li>
 
-  <li data-index="3" data-categories="frequency domain analysis,continuous glucose monitoring" data-listing-file-modified-sort="1737054008611" data-listing-reading-time-sort="2" data-listing-word-count-sort="291" style="margin-top:20px;">
-    <span class="listing-title lead">Glucose Color Index: Development and Validation of a Novel Measure of the Shape of Glycemic Variability</span><br>
-    <span class="listing-author">Sartini, Fang, Rooney, Selvin, Coresh, &amp; Zeger</span><br>
-    <span class="listing-publication fst-italic ">Diabetes Science and Technology</span>
-    <span class="listing-year">(2024)</span><br>
-    <a href="./resources/publications/articles/sartini_GCI_2024.html" class="btn btn-primary btn-sm">
-      Details
-    </a>
-    
-    <a href="https://doi.org/10.1177/19322968241245654" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">
-      DOI
-    </a>
-    
-    
-    
-    <a href="https://journals.sagepub.com/doi/suppl/10.1177/19322968241245654/suppl_file/sj-docx-1-dst-10.1177_19322968241245654.docx" class="btn btn-light btn-sm" target="_blank" rel="noopener noreferrer">
-      <i class="bi bi-file-earmark-zip"></i> Materials
-    </a>
-    
-  </li>
-
-  <li data-index="4" data-categories="functional data analysis,hierarchical structure,continuous glucose monitoring" data-listing-file-modified-sort="1737054047006" data-listing-reading-time-sort="2" data-listing-word-count-sort="211" style="margin-top:20px;">
+  <li data-index="3" data-categories="functional data analysis,hierarchical structure,continuous glucose monitoring" data-listing-file-modified-sort="1737054047006" data-listing-reading-time-sort="2" data-listing-word-count-sort="211" style="margin-top:20px;">
     <span class="listing-title lead">Multilevel functional data analysis modeling of human glucose response to meal intake</span><br>
     <span class="listing-author">Matabuena, Sartini, &amp; Gude</span><br>
     <span class="listing-publication fst-italic ">ArXiv</span>
     <span class="listing-year">(2024)</span><br>
-    <a href="./resources/publications/articles/matabuena_multilevel_2024.html" class="btn btn-primary btn-sm">
+    <a href="./resources/publications/pre_print/matabuena_multilevel_2024.html" class="btn btn-primary btn-sm">
       Details
     </a>
     
@@ -321,61 +412,6 @@ window.Quarto = {
     
   </li>
 
-  <li data-index="5" data-categories="evolutionary game theory,indirect reciprocity" data-listing-file-modified-sort="1737054041392" data-listing-reading-time-sort="2" data-listing-word-count-sort="259" style="margin-top:20px;">
-    <span class="listing-title lead">The evolution of private reputations in information-abundant landscapes</span><br>
-    <span class="listing-author">Michel-Mata, Kawakatsu, Sartini, Kessinger, Plotkin, &amp; Tarnita</span><br>
-    <span class="listing-publication fst-italic ">Nature</span>
-    <span class="listing-year">(2024)</span><br>
-    <a href="./resources/publications/articles/michelmata_evolution_2024.html" class="btn btn-primary btn-sm">
-      Details
-    </a>
-    
-    <a href="https://doi.org/10.1038/s41586-024-07977-x" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">
-      DOI
-    </a>
-    
-    
-    
-    <a href="https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-024-07977-x/MediaObjects/41586_2024_7977_MOESM1_ESM.pdf" class="btn btn-light btn-sm" target="_blank" rel="noopener noreferrer">
-      <i class="bi bi-file-earmark-zip"></i> Materials
-    </a>
-    
-  </li>
-
-  <li data-index="6" data-categories="continuous glucose monitoring" data-listing-file-modified-sort="1737053984040" data-listing-reading-time-sort="2" data-listing-word-count-sort="209" style="margin-top:20px;">
-    <span class="listing-title lead">The Associations of Mean Glucose and Time in Range from Continuous Glucose Monitoring with HbA1c in Adults with Type 2 Diabetes</span><br>
-    <span class="listing-author">Selvin, Wang, Rooney, Echouffo-Tcheugui, Fang, Zeger, Sartini, Tang, Coresh, Aurora, &amp; Punjabi</span><br>
-    <span class="listing-publication fst-italic ">Diabetes Technology and Therapeutics</span>
-    <span class="listing-year">(2023)</span><br>
-    <a href="./resources/publications/articles/selvin_associations_2023.html" class="btn btn-primary btn-sm">
-      Details
-    </a>
-    
-    <a href="https://doi.org/10.1089/dia.2022.0178" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">
-      DOI
-    </a>
-    
-    
-    
-  </li>
-
-  <li data-index="7" data-categories="continuous glucose monitoring" data-listing-file-modified-sort="1737053959816" data-listing-reading-time-sort="2" data-listing-word-count-sort="239" style="margin-top:20px;">
-    <span class="listing-title lead">Within-person and between-sensor variability in continuous glucose monitoring metrics</span><br>
-    <span class="listing-author">Selvin, Wang, Rooney, Fang, Echouffo-Tcheugui, Zeger, Sartini, Tang, Coresh, Aurora, &amp; Punjabi</span><br>
-    <span class="listing-publication fst-italic ">Clinical Chemistry</span>
-    <span class="listing-year">(2023)</span><br>
-    <a href="./resources/publications/articles/selvin_variability_2023.html" class="btn btn-primary btn-sm">
-      Details
-    </a>
-    
-    <a href="https://doi.org/10.1093/clinchem/hvac192" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">
-      DOI
-    </a>
-    
-    
-    
-  </li>
-
 </ul>
 
 <div class="listing-no-matching d-none">
@@ -385,6 +421,7 @@ No matching items
 
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

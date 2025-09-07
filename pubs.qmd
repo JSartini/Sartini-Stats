@@ -2,8 +2,19 @@
 title: "Publications"
 toc: false
 listing:
-  - id: articles
-    contents: "resources/publications/*/**.qmd"
+  - id: Publications
+    contents: "resources/publications/in_print/**.qmd"
+    template: ./ejs/article.ejs
+    categories: true
+    sort:
+      - "year desc"
+      - "title"
+    page-size: 10
+    field-display-names: 
+      publication: "Publication"
+      year: "Year"
+  - id: Pre-prints
+    contents: "resources/publications/pre_print/**.qmd"
     template: ./ejs/article.ejs
     categories: true
     sort:
@@ -15,14 +26,12 @@ listing:
       year: "Year"
 ---
 
-```{=html}
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Publications</li>
-  </ol>
-</nav>
-```
+## In-Print
 
-:::{#articles}
+:::{#Publications}
+:::
+
+## Pre-Print
+
+:::{#Pre-prints}
 :::

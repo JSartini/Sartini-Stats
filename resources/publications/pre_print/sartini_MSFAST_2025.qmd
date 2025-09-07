@@ -12,7 +12,7 @@ categories:
   - functional data analysis
   - principal components analysis
   - Bayesian methods
-  - anthropometric measurements
+  - anthropometrics
 ---
 
 Citation (APA 7)

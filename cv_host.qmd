@@ -1,0 +1,1 @@
+{{< pdf file="resources/images/JSartini_CV.pdf" >}}

@@ -9,12 +9,14 @@ website:
     left:
       - href: about.qmd
         text: About
+      - href: blog.qmd
+        text: Research/Teaching
+      - href: cv_host.qmd
+        text: CV
       - href: pubs.qmd
         text: Publications
       - href: soft.qmd
         text: Software
-      - href: blog.qmd
-        text: Blog Posts
 
 format:
   html:

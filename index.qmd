@@ -43,7 +43,7 @@ I am concluding my degree requirements, with tentative graduation in Spring 2026
 
 ::: {.column width="45%"}
 
-Motivated by increasingly prevalent multivariate, longitudinal, potentially non-Gaussian datasets (e.g. multiple wearable technologies in the [ARIC](https://aric.cscc.unc.edu/aric9/) study), my research focuses on developing statistical methods for comprehensive modeling of complex covariance structure, with emphasis on implementing efficient and approachable software.
+Motivated by the increasing complexity and nuance of data collected by studies employing new physiological monitoring technology (e.g. wearable devices like accelerometry, continuous glucose monitoring, or patch electrocardiograms), my research combines a rigorous Bayesian statistical approach with computational techniques to produce practical software producing uniquely valid inference by jointly modeling all sources of uncertainty.
 
 When not working on methods or analyzing a dataset, I can usually be found either weightlifting or running. 
 

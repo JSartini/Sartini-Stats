@@ -1,6 +1,5 @@
 ---
 title: "STAN Introduction"
-author: Joseph Sartini
 date: 01/31/2025
 format: 
   revealjs:

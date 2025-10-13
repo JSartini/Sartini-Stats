@@ -1,7 +1,6 @@
 ---
 title: "Data Visualization Principles"
 subtitle: "Challenges and Best Practices"
-author: "Joseph Sartini"
 date: 11/22/2024
 format: 
   html: 
@@ -58,7 +57,6 @@ full_data = read.csv("../resources/data/NHANES.csv")
 ![](../resources/images/Actigraph.jpeg){height="300" width="250"}
 
 Actigraph GT3X [@Thornton_MLPA_2023]
-
 
 ## "Table 1"
 
@@ -154,13 +152,11 @@ for_table %>%
 -   Encourage comparison (Tufte)
 
 -   Vertical contrasts are easier (Broman)
-
 :::
 
 ## MVPA by CKM Status {.smaller}
 
 ::: panel-tabset
-
 ### Initial Pass
 
 We first leverage a standard bar chart with uncertainty bounds to first visualize the mean minutes of MVPA by CKM status:
@@ -180,7 +176,6 @@ full_data %>%
        subtitle = "Appears to be a dose-response relationship") + 
   theme_bw()
 ```
-
 
 ### Improvement 1
 
@@ -207,7 +202,6 @@ full_data %>%
        subtitle = "Main differentiation between stages 0-2 and 3-4") + 
   theme_bw()
 ```
-
 
 ### Improvement 2
 
@@ -246,7 +240,6 @@ full_data %>%
 -   Data transforms (Broman)
 
 -   Grouping by continuity (Gestalt Principal)
-
 :::
 
 ## MVPA by CKM Cont. {.scrollable}
@@ -313,7 +306,6 @@ full_data %>%
 -   Data transforms (Broman)
 
 -   Rapid vs deliberate thinking (Kahneman)
-
 :::
 
 ## AHA Activity Guideline {.smaller}
@@ -395,14 +387,12 @@ full_data %>%
   
 ```
 
-
 ### Principles
 
 -   Easy comparison (Broman, Tufte, Simkin and Hastie)
 
 -   Grouping by proximity (Gestalt Principle)
 :::
-
 
 ## MVPA vs Troponin T {.smaller}
 
@@ -524,7 +514,6 @@ plot = insert_yaxis_grob(plot, ydens, grid::unit(.2, "null"), position = "right"
 ggdraw(plot)
 ```
 
-
 ### Principles
 
 -   Let the data talk (Tufte, Broman)
@@ -534,14 +523,9 @@ ggdraw(plot)
 -   Visualize multiple scales (Tufte)
 
 -   Grouping by enclosure (Gestalt Principle)
-
 :::
 
 ## Further Reading
 
 ::: {#refs}
 :::
-
-
-
-

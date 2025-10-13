@@ -10,7 +10,7 @@ website:
       - href: about.qmd
         text: About
       - href: blog.qmd
-        text: Research/Teaching
+        text: Blog
       - href: cv_host.qmd
         text: CV
       - href: pubs.qmd

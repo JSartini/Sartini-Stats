@@ -2,7 +2,10 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/MSFAST_Vignette.html",
+      "/posts/Gifs.html",
       "/posts/STAN_Intro.html",
+      "/posts/FAST_Vignette.html",
       "/posts/Visualizing.html"
     ]
   },

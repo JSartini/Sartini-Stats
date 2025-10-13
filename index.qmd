@@ -21,20 +21,13 @@ about:
       href: https://bsky.app/profile/jsartini.bsky.social
 ---
 
-
-:::: {.columns}
-
+::: columns
 ::: {.column width="50%"}
-
-:::{#hero-heading}
-
+::: {#hero-heading}
 I am a 5th year PhD student in the [Biostatistics Department](https://publichealth.jhu.edu/departments/biostatistics) at the [Johns Hopkins University Bloomberg School of Public Health](https://publichealth.jhu.edu).
 
 I am concluding my degree requirements, with tentative graduation in Spring 2026. My PhD advisors are [Dr. Scott Zeger](https://publichealth.jhu.edu/faculty/784/scott-l-zeger) and [Dr. Ciprian Crainiceanu](http://ciprianstats.org). For my applied work, I am mentored by [Dr. Elizabeth Selvin](https://publichealth.jhu.edu/faculty/1882/elizabeth-selvin) and [Dr. Michael Fang](https://publichealth.jhu.edu/faculty/4192/michael-fang). I previously completed a BSE in [Operations Research and Financial Engineering](https://orfe.princeton.edu) from [Princeton University](https://www.princeton.edu) in 2021.
-
-
 :::
-
 :::
 
 ::: {.column width="5%"}
@@ -42,13 +35,10 @@ I am concluding my degree requirements, with tentative graduation in Spring 2026
 :::
 
 ::: {.column width="45%"}
+Motivated by the increasing complexity of data collected by studies employing new physiological monitoring technology (e.g. wearable devices like accelerometry, continuous glucose monitoring, or patch electrocardiograms), my research combines a rigorous statistical approach with computational techniques to produce practical software for performing valid inference on structured longitudinal and functional data.
 
-Motivated by the increasing complexity and nuance of data collected by studies employing new physiological monitoring technology (e.g. wearable devices like accelerometry, continuous glucose monitoring, or patch electrocardiograms), my research combines a rigorous Bayesian statistical approach with computational techniques to produce practical software producing uniquely valid inference by jointly modeling all sources of uncertainty.
+When not working on methods or digging into a dataset, I can usually be found either weightlifting or running.
 
-When not working on methods or analyzing a dataset, I can usually be found either weightlifting or running. 
-
-![Struggling Post-Baltimore Marathon](resources/images/Marathon.jpg)
-
+![Struggling post-Baltimore Marathon](resources/images/Marathon.jpg)
 :::
-
-::::
+:::

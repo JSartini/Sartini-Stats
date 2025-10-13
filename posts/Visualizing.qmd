@@ -2,10 +2,11 @@
 title: "Data Visualization Principles"
 subtitle: "Challenges and Best Practices"
 date: 11/22/2024
+author: Joseph Sartini
 format: 
   html: 
     css: ../resources/styles/Visualizations.css
-editor: visual
+editor: source
 bibliography: ../resources/bibs/Visualizations.bib
 csl: ../resources/bibs/elsevier-vancouver.csl
 execute:

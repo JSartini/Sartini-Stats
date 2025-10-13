@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Blog Posts",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\n9/3/25\n\n\nMSFAST: Bayesian Multivariate, Sparse FPCA Vignette\n\n\n \n\n\n\n\n8/12/25\n\n\nVisualizing Climate Exposures using Gifs\n\n\n \n\n\n\n\n1/31/25\n\n\nSTAN Introduction\n\n\n \n\n\n\n\n11/24/24\n\n\nFAST: Bayesian FPCA Vignette\n\n\n \n\n\n\n\n11/22/24\n\n\nData Visualization Principles\n\n\n \n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\n9/3/25\n\n\nMSFAST: Bayesian Multivariate, Sparse FPCA Vignette\n\n\nJoseph Sartini\n\n\n\n\n8/12/25\n\n\nVisualizing Climate Exposures using Gifs\n\n\nJoseph Sartini\n\n\n\n\n1/31/25\n\n\nSTAN Introduction\n\n\nJoseph Sartini\n\n\n\n\n11/24/24\n\n\nFAST: Bayesian FPCA Vignette\n\n\nJoseph Sartini\n\n\n\n\n11/22/24\n\n\nData Visualization Principles\n\n\nJoseph Sartini\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "pubs.html",
@@ -32,7 +32,7 @@
     "href": "index.html",
     "title": "Joe Sartini",
     "section": "",
-    "text": "I am a 5th year PhD student in the Biostatistics Department at the Johns Hopkins University Bloomberg School of Public Health.\nI am concluding my degree requirements, with tentative graduation in Spring 2026. My PhD advisors are Dr. Scott Zeger and Dr. Ciprian Crainiceanu. For my applied work, I am mentored by Dr. Elizabeth Selvin and Dr. Michael Fang. I previously completed a BSE in Operations Research and Financial Engineering from Princeton University in 2021.\n \n    \n  \n    \n     LinkedIn\n  \n  \n    \n     GitHub\n  \n  \n    \n     Email\n  \n  \n      Bluesky\n  \n\n\n  \n\n\n\n\n\nMotivated by the increasing complexity and nuance of data collected by studies employing new physiological monitoring technology (e.g. wearable devices like accelerometry, continuous glucose monitoring, or patch electrocardiograms), my research combines a rigorous Bayesian statistical approach with computational techniques to produce practical software producing uniquely valid inference by jointly modeling all sources of uncertainty.\nWhen not working on methods or analyzing a dataset, I can usually be found either weightlifting or running.\n\n\n\nStruggling Post-Baltimore Marathon"
+    "text": "I am a 5th year PhD student in the Biostatistics Department at the Johns Hopkins University Bloomberg School of Public Health.\nI am concluding my degree requirements, with tentative graduation in Spring 2026. My PhD advisors are Dr. Scott Zeger and Dr. Ciprian Crainiceanu. For my applied work, I am mentored by Dr. Elizabeth Selvin and Dr. Michael Fang. I previously completed a BSE in Operations Research and Financial Engineering from Princeton University in 2021.\n \n    \n  \n    \n     LinkedIn\n  \n  \n    \n     GitHub\n  \n  \n    \n     Email\n  \n  \n      Bluesky\n  \n\n\n  \n\n\n\n\n\nMotivated by the increasing complexity of data collected by studies employing new physiological monitoring technology (e.g. wearable devices like accelerometry, continuous glucose monitoring, or patch electrocardiograms), my research combines a rigorous statistical approach with computational techniques to produce practical software for performing valid inference on structured longitudinal and functional data.\nWhen not working on methods or digging into a dataset, I can usually be found either weightlifting or running.\n\n\n\nStruggling post-Baltimore Marathon"
   },
   {
     "objectID": "resources/publications/in_print/selvin_variability_2023.html",
@@ -207,7 +207,7 @@
     "href": "posts/STAN_Intro.html#convergence-monitoring",
     "title": "STAN Introduction",
     "section": "Convergence Monitoring",
-    "text": "Convergence Monitoring\n\ncheck_hmc_diagnostics(model)\n\n\nDivergences:\n\n\n0 of 2000 iterations ended with a divergence.\n\n\n\nTree depth:\n\n\n1207 of 2000 iterations saturated the maximum tree depth of 10 (60.35%).\nTry increasing 'max_treedepth' to avoid saturation.\n\n\n\nEnergy:\n\n\nE-BFMI indicated no pathological behavior.\n\n\n\nsummary(model)$summary[,\"Rhat\"]\n\n beta[1]  beta[2]  beta[3]  beta[4]  beta[5]  beta[6]  beta[7]     lp__ \n2.387849 2.163752 2.266375 2.316986 2.296446 1.601879 2.335029 1.037560"
+    "text": "Convergence Monitoring\n\ncheck_hmc_diagnostics(model)\n\n\nDivergences:\n\n\n0 of 2000 iterations ended with a divergence.\n\n\n\nTree depth:\n\n\n1212 of 2000 iterations saturated the maximum tree depth of 10 (60.6%).\nTry increasing 'max_treedepth' to avoid saturation.\n\n\n\nEnergy:\n\n\nE-BFMI indicated no pathological behavior.\n\n\n\nsummary(model)$summary[,\"Rhat\"]\n\n beta[1]  beta[2]  beta[3]  beta[4]  beta[5]  beta[6]  beta[7]     lp__ \n2.365263 2.081568 2.424803 2.459833 2.446590 1.643589 2.438779 1.039459"
   },
   {
     "objectID": "posts/STAN_Intro.html#hamiltonian-monte-carlo",
@@ -326,7 +326,7 @@
     "href": "posts/STAN_Intro.html#updated-model-performance",
     "title": "STAN Introduction",
     "section": "Updated Model Performance",
-    "text": "Updated Model Performance\n\ncheck_hmc_diagnostics(model)\n\n\nDivergences:\n\n\n0 of 6000 iterations ended with a divergence.\n\n\n\nTree depth:\n\n\n0 of 6000 iterations saturated the maximum tree depth of 10.\n\n\n\nEnergy:\n\n\nE-BFMI indicated no pathological behavior.\n\n\n\nsummary(model)$summary[,\"Rhat\"]\n\ntheta[1] theta[2] theta[3] theta[4] theta[5] theta[6] theta[7]  beta[1] \n1.007929 1.007616 1.003717 1.006647 1.007220 1.006543 1.007015 1.003987 \n beta[2]  beta[3]  beta[4]  beta[5]  beta[6]  beta[7]     lp__ \n1.002310 1.007863 1.006894 1.007278 1.002483 1.007015 1.005213"
+    "text": "Updated Model Performance\n\ncheck_hmc_diagnostics(model)\n\n\nDivergences:\n\n\n0 of 6000 iterations ended with a divergence.\n\n\n\nTree depth:\n\n\n0 of 6000 iterations saturated the maximum tree depth of 10.\n\n\n\nEnergy:\n\n\nE-BFMI indicated no pathological behavior.\n\n\n\nsummary(model)$summary[,\"Rhat\"]\n\ntheta[1] theta[2] theta[3] theta[4] theta[5] theta[6] theta[7]  beta[1] \n1.003796 1.003760 1.001931 1.003562 1.003605 1.003334 1.003570 1.002406 \n beta[2]  beta[3]  beta[4]  beta[5]  beta[6]  beta[7]     lp__ \n1.001364 1.003667 1.003591 1.003552 1.000757 1.003570 1.001324"
   },
   {
     "objectID": "posts/STAN_Intro.html#updated-model-visualization",
@@ -354,7 +354,7 @@
     "href": "posts/STAN_Intro.html#profiling-the-model-with-cmdstanr-2",
     "title": "STAN Introduction",
     "section": "Profiling the Model with CmdStanR (2)",
-    "text": "Profiling the Model with CmdStanR (2)\n\nmodel = cmdstan_model(\"Profile_Mod.stan\")\nfit = model$sample(data = data_list, chains = 1)\nfit$profiles()[[1]][,c(1,3,4,5,8)]\n\n\n\n        name  total_time forward_time reverse_time autodiff_calls\n1  Generated 0.000178225  0.000178225   0.00000000              0\n2 Likelihood 0.148557000  0.118356000   0.03020140         175011\n3     Priors 0.026723200  0.023253000   0.00347016         175011"
+    "text": "Profiling the Model with CmdStanR (2)\n\nmodel = cmdstan_model(\"Profile_Mod.stan\")\nfit = model$sample(data = data_list, chains = 1)\nfit$profiles()[[1]][,c(1,3,4,5,8)]\n\n\n\n        name  total_time forward_time reverse_time autodiff_calls\n1  Generated 0.000175152  0.000175152   0.00000000              0\n2 Likelihood 0.145845000  0.116126000   0.02971880         170759\n3     Priors 0.026700700  0.023262300   0.00343839         170759"
   },
   {
     "objectID": "posts/STAN_Intro.html#resource-links",

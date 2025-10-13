@@ -1,6 +1,7 @@
 ---
 title: "FAST: Bayesian FPCA Vignette"
 date: 11/24/2024
+author: Joseph Sartini
 editor: source
 output: html_document
 ---

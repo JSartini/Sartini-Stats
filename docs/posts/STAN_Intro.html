@@ -10,6 +10,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.549">
 
+  <meta name="author" content="Joseph Sartini">
   <meta name="dcterms.date" content="2025-01-31">
   <title>Sartini-Stats - STAN Introduction</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -394,6 +395,11 @@
   <h1 class="title">STAN Introduction</h1>
 
 <div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Joseph Sartini 
+</div>
+</div>
 </div>
 
   <p class="date">2025-01-31</p>
@@ -715,7 +721,7 @@ Divergences:</code></pre>
 Tree depth:</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>1207 of 2000 iterations saturated the maximum tree depth of 10 (60.35%).
+<pre><code>1212 of 2000 iterations saturated the maximum tree depth of 10 (60.6%).
 Try increasing 'max_treedepth' to avoid saturation.</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
@@ -730,7 +736,7 @@ Energy:</code></pre>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">summary</span>(model)<span class="sc">$</span>summary[,<span class="st">"Rhat"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> beta[1]  beta[2]  beta[3]  beta[4]  beta[5]  beta[6]  beta[7]     lp__ 
-2.387849 2.163752 2.266375 2.316986 2.296446 1.601879 2.335029 1.037560 </code></pre>
+2.365263 2.081568 2.424803 2.459833 2.446590 1.643589 2.438779 1.039459 </code></pre>
 </div>
 </div>
 </section>
@@ -948,9 +954,9 @@ Energy:</code></pre>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">summary</span>(model)<span class="sc">$</span>summary[,<span class="st">"Rhat"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>theta[1] theta[2] theta[3] theta[4] theta[5] theta[6] theta[7]  beta[1] 
-1.007929 1.007616 1.003717 1.006647 1.007220 1.006543 1.007015 1.003987 
+1.003796 1.003760 1.001931 1.003562 1.003605 1.003334 1.003570 1.002406 
  beta[2]  beta[3]  beta[4]  beta[5]  beta[6]  beta[7]     lp__ 
-1.002310 1.007863 1.006894 1.007278 1.002483 1.007015 1.005213 </code></pre>
+1.001364 1.003667 1.003591 1.003552 1.000757 1.003570 1.001324 </code></pre>
 </div>
 </div>
 </section>
@@ -1020,9 +1026,9 @@ Energy:</code></pre>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>        name  total_time forward_time reverse_time autodiff_calls
-1  Generated 0.000178225  0.000178225   0.00000000              0
-2 Likelihood 0.148557000  0.118356000   0.03020140         175011
-3     Priors 0.026723200  0.023253000   0.00347016         175011</code></pre>
+1  Generated 0.000175152  0.000175152   0.00000000              0
+2 Likelihood 0.145845000  0.116126000   0.02971880         170759
+3     Priors 0.026700700  0.023262300   0.00343839         170759</code></pre>
 </div>
 </div>
 </section>

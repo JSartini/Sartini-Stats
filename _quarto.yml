@@ -20,7 +20,9 @@ website:
 
 format:
   html:
-    theme: sandstone
+    theme: 
+      - sandstone
+      - resources/styles/styles.scss
     css: resources/styles/styles.css
     toc: true
     page-layout: full

@@ -35,7 +35,7 @@ I am concluding my degree requirements, with tentative graduation in Spring 2026
 :::
 
 ::: {.column width="45%"}
-Motivated by the increasing complexity of data collected by studies employing new physiological monitoring technology (e.g. wearable devices like accelerometry, continuous glucose monitoring, or patch electrocardiograms), my research combines a rigorous statistical approach with computational techniques to produce practical software for performing valid inference on structured longitudinal and functional data.
+Motivated by the increasing complexity of data collected by studies employing new physiological monitoring technology (e.g. wearable devices like accelerometry, continuous glucose monitoring, or patch electrocardiograms), my research combines a rigorous statistical approach with computational techniques, including machine learning, to produce practical software for performing valid inference on structured longitudinal and functional data.
 
 When not working on methods or digging into a dataset, I can usually be found either weightlifting or running.
 

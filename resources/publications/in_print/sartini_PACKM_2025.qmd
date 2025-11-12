@@ -1,0 +1,15 @@
+---
+title: "Light physical activity and all-cause mortality in US adults across Cardiovascular-Kidney-Metabolic Syndrome Stages"
+type: "brief report"
+author: "Sartini, Rooney, Schrack, McEvoy, Ndumele, Zeger, Selvin, & Fang"
+publication: "American Heart Association"
+year: "in press"
+toc: false
+categories:
+  - cardiovascular-kidney-metabolic syndrome
+  - accelerometry
+---
+
+## Citation (APA 7)
+
+> Sartini, J., Rooney, M. R., Schrack, J., McEvoy, J., Ndumele, C., Zeger, S., Selvin, E., Fang, M. (in press). Light physical activity and all-cause mortality in US adults across Cardiovascular-Kidney-Metabolic Syndrome Stages. *Journal of the American Heart Association*

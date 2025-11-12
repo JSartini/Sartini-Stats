@@ -252,4 +252,4 @@ map(1:length(align$Score), function(x){
   theme(axis.title.x = element_blank())
 ```
 
-This document just visualizes a particular case of applying the "[FAST](../resources/publications/pre_print/sartini_BFPCA_2024.qmd)" approach to perform fully-Bayesian Functional PCA. All supporting STAN and R code here is designed to be flexible, such that it may directly be applied to any other similarly structured problem. 
+This document just visualizes a particular case of applying the "[FAST](../resources/publications/in_print/sartini_BFPCA_2024.qmd)" approach to perform fully-Bayesian Functional PCA. All supporting STAN and R code here is designed to be flexible, such that it may directly be applied to any other similarly structured problem. 

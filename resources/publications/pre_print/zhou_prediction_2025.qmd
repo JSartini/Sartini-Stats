@@ -9,7 +9,6 @@ doi: "https://doi.org/10.48550/arXiv.2501.07842"
 toc: false
 categories:
   - functional data analysis
-  - random effects inference
   - accelerometry
 ---
 

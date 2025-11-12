@@ -1,6 +1,6 @@
 ---
 title: "The Associations of Mean Glucose and Time in Range from Continuous Glucose Monitoring with HbA1c in Adults with Type 2 Diabetes"
-type: "article"
+type: "brief report"
 author: "Selvin, Wang, Rooney, Echouffo-Tcheugui, Fang, Zeger, Sartini, Tang, Coresh, Aurora, & Punjabi"
 year: "2023"
 publication: "Diabetes Technology and Therapeutics"

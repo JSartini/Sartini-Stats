@@ -1,0 +1,24 @@
+---
+title: "Fast Bayesian Functional Principal Components Analysis"
+type: "article"
+author: "Sartini, Zhou, Selvin, Zeger, & Crainiceanu"
+publication: "Computational and Graphical Statistics"
+preprint: "https://arxiv.org/abs/2412.11340"
+materials: "https://github.com/JSartini/FAST-BFPCA"
+year: "in press"
+toc: false
+categories:
+  - functional data analysis
+  - principal components analysis
+  - Bayesian methods
+  - hierarchical structure
+  - continuous glucose monitoring
+---
+
+## Citation (APA 7)
+
+> Sartini, J., Zhou, X., Selvin, L., Zeger, S., & Crainiceanu, C. (in press). Fast Bayesian Functional Principal Components Analysis. *Journal of Computational and Graphical Statistics.*
+
+## Abstract
+
+Functional Principal Components Analysis (FPCA) is a widely used analytic tool for dimension reduction of functional data. Traditional implementations of FPCA estimate the principal components from the data, then treat these estimates as fixed in subsequent analyses. To account for the uncertainty of PC estimates, we propose FAST, a fully-Bayesian FPCA with three core components: (1) projection of eigenfunctions onto an orthonormal spline basis; (2) efficient sampling of the orthonormal spline coefficient matrix using a parameter expansion scheme based on polar decomposition; and (3) ordering eigenvalues during sampling. Extensive simulation studies show that FAST is very stable and performs better compared to existing methods. FAST is motivated by and applied to a study of the variability in mealtime glucose from the Dietary Approaches to Stop Hypertension for Diabetes Continuous Glucose Monitoring (DASH4D CGM) study. All relevant STAN code and simulation routines are available as supplementary material.

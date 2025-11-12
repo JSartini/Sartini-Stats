@@ -1,5 +1,4 @@
 ---
-title: "Publications"
 toc: false
 listing:
   - id: Publications
@@ -26,12 +25,12 @@ listing:
       year: "Year"
 ---
 
-## In-Print
+## Publications
 
-:::{#Publications}
+::: {#Publications}
 :::
 
-## Pre-Print
+## Pre-Prints
 
-:::{#Pre-prints}
+::: {#Pre-prints}
 :::

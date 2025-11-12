@@ -12,12 +12,13 @@
   {
     "listing": "/pubs.html",
     "items": [
+      "/resources/publications/in_print/sartini_BFPCA_2024.html",
+      "/resources/publications/in_print/sartini_PACKM_2025.html",
       "/resources/publications/in_print/sartini_GCI_2024.html",
       "/resources/publications/in_print/michelmata_evolution_2024.html",
       "/resources/publications/in_print/selvin_associations_2023.html",
       "/resources/publications/in_print/selvin_variability_2023.html",
       "/resources/publications/pre_print/sartini_MSFAST_2025.html",
-      "/resources/publications/pre_print/sartini_BFPCA_2024.html",
       "/resources/publications/pre_print/zhou_prediction_2025.html",
       "/resources/publications/pre_print/matabuena_multilevel_2024.html"
     ]

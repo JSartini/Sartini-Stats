@@ -12,6 +12,7 @@ categories:
   - functional data analysis
   - principal components analysis
   - Bayesian methods
+  - multivariate data
   - anthropometrics
 ---
 

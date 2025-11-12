@@ -1,6 +1,6 @@
 ---
 title: "Within-person and between-sensor variability in continuous glucose monitoring metrics"
-type: "article"
+type: "brief report"
 author: "Selvin, Wang, Rooney, Fang, Echouffo-Tcheugui, Zeger, Sartini, Tang, Coresh, Aurora, & Punjabi"
 year: "2023"
 publication: "Clinical Chemistry"

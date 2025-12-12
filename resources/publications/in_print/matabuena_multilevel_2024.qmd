@@ -1,0 +1,32 @@
+---
+title: "Multilevel functional data analysis modeling of human glucose response to meal intake"
+type: "article"
+author: "Sartini, Matabuena, & Gude"
+year: "in press"
+publication: "BMC Medical Research Methodology"
+preprint: "http://arxiv.org/abs/2405.14690"
+toc: false
+categories:
+  - functional data analysis
+  - hierarchical structure
+  - continuous glucose monitoring
+---
+
+## Citation (APA)
+
+> Sartini, J., Matabuena, M., & Gude, F. (in press). Multilevel Functional Data Analysis Modeling of Human Glucose Response to Meal Intake. *BMC Medical Research Methodology.*
+
+## Abstract
+
+**Purpose:**
+Postprandial glucose, collected through continuous glucose monitoring (CGM), has established clinical relevance in assessing metabolic capacity and informing diet prescriptions. However, most studies of postprandial glucose summarize these data into scalar values, such as 2-hour area under the curve (AUC) or 2-hour peak glucose.
+We propose analyzing the full CGM time-series trajectories to provide more detailed insights. Given the smooth dynamics of glucose metabolism, the resulting data are inherently functional, with hierarchical structure when there are multiple time series per participant.
+
+**Methods:**
+We consider multilevel functional data analysis (FDA) techniques to analyze postprandial CGM trajectories, applying these methods to data from participants without diabetes in the AEGIS study. The AEGIS study collected meal timing and nutrient composition during periods the participants wore CGM devices. We illustrate the utility of FDA methods to characterize postprandial CGM variability and to explore the associations between dietary/patient characteristics and CGM over the postprandial period. We introduce an extension of the R-squared ($R^2$) metric to hierarchical functional models to quantify variability explained in this context.
+
+**Results:**
+The FDA models indicate that, for many nutrients, the effect of dietary composition varies throughout the 6-hour post-prandial temporal window. For example, fiber blunts the postprandial glucose response 90 minutes after the meal, while fats reduce the response during the first 50 minutes. In addition,  metabolic responses to dietary intake differ between normoglycemic and prediabetic individuals as expected.
+
+**Conclusion:**
+Analyzing postprandial glucose responses with functional methods yields temporal insights that traditional scalar approaches cannot capture. Stratifying the analysis by glycemic status (normoglycemic vs. prediabetes) also provides novel findings.}

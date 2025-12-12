@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Matabuena, Sartini, &amp; Gude">
+<meta name="author" content="Sartini, Matabuena, &amp; Gude">
 
 <title>Sartini-Stats - Multilevel functional data analysis modeling of human glucose response to meal intake</title>
 <style>
@@ -68,6 +68,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../../resources/styles/styles.css">
 </head>
@@ -141,20 +170,12 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Matabuena, Sartini, &amp; Gude </p>
+             <p>Sartini, Matabuena, &amp; Gude </p>
           </div>
   </div>
     
   
     
-    <div>
-    <div class="quarto-title-meta-heading">Doi</div>
-    <div class="quarto-title-meta-contents">
-      <p class="doi">
-        <a href="https://doi.org/https://doi.org/10.48550/arXiv.2405.14690">https://doi.org/10.48550/arXiv.2405.14690</a>
-      </p>
-    </div>
-  </div>
   </div>
   
 
@@ -165,12 +186,15 @@ ul.task-list li input[type="checkbox"] {
 <section id="citation-apa" class="level2">
 <h2 class="anchored" data-anchor-id="citation-apa">Citation (APA)</h2>
 <blockquote class="blockquote">
-<p>Matabuena, M., &amp; Sartini, J. (2024). Multilevel functional data analysis modeling of human glucose response to meal intake. ArXiv.</p>
+<p>Sartini, J., Matabuena, M., &amp; Gude, F. (in press). Multilevel Functional Data Analysis Modeling of Human Glucose Response to Meal Intake. <em>BMC Medical Research Methodology.</em></p>
 </blockquote>
 </section>
 <section id="abstract" class="level2">
 <h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
-<p>Glucose meal response information collected via Continuous Glucose Monitoring (CGM) is relevant to the assessment of individual metabolic status and the support of personalized diet prescriptions. However, the complexity of the data produced by CGM monitors pushes the limits of existing analytic methods. CGM data often exhibits substantial within-person variability and has a natural multilevel structure. This research is motivated by the analysis of CGM data from individuals without diabetes in the AEGIS study. The dataset includes detailed information on meal timing and nutrition for each individual over different days. The primary focus of this study is to examine CGM glucose responses following patients’ meals and explore the time-dependent associations with dietary and patient characteristics. Motivated by this problem, we propose a new analytical framework based on multilevel functional models, including a new functional mixed R-square coefficient. The use of these models illustrates 3 key points: (i) The importance of analyzing glucose responses across the entire functional domain when making diet recommendations; (ii) The differential metabolic responses between normoglycemic and prediabetic patients, particularly with regards to lipid intake; (iii) The importance of including random, person-level effects when modelling this scientific problem.</p>
+<p><strong>Purpose:</strong> Postprandial glucose, collected through continuous glucose monitoring (CGM), has established clinical relevance in assessing metabolic capacity and informing diet prescriptions. However, most studies of postprandial glucose summarize these data into scalar values, such as 2-hour area under the curve (AUC) or 2-hour peak glucose. We propose analyzing the full CGM time-series trajectories to provide more detailed insights. Given the smooth dynamics of glucose metabolism, the resulting data are inherently functional, with hierarchical structure when there are multiple time series per participant.</p>
+<p><strong>Methods:</strong> We consider multilevel functional data analysis (FDA) techniques to analyze postprandial CGM trajectories, applying these methods to data from participants without diabetes in the AEGIS study. The AEGIS study collected meal timing and nutrient composition during periods the participants wore CGM devices. We illustrate the utility of FDA methods to characterize postprandial CGM variability and to explore the associations between dietary/patient characteristics and CGM over the postprandial period. We introduce an extension of the R-squared (<span class="math inline">\(R^2\)</span>) metric to hierarchical functional models to quantify variability explained in this context.</p>
+<p><strong>Results:</strong> The FDA models indicate that, for many nutrients, the effect of dietary composition varies throughout the 6-hour post-prandial temporal window. For example, fiber blunts the postprandial glucose response 90 minutes after the meal, while fats reduce the response during the first 50 minutes. In addition, metabolic responses to dietary intake differ between normoglycemic and prediabetic individuals as expected.</p>
+<p><strong>Conclusion:</strong> Analyzing postprandial glucose responses with functional methods yields temporal insights that traditional scalar approaches cannot capture. Stratifying the analysis by glycemic status (normoglycemic vs.&nbsp;prediabetes) also provides novel findings.}</p>
 
 
 </section>

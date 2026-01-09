@@ -7,7 +7,7 @@ publication: "Clinical Chemistry"
 doi: "https://doi.org/10.1093/clinchem/hvac192"
 toc: false
 categories:
-  - continuous glucose monitoring
+  - CGM
 ---
 
 ## Citation (APA 7)

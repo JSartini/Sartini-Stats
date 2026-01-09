@@ -8,8 +8,8 @@ doi: "https://doi.org/10.1177/19322968241245654"
 materials: "https://journals.sagepub.com/doi/suppl/10.1177/19322968241245654/suppl_file/sj-docx-1-dst-10.1177_19322968241245654.docx"
 toc: false
 categories:
-  - frequency domain analysis
-  - continuous glucose monitoring
+  - Time series
+  - CGM
 ---
 
 ## Citation (APA 7)

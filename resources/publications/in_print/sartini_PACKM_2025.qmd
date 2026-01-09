@@ -3,13 +3,25 @@ title: "Light physical activity and all-cause mortality in US adults across Card
 type: "brief report"
 author: "Sartini, Rooney, Schrack, McEvoy, Ndumele, Zeger, Selvin, & Fang"
 publication: "American Heart Association"
-year: "in press"
+year: "2026"
+doi: "https://doi.org/10.1161/JAHA.125.046271"
 toc: false
 categories:
-  - cardiovascular-kidney-metabolic syndrome
-  - accelerometry
+  - CKM syndrome
+  - Accelerometry
+  - Physical activity
+  - News impact
 ---
 
 ## Citation (APA 7)
 
-> Sartini, J., Rooney, M. R., Schrack, J., McEvoy, J., Ndumele, C., Zeger, S., Selvin, E., Fang, M. (in press). Light physical activity and all-cause mortality in US adults across Cardiovascular-Kidney-Metabolic Syndrome Stages. *Journal of the American Heart Association*
+> Sartini, J., Rooney, M. R., Schrack, J. A., McEvoy, J. W., Ndumele, C. E., Zeger, S., Selvin, E., & Fang, M. (2026). Light Physical Activity and All‐Cause Mortality in US Adults Across Cardiovascular‐Kidney‐Metabolic Syndrome Stages. Journal of the American Heart Association, 0(0), e046271. https://doi.org/10.1161/JAHA.125.046271
+
+
+## News Coverage
+
+- [American Heart Association Release](https://newsroom.heart.org/news/movement-matters-light-activity-led-to-better-survival-in-diabetes-heart-kidney-disease)
+- [U.S. News](https://www.usnews.com/news/health-news/articles/2026-01-07/walking-household-chores-can-be-lifesaving-therapy-for-people-with-metabolic-syndrome)
+- [Powers Health](https://www.powershealth.org/about-us/newsroom/health-library/2026/01/07/walking-household-chores-can-be-lifesaving-therapy-for-people-with-metabolic-syndrome)
+- [Everyday Health](https://www.everydayhealth.com/diabetes/stretching-slow-walking-housework-may-extend-lifespan-with-common-chronic-diseases/)
+

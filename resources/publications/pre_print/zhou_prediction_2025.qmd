@@ -8,8 +8,8 @@ preprint: "http://arxiv.org/abs/2501.07842"
 doi: "https://doi.org/10.48550/arXiv.2501.07842"
 toc: false
 categories:
-  - functional data analysis
-  - accelerometry
+  - Functional data
+  - Accelerometry
 ---
 
 Citation (APA 7)

@@ -4,20 +4,22 @@ type: "article"
 author: "Sartini, Zhou, Selvin, Zeger, & Crainiceanu"
 publication: "Computational and Graphical Statistics"
 preprint: "https://arxiv.org/abs/2412.11340"
+doi: "https://doi.org/10.1080/10618600.2025.2592768"
 materials: "https://github.com/JSartini/FAST-BFPCA"
-year: "in press"
+year: "2025"
 toc: false
 categories:
-  - functional data analysis
-  - principal components analysis
+  - Functional data
+  - Principal components
   - Bayesian methods
-  - hierarchical structure
-  - continuous glucose monitoring
+  - Multilevel
+  - CGM
 ---
 
 ## Citation (APA 7)
 
-> Sartini, J., Zhou, X., Selvin, L., Zeger, S., & Crainiceanu, C. (in press). Fast Bayesian Functional Principal Components Analysis. *Journal of Computational and Graphical Statistics.*
+> Sartini, J., Zhou, X., Selvin, L., Zeger, S., & Crainiceanu, C. M. (2025). Fast Bayesian Functional Principal Components Analysis. Journal of Computational and Graphical Statistics. https://www.tandfonline.com/doi/abs/10.1080/10618600.2025.2592768
+
 
 ## Abstract
 

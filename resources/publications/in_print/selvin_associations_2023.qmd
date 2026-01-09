@@ -7,7 +7,7 @@ publication: "Diabetes Technology and Therapeutics"
 doi: "https://doi.org/10.1089/dia.2022.0178"
 toc: false
 categories:
-  - continuous glucose monitoring
+  - CGM
 ---
 
 ## Citation (APA 7)

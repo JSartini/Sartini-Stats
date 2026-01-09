@@ -9,11 +9,10 @@ doi: "https://doi.org/10.48550/arXiv.2509.03512"
 materials: "https://github.com/JSartini/MSFAST_B-m-FPCA"
 toc: false
 categories:
-  - functional data analysis
-  - principal components analysis
+  - Functional data
+  - Principal components
   - Bayesian methods
-  - multivariate data
-  - anthropometrics
+  - Multivariate
 ---
 
 Citation (APA 7)

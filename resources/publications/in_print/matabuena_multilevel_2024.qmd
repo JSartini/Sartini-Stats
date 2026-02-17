@@ -1,10 +1,11 @@
 ---
-title: "Multilevel functional data analysis modeling of human glucose response to meal intake"
+title: "Beyond scalar metrics: functional data analysis of postprandial continuous glucose monitoring in the AEGIS study"
 type: "article"
 author: "Sartini, Matabuena, & Gude"
-year: "in press"
 publication: "BMC Medical Research Methodology"
 preprint: "http://arxiv.org/abs/2405.14690"
+doi: "https://doi.org/10.1186/s12874-025-02748-2"
+year: "2026"
 toc: false
 categories:
   - Functional data

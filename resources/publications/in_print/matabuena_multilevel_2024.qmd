@@ -15,7 +15,7 @@ categories:
 
 ## Citation (APA)
 
-> Sartini, J., Matabuena, M., & Gude, F. (in press). Multilevel Functional Data Analysis Modeling of Human Glucose Response to Meal Intake. *BMC Medical Research Methodology.*
+> Matabuena, M., Sartini, J. & Gude, F. Beyond scalar metrics: functional data analysis of postprandial continuous glucose monitoring in the AEGIS study. *BMC Med Res Methodol* (2026). https://doi.org/10.1186/s12874-025-02748-2
 
 ## Abstract
 

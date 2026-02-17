@@ -2,6 +2,8 @@
 title: "Software"
 ---
 
+-   [BFun: Bayesian Functional (Mixed) Modeling](https://github.com/JSartini/BFun) \| The goal of BFun is to provide the tools necessary to fit Bayesian functional (mixed) models where random effects are represented using stochastic eigenfunctions. This type of joint modeling accounts for all potential sources of uncertainty, providing valid inferences even when signal to noise ratio is small. The package is oriented around a Markov Chain Monte Carlo approach, but provides an experimental variational implementation as well (still undergoing testing).
+
 -   [MSFAST Bayesian Multivariate Sparse FPCA](https://github.com/JSartini/MSFAST_B-m-FPCA) \| Supporting material for the manuscript introducing the MSFAST approach to Bayesian Functional Principal Components Analysis for multivariate, sparsely-observed data. Includes STAN and R codes providing univariate and multivariate sparse data simulations comparing MSFAST with existing implementations, evaluating estimation accuracy and inference validity. Additionally includes a vignette illustrating a real analysis on the CONTENT child growth data.
 
 -   [FAST Bayesian FPCA](https://github.com/JSartini/FAST-BFPCA) \| Supporting material for the manuscript introducing the FAST approach to fitting Bayesian Functional Principal Components Analysis. Includes STAN and R codes providing simulation and model fitting routines comparing FAST with existing implementations on a simple simulation scenario and a multilevel scenario, evaluating estimation accuracy and inference validity.

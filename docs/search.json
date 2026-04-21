@@ -151,7 +151,7 @@
     "href": "posts/STAN_Intro.html#what-is-stan",
     "title": "STAN Introduction",
     "section": "What is STAN?",
-    "text": "What is STAN?\n\n\nBayesian probabilistic programming language\nMultiple posterior sampling routines\n\nHamiltonian Monte Carlo\nVariational Inference\nLaplace approximation\n\nBased on C++\nInterfaces with Python, Julia, R, and Unix Shell"
+    "text": "What is STAN?\n\nBayesian probabilistic programming language\nMultiple posterior sampling routines\n\nHamiltonian Monte Carlo\n\nAdaptive step size\n\nVariational Inference\nLaplace approximation\n\nBased on C++\nInterfaces with Python, Julia, R, and Unix Shell\n\n\nLaplace approximation - approximate the distribution as a normal centered at the MAP using Taylor expansion."
   },
   {
     "objectID": "posts/STAN_Intro.html#structure-of-a-stan-script",
@@ -165,49 +165,49 @@
     "href": "posts/STAN_Intro.html#section---functions",
     "title": "STAN Introduction",
     "section": "Section - functions",
-    "text": "Section - functions\n\n\nComplex indexing\n\nSparsely observed data\n\nGenerating quantities/structures\n\nSplines, etc.\n\nSuffixes for particular functions\n\nContaining RNG: “_rng”\nModifying target density: “_lp”\n\n\n\n\nRNG functions can only be used on data/generated quantities"
+    "text": "Section - functions\n\nRepeated sub-tasks\n\nCode brevity\nParallelization\n\n\n\n\nComplex indexing\n\nSparsely observed data\n\n\n\n\n\nSuffixes for particular functions\n\nContaining RNG: “_rng”\nModifying target density: “_lp”\n\n\n\nRNG functions can only be used on data/generated quantities"
   },
   {
     "objectID": "posts/STAN_Intro.html#section---data",
     "href": "posts/STAN_Intro.html#section---data",
     "title": "STAN Introduction",
     "section": "Section - data",
-    "text": "Section - data\n\n\nLikelihood data\n\nIndexing arrays\n\nAll constants\n\nArray extents\n\nCommonly used linear transforms\n\n\n\nOften need more information in this block than you think to fully specify the model."
+    "text": "Section - data\n\nObserved data\n\nCorresponding indexing objects\n\nAll constants\n\nArray extents\n\nCommonly used linear transforms\n\n\nOften need more information in this block than you think to fully specify the model."
   },
   {
     "objectID": "posts/STAN_Intro.html#section---transformed-data",
     "href": "posts/STAN_Intro.html#section---transformed-data",
     "title": "STAN Introduction",
     "section": "Section - transformed data",
-    "text": "Section - transformed data\n\n\nFunctions of data variables\nOnly evaluated once\n\nPrior to sampling\n\nHelpful for book-keeping\n\nSimplify data inputs\n\nRandom data sub-samples"
+    "text": "Section - transformed data\n\nFunctions of data variables\n\ne.g., eigenvalues of matrix\n\n\n\n\nHelpful for book-keeping\n\nSimplify data inputs\n\n\n\n\n\nOnly evaluated once\n\nPrior to sampling"
   },
   {
     "objectID": "posts/STAN_Intro.html#section---parameters",
     "href": "posts/STAN_Intro.html#section---parameters",
     "title": "STAN Introduction",
     "section": "Section - parameters",
-    "text": "Section - parameters\n\n\nSpecify sampled quantities\n\nVariable names\nExtents\n\nDefinitions only, no statements\nRead from underlying sampler\nCan provide initial values\n\n\n\n\nWill get more into how to provide initial values shortly"
+    "text": "Section - parameters\n\nSpecify sampled quantities\n\nVariable names\nAny constraints\n\n\n\n\nDefinitions only\n\n\n\n\nCan provide initial values\n\n\n\nWill get more into how to provide initial values shortly\nConstraints are checked (will reject if not satisfied), not transformed to be enforced unless otherwise indicated"
   },
   {
     "objectID": "posts/STAN_Intro.html#section---transformed-parameters",
     "href": "posts/STAN_Intro.html#section---transformed-parameters",
     "title": "STAN Introduction",
     "section": "Section - transformed parameters",
-    "text": "Section - transformed parameters\n\n\nDeterministic functions\nPart of target posterior\nEvaluated with each sample\n\nInverse transform\nLog absolute Jacobian\n\nGood for re-parameterization\n\nStability\nLatent modeling\n\n\n\n\n\nCan include data, transformed data, and parameters as inputs\nNeed inverse transform and log absolute Jacobian to be efficient, as they can greatly slow down the sampling process otherwise\nNatural scale vs sampling efficiency (NUTS and standard HMC prefer unconstrained parameters). However, gradient calculations usually dwarf these differences"
+    "text": "Section - transformed parameters\n\nDeterministic functions of parameters\n\n\n\nGood for re-parameterization\n\nParameter expansion\nCentered / Non-centered\n\n\n\n\n\nEvaluated with each sample\n\nTransformation vs. Change of variables\nInverse transform and Log absolute Jacobian\n\n\n\n\nCan include data, transformed data, and parameters as inputs\nNUTS and standard HMC prefer unconstrained parameters\nTranformation: sample then transform, CoV: transform then sample\nNeed inverse transform and log absolute Jacobian to be efficient, as they can greatly slow down the sampling process otherwise\nNatural scale vs sampling efficiency. However, gradient calculations usually dwarf these differences"
   },
   {
     "objectID": "posts/STAN_Intro.html#section---model",
     "href": "posts/STAN_Intro.html#section---model",
     "title": "STAN Introduction",
     "section": "Section - model",
-    "text": "Section - model\n\n\nDefine the target posterior\n\nSum of log density functions\n\nPrior distributions on (transformed) parameters\nData/model likelihood\nMost computational expense\nORDER MATTERS\n\n\n\nIt is often important to know which subgroup of operations within the model block is consuming the majority of computation time (after deciding that efficient is insufficient). We will get to how this can be done (do not optimize unless necessary)."
+    "text": "Section - model\n\nDefine the target posterior\n\nLog density\n\n\n\n\nPrior distributions on (transformed) parameters\nData/model likelihood\n\n\n\n\nMost computational expense\nORDER MATTERS\n\n\nIt is often important to know which subgroup of operations within the model block is consuming the majority of computation time (after deciding that efficiency is insufficient). We will get to how this can be done (do not optimize unless necessary)."
   },
   {
     "objectID": "posts/STAN_Intro.html#section---generated-quantities",
     "href": "posts/STAN_Intro.html#section---generated-quantities",
     "title": "STAN Introduction",
     "section": "Section - generated quantities",
-    "text": "Section - generated quantities\n\n\nExecuted after samples are generated\nFunctions of model output\n\nPredictions for new data\nSimulate new data\nExtract posterior estimates\nCalculate model fit criterion"
+    "text": "Section - generated quantities\n\nFunctions of model output\n\nPredictions for new data\nSimulations based on parameters\nExtract posterior estimates\nCalculate model fit criterion\n\n\n\n\nExecuted after samples are generated"
   },
   {
     "objectID": "posts/STAN_Intro.html#example-model---glm",
@@ -221,7 +221,7 @@
     "href": "posts/STAN_Intro.html#running-the-model-in-r",
     "title": "STAN Introduction",
     "section": "Running the Model in R",
-    "text": "Running the Model in R\n\nfit_df = mtcars %&gt;%\n  mutate(Efficient = case_when(mpg &gt;= median(mpg) ~ 1,\n                               TRUE ~ 0)) %&gt;%\n  mutate(am = as.factor(am))\nfit_matrix = model.matrix(~cyl + disp + hp + drat + wt + am, fit_df)\n\ndata_list = list(N = nrow(mtcars), P = ncol(fit_matrix), \n                 Y = fit_df$Efficient, X = fit_matrix)\n\nmodel = sampling(\n  first_model, \n  data = data_list, \n  chains = 4, \n  iter = 1000, \n  warmup = 500, \n  # init = ,\n  # control = list(adapt_delta = , \n  #                max_treedepth = , \n  #                stepsize_jitter = ), \n  verbose = F,\n  refresh = 0\n)"
+    "text": "Running the Model in R\n\nfit_df = mtcars %&gt;%\n  mutate(Efficient = case_when(mpg &gt;= median(mpg) ~ 1,\n                               TRUE ~ 0)) %&gt;%\n  mutate(am = as.factor(am))\nfit_matrix = model.matrix(~cyl + disp + hp + drat + wt + am, fit_df)\n\ndata_list = list(N = nrow(mtcars), P = ncol(fit_matrix), \n                 Y = fit_df$Efficient, X = fit_matrix)\n\nmodel = sampling(\n  first_model, \n  data = data_list, \n  chains = 4, \n  iter = 1000, \n  warmup = 500, \n  # init = ,\n  # control = list(...), \n  verbose = F,\n  refresh = 0\n)"
   },
   {
     "objectID": "posts/STAN_Intro.html#convergence-monitoring",
@@ -242,28 +242,28 @@
     "href": "posts/STAN_Intro.html#hamiltonian-monte-carlo-continued",
     "title": "STAN Introduction",
     "section": "Hamiltonian Monte Carlo Continued",
-    "text": "Hamiltonian Monte Carlo Continued\n\n\nVersion of Metropolis-Hastings\nHamiltonian Dynamics used to propose next state\n\nTrajectory with momentum\nDistribution \\(\\approx\\) potential energy field\nLeapfrog integrator stepwise approximation\n\nMomentum: reduced correlation between samples\nEnergy conservation: high acceptance probability\n\n\n\n\nLeapfrog integrator uses model gradient to take steps, why it is important to keep this efficient (analytical gradients built-in by STAN for many things)\nUse MH step to compensate for numerical issues in the Leapfrog algorithm, but acceptance probability should be high if things go well (not needed in perfect world)"
+    "text": "Hamiltonian Monte Carlo Continued\n\nMH with Hamiltonian Dynamics to propose movements\n\nRandomly sample kinetic energy\nPosterior \\(\\approx\\) potential energy field\nSimulate trajectory using leapfrog integrator\nAccept/reject proposed stopping point\n\n\n\n\nLower correlation between samples\n\nPhysical model: travel further in the parameter space\nHigher sampling efficiency\n\n\n\n\n\nEnergy conservation: high acceptance probability\n\n\n\nMomentum and kinetic energy used interchangeably, as they are 1-1 transforms for a fixed mass\nLeapfrog integrator uses model gradient to take steps, why it is important to keep this efficient (analytical gradients built-in by STAN for many things)\nMH step compensates for numerical issues in the Leapfrog algorithm, but acceptance probability should be high if things go well (not needed in perfect world). Acceptance probability is modified to include both posterior and momentum/particle “mass”, if energy is preserved, it is 1."
   },
   {
     "objectID": "posts/STAN_Intro.html#divergences",
     "href": "posts/STAN_Intro.html#divergences",
     "title": "STAN Introduction",
     "section": "Divergences",
-    "text": "Divergences\n\n\nSimulated trajectory \\(\\neq\\) true trajectory\nGlobal step size \\(&gt;\\) true posterior geometry resolution\n\nLeapfrog first order approximataion\n\nHamiltonian departs from initial value\n\nTotal energy (kinetic + potential)\nShould be preserved along trajectory\n\nSampler WILL NOT accept samples after divergence"
+    "text": "Divergences\n\nSimulated trajectory \\(\\neq\\) true trajectory\n\n\n\nStep size \\(&gt;\\) true posterior geometry resolution\n\nLeapfrog first order approximation\n\n\n\n\n\nHamiltonian departs from initial value\n\nTotal energy (kinetic + potential)\nShould be preserved along trajectory\n\n\n\n\n\nSampler may reject samples after divergence"
   },
   {
     "objectID": "posts/STAN_Intro.html#tree-depth-warnings",
     "href": "posts/STAN_Intro.html#tree-depth-warnings",
     "title": "STAN Introduction",
     "section": "Tree Depth Warnings",
-    "text": "Tree Depth Warnings\n\n\nTree depth controls number of simulation steps\n\n\\(\\leq 2^{max\\_treedepth}\\) steps\n\nPrimarily an efficiency concern\nGenerally recommended to not increase\n\nOften model misspecification"
+    "text": "Tree Depth Warnings\n\nTree depth controls number of simulation steps\n\n\\(\\leq 2^{max\\_treedepth}\\) steps\nKeeps simulated trajectories finite\n\nPrimarily an efficiency concern\n\n\n\nGenerally recommended to not increase\n\nOften model misspecification"
   },
   {
     "objectID": "posts/STAN_Intro.html#est.-bayesian-fraction-of-miss.-info.",
     "href": "posts/STAN_Intro.html#est.-bayesian-fraction-of-miss.-info.",
     "title": "STAN Introduction",
     "section": "Est. Bayesian Fraction of Miss. Info.",
-    "text": "Est. Bayesian Fraction of Miss. Info.\n\n\nPosterior decomposes into energy equivalence classes\nLow EBFMI indicates getting “stuck” in energy sets\n\nSTAN monitors energy during sampling\n\nInsufficiently exploring the posterior\n\nTails too large, etc"
+    "text": "Est. Bayesian Fraction of Miss. Info.\n\nPosterior decomposes into energy equivalence classes\n\n\n\nLow EBFMI indicates getting “stuck” in energy sets\n\nSTAN monitors the Hamiltonian during sampling\nChosen kinetic energies do not deviate enough\n\n\n\n\n\nInsufficiently exploring the posterior\n\nTails too large, etc\n\n\n\nTails stretch things out, elongate the distance between level sets."
   },
   {
     "objectID": "posts/STAN_Intro.html#geometric-intuition",
@@ -333,21 +333,21 @@
     "href": "posts/STAN_Intro.html#how-to-update-the-model",
     "title": "STAN Introduction",
     "section": "How to Update the Model",
-    "text": "How to Update the Model\n\ndata {\n  int N;  // Number of observations\n  int P;  // Number of fixed effect covariates\n  \n  array[N] int&lt;lower=0, upper=1&gt; Y;  // Binary outcomes\n  matrix[N, P] X;                    // Fixed effects design matrix\n}\ntransformed data {\n  matrix[N, P] Q_coef = qr_thin_Q(X) * sqrt(N-1);\n  matrix[P, P] R_coef = qr_thin_R(X) / sqrt(N-1);\n  matrix[P, P] R_coef_inv = inverse(R_coef);\n}\nparameters {\n  vector[P] theta;  // Coefficients\n}\nmodel {\n  theta ~ normal(0, 100);\n  Y ~ bernoulli_logit(Q_coef * theta);\n}\ngenerated quantities {\n  vector[P] beta = R_coef_inv * theta;\n}"
+    "text": "How to Update the Model\n\ndata {\n  int N;  // Number of observations\n  int P;  // Number of fixed effect covariates\n  \n  array[N] int&lt;lower=0, upper=1&gt; Y;  // Binary outcomes\n  matrix[N, P] X;                    // Fixed effects design matrix\n}\ntransformed data {\n  matrix[N, P] Q_coef = qr_thin_Q(X) * sqrt(N-1);\n  matrix[P, P] R_coef = qr_thin_R(X) / sqrt(N-1);\n}\nparameters {\n  vector[P] beta;  // Coefficients\n}\ntransformed parameters{\n  vector[P] theta = R_coef * beta;\n}\nmodel {\n  beta ~ normal(0, 10);\n  Y ~ bernoulli_logit(Q_coef * theta);\n}"
   },
   {
     "objectID": "posts/STAN_Intro.html#running-the-updated-model",
     "href": "posts/STAN_Intro.html#running-the-updated-model",
     "title": "STAN Introduction",
     "section": "Running the Updated Model",
-    "text": "Running the Updated Model\n\nmodel = sampling(\n  second_model, \n  data = data_list, \n  chains = 4, \n  iter = 2500, \n  warmup = 1000, \n  control = list(adapt_delta = 0.95),\n  verbose = F,\n  refresh = 0\n)"
+    "text": "Running the Updated Model\n\nmodel = sampling(\n  second_model, \n  data = data_list, \n  chains = 4, \n  iter = 1000, \n  warmup = 500, \n  verbose = F,\n  refresh = 0\n)"
   },
   {
     "objectID": "posts/STAN_Intro.html#updated-model-performance",
     "href": "posts/STAN_Intro.html#updated-model-performance",
     "title": "STAN Introduction",
     "section": "Updated Model Performance",
-    "text": "Updated Model Performance\n\ncheck_hmc_diagnostics(model)\n\n\nDivergences:\n\n\n0 of 6000 iterations ended with a divergence.\n\n\n\nTree depth:\n\n\n0 of 6000 iterations saturated the maximum tree depth of 10.\n\n\n\nEnergy:\n\n\nE-BFMI indicated no pathological behavior.\n\n\n\nsummary(model)$summary[,\"Rhat\"]\n\ntheta[1] theta[2] theta[3] theta[4] theta[5] theta[6] theta[7]  beta[1] \n1.003796 1.003760 1.001931 1.003562 1.003605 1.003334 1.003570 1.002406 \n beta[2]  beta[3]  beta[4]  beta[5]  beta[6]  beta[7]     lp__ \n1.001364 1.003667 1.003591 1.003552 1.000757 1.003570 1.001324"
+    "text": "Updated Model Performance\n\ncheck_hmc_diagnostics(model)\n\n\nDivergences:\n\n\n0 of 2000 iterations ended with a divergence.\n\n\n\nTree depth:\n\n\n0 of 2000 iterations saturated the maximum tree depth of 10.\n\n\n\nEnergy:\n\n\nE-BFMI indicated no pathological behavior.\n\n\n\nsummary(model)$summary[8:15,\"Rhat\"]\n\n theta[1]  theta[2]  theta[3]  theta[4]  theta[5]  theta[6]  theta[7]      lp__ \n1.0012360 1.0001953 1.0028185 1.0002307 0.9999944 1.0034565 0.9997221 1.0044744"
   },
   {
     "objectID": "posts/STAN_Intro.html#updated-model-visualization",
@@ -382,7 +382,7 @@
     "href": "posts/STAN_Intro.html#resource-links",
     "title": "STAN Introduction",
     "section": "Resource Links",
-    "text": "Resource Links\n\nSTAN Manual\nIntroduction to HMC\nBayesian Workflow\n\n\nIntro to HMC by Michael Betancourt\nBayesian Workflow by Gelman et. al."
+    "text": "Resource Links\n\nBayesian Workflow\nIntroduction to HMC\nSTAN Manual\nBRMS Manual\n\n\nBayesian Workflow by Gelman et. al.\nIntro to HMC by Michael Betancourt"
   },
   {
     "objectID": "posts/MSFAST_Vignette.html",
@@ -1034,5 +1034,96 @@
     "title": "Software",
     "section": "",
     "text": "BFun: Bayesian Functional (Mixed) Modeling | The goal of BFun is to provide the tools necessary to fit Bayesian functional (mixed) models where random effects are represented using stochastic eigenfunctions. This type of joint modeling accounts for all potential sources of uncertainty, providing valid inferences even when signal to noise ratio is small. The package is oriented around a Markov Chain Monte Carlo approach, but provides an experimental variational implementation as well (still undergoing testing).\nMSFAST Bayesian Multivariate Sparse FPCA | Supporting material for the manuscript introducing the MSFAST approach to Bayesian Functional Principal Components Analysis for multivariate, sparsely-observed data. Includes STAN and R codes providing univariate and multivariate sparse data simulations comparing MSFAST with existing implementations, evaluating estimation accuracy and inference validity. Additionally includes a vignette illustrating a real analysis on the CONTENT child growth data.\nFAST Bayesian FPCA | Supporting material for the manuscript introducing the FAST approach to fitting Bayesian Functional Principal Components Analysis. Includes STAN and R codes providing simulation and model fitting routines comparing FAST with existing implementations on a simple simulation scenario and a multilevel scenario, evaluating estimation accuracy and inference validity.\nrGCI | Supporting R software for calculation of the novel Glucose Color Index (GCI) frequency-domain summary of Continuous Glucose Monitoring Data. Includes tools for calculating the smoothed log-periodogram using two weeks of glucose data, summarizing this function into 6 measures using a piece-wise linear model, and finally producing the GCI using weights derived via canonical correlation analysis."
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#bayesian-modeling",
+    "href": "posts/STAN_Intro.html#bayesian-modeling",
+    "title": "STAN Introduction",
+    "section": "Bayesian Modeling",
+    "text": "Bayesian Modeling\n\\[P(\\Theta|X) \\propto P(X|\\Theta)P(\\Theta)\\]\n\nhttps://svmiller.com/blog/2021/02/thinking-about-your-priors-bayesian-analysis/"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#markov-chain-monte-carlo",
+    "href": "posts/STAN_Intro.html#markov-chain-monte-carlo",
+    "title": "STAN Introduction",
+    "section": "Markov Chain Monte Carlo",
+    "text": "Markov Chain Monte Carlo\n\nMetropolis Hastings (MH)\n\nProposal distribution\nAcceptance probability\n\n\n\n\nGibbs Sampling\n\nSpecial case of MH\nConditional distributions\n\\(P\\)(Acceptance)\\(=1\\)\n\n\n\n\n\nHamiltonian Monte Carlo\n\nSpecial case of MH\nHamiltonian dynamics\n\\(P\\)(Acceptance)\\(=1\\)*"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#example-model---simple-glm",
+    "href": "posts/STAN_Intro.html#example-model---simple-glm",
+    "title": "STAN Introduction",
+    "section": "Example Model - Simple GLM",
+    "text": "Example Model - Simple GLM\n\ndata {\n  int N;  // Number of observations\n  int P;  // Number of fixed effect covariates\n  \n  array[N] int&lt;lower=0, upper=1&gt; Y;  // Binary outcomes\n  matrix[N, P] X;                    // Fixed effects design matrix\n}\nparameters {\n   vector[P] beta;  // Coefficients\n}\nmodel {\n   Y ~ bernoulli_logit(X * beta);\n   // target += bernoulli_logit_lpmf(Y | X * beta);\n}\n\n\nWhile there is no explicit prior on beta here, that just means that STAN is choosing the equivalent to a flat prior under the hood"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#reminder-hamiltonian-dynamics",
+    "href": "posts/STAN_Intro.html#reminder-hamiltonian-dynamics",
+    "title": "STAN Introduction",
+    "section": "Reminder: Hamiltonian Dynamics",
+    "text": "Reminder: Hamiltonian Dynamics\n\nHMC Visualization: By Justinkunimune - github.com/jkunimune/hamiltonian-mc, CC0"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#runtime-options---adaptive-hmc",
+    "href": "posts/STAN_Intro.html#runtime-options---adaptive-hmc",
+    "title": "STAN Introduction",
+    "section": "Runtime Options - Adaptive HMC",
+    "text": "Runtime Options - Adaptive HMC\n\n\nadapt_delta: target acceptance probability in adaptation\nmax_treedepth: bounds leapfrog steps\nstepsize_jitter: multiplier of adapted stepsize\n\n\n\nIncreasing adapt_delta leads to more accurate sampler, but slower\nIncreasing max_treedepth has a similar effect, it is in place to avoid excessively long computation times. Talk more about this shortly\nHaving a jitter to step-sizes (% either direction) can help get unstuck, or cause slow sampling/divergences"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#diagnostics",
+    "href": "posts/STAN_Intro.html#diagnostics",
+    "title": "STAN Introduction",
+    "section": "Diagnostics",
+    "text": "Diagnostics\n\ncheck_hmc_diagnostics(model)\n\n\nDivergences:\n\n\n0 of 2000 iterations ended with a divergence.\n\n\n\nTree depth:\n\n\n1192 of 2000 iterations saturated the maximum tree depth of 10 (59.6%).\nTry increasing 'max_treedepth' to avoid saturation.\n\n\n\nEnergy:\n\n\nE-BFMI indicated no pathological behavior.\n\n\n\nsummary(model)$summary[,\"Rhat\"]\n\n beta[1]  beta[2]  beta[3]  beta[4]  beta[5]  beta[6]  beta[7]     lp__ \n1.905472 1.636913 1.918515 1.921832 1.923458 1.429901 1.929289 1.018607"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#shinystan---summary",
+    "href": "posts/STAN_Intro.html#shinystan---summary",
+    "title": "STAN Introduction",
+    "section": "ShinySTAN - Summary",
+    "text": "ShinySTAN - Summary"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#brms---an-alternative",
+    "href": "posts/STAN_Intro.html#brms---an-alternative",
+    "title": "STAN Introduction",
+    "section": "BRMS - An Alternative",
+    "text": "BRMS - An Alternative\n\nbrms_fit = brm(Efficient ~ cyl + disp + hp + drat + wt + am, \n                data = fit_df, family = bernoulli(), \n                silent = 2, refresh = 0, \n                cores = 4, chains = 4, iter = 1000)\n\n\nstancode(brms_fit)\n\n// generated with brms 2.22.0\nfunctions {\n}\ndata {\n  int&lt;lower=1&gt; N;  // total number of observations\n  array[N] int Y;  // response variable\n  int&lt;lower=1&gt; K;  // number of population-level effects\n  matrix[N, K] X;  // population-level design matrix\n  int&lt;lower=1&gt; Kc;  // number of population-level effects after centering\n  int prior_only;  // should the likelihood be ignored?\n}\ntransformed data {\n  matrix[N, Kc] Xc;  // centered version of X without an intercept\n  vector[Kc] means_X;  // column means of X before centering\n  for (i in 2:K) {\n    means_X[i - 1] = mean(X[, i]);\n    Xc[, i - 1] = X[, i] - means_X[i - 1];\n  }\n}\nparameters {\n  vector[Kc] b;  // regression coefficients\n  real Intercept;  // temporary intercept for centered predictors\n}\ntransformed parameters {\n  real lprior = 0;  // prior contributions to the log posterior\n  lprior += student_t_lpdf(Intercept | 3, 0, 2.5);\n}\nmodel {\n  // likelihood including constants\n  if (!prior_only) {\n    target += bernoulli_logit_glm_lpmf(Y | Xc, Intercept, b);\n  }\n  // priors including constants\n  target += lprior;\n}\ngenerated quantities {\n  // actual population-level intercept\n  real b_Intercept = Intercept - dot_product(means_X, b);\n}"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#brms---diagnostics",
+    "href": "posts/STAN_Intro.html#brms---diagnostics",
+    "title": "STAN Introduction",
+    "section": "BRMS - Diagnostics",
+    "text": "BRMS - Diagnostics\n\ncheck_hmc_diagnostics(brms_fit$fit)\n\n\nDivergences:\n\n\n0 of 2000 iterations ended with a divergence.\n\n\n\nTree depth:\n\n\n0 of 2000 iterations saturated the maximum tree depth of 10.\n\n\n\nEnergy:\n\n\nE-BFMI indicated no pathological behavior.\n\nrhat(brms_fit)\n\nb_Intercept       b_cyl      b_disp        b_hp      b_drat        b_wt \n   1.016590    1.003937    1.046643    1.035852    1.037613    1.014859 \n      b_am1   Intercept      lprior        lp__ \n   1.028110    1.045403    1.046189    1.040587"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#brms---updating-priors",
+    "href": "posts/STAN_Intro.html#brms---updating-priors",
+    "title": "STAN Introduction",
+    "section": "BRMS - Updating Priors",
+    "text": "BRMS - Updating Priors\n\nbrms_update = brm(Efficient ~ cyl + disp + hp + drat + wt + am, \n                data = fit_df, family = bernoulli(), \n                silent = 2, refresh = 0, \n                cores = 4, chains = 4, iter = 1000, \n                prior = set_prior(\"normal(0, 10)\", class = \"b\"))\n\n\nstancode(brms_update)\n\n// generated with brms 2.22.0\nfunctions {\n}\ndata {\n  int&lt;lower=1&gt; N;  // total number of observations\n  array[N] int Y;  // response variable\n  int&lt;lower=1&gt; K;  // number of population-level effects\n  matrix[N, K] X;  // population-level design matrix\n  int&lt;lower=1&gt; Kc;  // number of population-level effects after centering\n  int prior_only;  // should the likelihood be ignored?\n}\ntransformed data {\n  matrix[N, Kc] Xc;  // centered version of X without an intercept\n  vector[Kc] means_X;  // column means of X before centering\n  for (i in 2:K) {\n    means_X[i - 1] = mean(X[, i]);\n    Xc[, i - 1] = X[, i] - means_X[i - 1];\n  }\n}\nparameters {\n  vector[Kc] b;  // regression coefficients\n  real Intercept;  // temporary intercept for centered predictors\n}\ntransformed parameters {\n  real lprior = 0;  // prior contributions to the log posterior\n  lprior += normal_lpdf(b | 0, 10);\n  lprior += student_t_lpdf(Intercept | 3, 0, 2.5);\n}\nmodel {\n  // likelihood including constants\n  if (!prior_only) {\n    target += bernoulli_logit_glm_lpmf(Y | Xc, Intercept, b);\n  }\n  // priors including constants\n  target += lprior;\n}\ngenerated quantities {\n  // actual population-level intercept\n  real b_Intercept = Intercept - dot_product(means_X, b);\n}"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#brms---updated-diagnostics",
+    "href": "posts/STAN_Intro.html#brms---updated-diagnostics",
+    "title": "STAN Introduction",
+    "section": "BRMS - Updated Diagnostics",
+    "text": "BRMS - Updated Diagnostics\n\ncheck_hmc_diagnostics(brms_update$fit)\n\n\nDivergences:\n\n\n0 of 2000 iterations ended with a divergence.\n\n\n\nTree depth:\n\n\n0 of 2000 iterations saturated the maximum tree depth of 10.\n\n\n\nEnergy:\n\n\nE-BFMI indicated no pathological behavior.\n\nrhat(brms_update)\n\nb_Intercept       b_cyl      b_disp        b_hp      b_drat        b_wt \n   1.001894    1.005495    1.007951    1.003834    1.006253    1.001785 \n      b_am1   Intercept      lprior        lp__ \n   1.002961    1.005025    1.007246    1.005499"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#profiling-stan-models-with-cmdstanr-1",
+    "href": "posts/STAN_Intro.html#profiling-stan-models-with-cmdstanr-1",
+    "title": "STAN Introduction",
+    "section": "Profiling STAN Models with CmdStanR (1)",
+    "text": "Profiling STAN Models with CmdStanR (1)\n\ndata {\n  int N;  // Number of observations\n  int P;  // Number of fixed effect covariates\n  \n  array[N] int&lt;lower=0, upper=1&gt; Y;  // Binary outcomes\n  matrix[N, P] X;                    // Fixed effects design matrix\n}\ntransformed data {\n  matrix[N, P] Q_coef = qr_thin_Q(X) * sqrt(N-1);\n  matrix[P, P] R_coef = qr_thin_R(X) / sqrt(N-1);\n}\nparameters {\n  vector[P] beta;  // Coefficients\n}\ntransformed parameters{\nvector[P] theta;\n  profile(\"Transform\") {\n    theta = R_coef * beta;\n  }\n}\nmodel {\n  profile(\"Priors\") {\n    beta ~ normal(0, 10);\n  }\n  profile(\"Likelihood\") {\n    target += bernoulli_logit_lpmf(Y| Q_coef * theta);\n  }\n}"
+  },
+  {
+    "objectID": "posts/STAN_Intro.html#profiling-stan-models-with-cmdstanr-2",
+    "href": "posts/STAN_Intro.html#profiling-stan-models-with-cmdstanr-2",
+    "title": "STAN Introduction",
+    "section": "Profiling STAN Models with CmdStanR (2)",
+    "text": "Profiling STAN Models with CmdStanR (2)\n\nmodel = cmdstan_model(\"Profile_Mod.stan\")\nfit = model$sample(data = data_list, chains = 1)\nfit$profiles()[[1]][,c(1,3,4,5,8)]\n\n\n\n        name  total_time forward_time reverse_time autodiff_calls\n1  Generated 0.000158059  0.000158059   0.00000000              0\n2     Priors 0.025370400  0.022040400   0.00332996         173154\n3 Likelihood 0.142509000  0.113486000   0.02902290         173154"
   }
 ]

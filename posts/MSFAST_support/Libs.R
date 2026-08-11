@@ -1,6 +1,5 @@
 # Calculation packages
 library(mfaces)
-library(MFPCA)
 library(bayesFPCA)
 library(MASS)
 library(face)
